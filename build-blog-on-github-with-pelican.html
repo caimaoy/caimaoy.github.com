@@ -2,7 +2,7 @@
 <html lang="zh"
 >
 <head>
-    <title>caimaoy's blog</title>
+    <title>使用Pelican在Github上建立个人博客 - caimaoy's blog</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -10,15 +10,23 @@
 
 
 
-<link rel="canonical" href="caimaoy.github.io">
-        <meta name="author" content="caimaoy" />
+<link rel="canonical" href="caimaoy.github.io/build-blog-on-github-with-pelican.html">
 
-    <!-- Open Graph tags -->
+        <meta name="author" content="caimaoy" />
+        <meta name="keywords" content="python,github,pelican" />
+        <meta name="description" content="相关连接 基础篇 进阶篇 有以上的链接我就不再赘述了，讲讲一些其他的坑 基础知识 python git github 配置文件 这个应该是说得比较多的一部分了，因为使用windows(我也不想用！！！)不得不改动一下配置文件 重点修改如下 Makefile 对于windows用户你可能要敢以下几件事 下载make.exe, 并且添加到环境变量中 修改Makefile文件关键是一些路径，具体忘记是哪些了，你可以去看这个blog的源代码对比一下 pelicanconfig.py git: publish git push origin $(GITHUB_PAGES_BRANCH) ghp-import -b $(GITHUB_PAGES_BRANCH) $(OUTPUTDIR) -p 其中git的部分你懂就应该懂，说一下ghp-import ghp-import 是用于分支发布的，也就是说你的源码是在一个分支，而生成的页面是在另外一个分支发布 ghp-import on Windows Until ghp-import Pull ..." />
+
         <meta property="og:site_name" content="caimaoy's blog" />
-        <meta property="og:type" content="website"/>
-        <meta property="og:title" content="caimaoy's blog"/>
-        <meta property="og:url" content="caimaoy.github.io"/>
-        <meta property="og:description" content="caimaoy's blog"/>
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="使用Pelican在Github上建立个人博客"/>
+        <meta property="og:url" content="caimaoy.github.io/build-blog-on-github-with-pelican.html"/>
+        <meta property="og:description" content="相关连接 基础篇 进阶篇 有以上的链接我就不再赘述了，讲讲一些其他的坑 基础知识 python git github 配置文件 这个应该是说得比较多的一部分了，因为使用windows(我也不想用！！！)不得不改动一下配置文件 重点修改如下 Makefile 对于windows用户你可能要敢以下几件事 下载make.exe, 并且添加到环境变量中 修改Makefile文件关键是一些路径，具体忘记是哪些了，你可以去看这个blog的源代码对比一下 pelicanconfig.py git: publish git push origin $(GITHUB_PAGES_BRANCH) ghp-import -b $(GITHUB_PAGES_BRANCH) $(OUTPUTDIR) -p 其中git的部分你懂就应该懂，说一下ghp-import ghp-import 是用于分支发布的，也就是说你的源码是在一个分支，而生成的页面是在另外一个分支发布 ghp-import on Windows Until ghp-import Pull ..."/>
+        <meta property="article:published_time" content="2015-04-01" />
+            <meta property="article:section" content="IT" />
+            <meta property="article:tag" content="python" />
+            <meta property="article:tag" content="github" />
+            <meta property="article:tag" content="pelican" />
+            <meta property="article:author" content="caimaoy" />
 
 
     <!-- Bootstrap -->
@@ -49,7 +57,7 @@ caimaoy's blog            </a>
                         <li >
                             <a href="caimaoy.github.io/category/about-me.html">About me</a>
                         </li>
-                        <li >
+                        <li class="active">
                             <a href="caimaoy.github.io/category/it.html">It</a>
                         </li>
             </ul>
@@ -66,9 +74,38 @@ caimaoy's blog            </a>
     <div class="row">
         <div class="col-sm-9">
 
-            <article>
-                <h2><a href="caimaoy.github.io/build-blog-on-github-with-pelican.html">使用Pelican在Github上建立个人博客</a></h2>
-                <div class="summary"><h1>相关连接</h1>
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="caimaoy.github.io/build-blog-on-github-with-pelican.html"
+                       rel="bookmark"
+                       title="Permalink to 使用Pelican在Github上建立个人博客">
+                        使用Pelican在Github上建立个人博客
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2015-04-01T09:51:00+08:00"> 周三 01 四月 2015</time>
+    </span>
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="caimaoy.github.io/tag/python.html">python</a>
+        /
+	<a href="caimaoy.github.io/tag/github.html">github</a>
+        /
+	<a href="caimaoy.github.io/tag/pelican.html">pelican</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <h1>相关连接</h1>
 <ul>
 <li><a href="http://www.xycoding.com/articles/2013/11/21/blog-create">基础篇</a></li>
 <li><a href="http://www.xycoding.com/articles/2013/11/22/blog-advance">进阶篇</a>  </li>
@@ -101,28 +138,54 @@ caimaoy's blog            </a>
 <p>其中git的部分你懂就应该懂，说一下ghp-import<br />
 ghp-import 是用于分支发布的，也就是说你的源码是在一个分支，而生成的页面是在另外一个分支发布</p>
 <h2>ghp-import on Windows</h2>
-<p><a href="http://docs.getpelican.com/en/latest/tips.html#publishing-to-github">Until ghp-import Pull ...</a></p>
-                    <a class="btn btn-default btn-xs" href="caimaoy.github.io/build-blog-on-github-with-pelican.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="caimaoy.github.io/about-me.html">关于我</a></h2>
-                <div class="summary"><h1>一个在国人F3的打工仔</h1>
-<p><strong>The Zen of Python, by Tim Peters</strong></p>
-<ul>
-<li>Beautiful is better than ugly.</li>
-<li>Explicit is better than implicit.</li>
-<li>Simple is better than complex.</li>
-<li>Complex is better than complicated.</li>
-<li>Flat is better than nested.</li>
-<li>Sparse is better than dense.</li>
-<li>Readability counts.</li>
-<li>Special cases aren't special enough to break the rules ...</li></ul>
-                    <a class="btn btn-default btn-xs" href="caimaoy.github.io/about-me.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
+<p><a href="http://docs.getpelican.com/en/latest/tips.html#publishing-to-github">Until ghp-import Pull Request #25 is accepted,you will need to install a custom build of ghp-import:</a>  </p>
+<div class="highlight"><pre>pip install https://github.com/chevah/ghp-import/archive/win-support.zip
+</pre></div>
+
+
+<p>可以使用上面的pip安装<br />
+如果你安装不上可以先卸载</p>
+<div class="highlight"><pre>pip uninstall ghp-import
+</pre></div>
+
+
+<p>如果你无法用下面的方法安装，请下载<a href="https://github.com/chevah/ghp-import/archive/win-support.zip">zip包</a>后安装:</p>
+<div class="highlight"><pre>python setup.py install
+</pre></div>
+            </div>
+            <!-- /.entry-content -->
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'caimaoy'; // required: replace example with your forum shortname
+
+                    var disqus_identifier = 'build-blog-on-github-with-pelican';
+                var disqus_url = 'caimaoy.github.io/build-blog-on-github-with-pelican.html';
+
+            var disqus_config = function () {
+                this.language = "zh";
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
 
         </div>
         <div class="col-sm-3" id="sidebar">

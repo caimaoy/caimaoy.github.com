@@ -2,7 +2,7 @@
 <html lang="zh"
 >
 <head>
-    <title>caimaoy's blog</title>
+    <title>Authors - caimaoy's blog</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -10,7 +10,7 @@
 
 
 
-<link rel="canonical" href="caimaoy.github.io">
+
         <meta name="author" content="caimaoy" />
 
     <!-- Open Graph tags -->
@@ -66,64 +66,8 @@ caimaoy's blog            </a>
     <div class="row">
         <div class="col-sm-9">
 
-            <article>
-                <h2><a href="caimaoy.github.io/build-blog-on-github-with-pelican.html">使用Pelican在Github上建立个人博客</a></h2>
-                <div class="summary"><h1>相关连接</h1>
-<ul>
-<li><a href="http://www.xycoding.com/articles/2013/11/21/blog-create">基础篇</a></li>
-<li><a href="http://www.xycoding.com/articles/2013/11/22/blog-advance">进阶篇</a>  </li>
-<li>有以上的链接我就不再赘述了，讲讲一些其他的坑</li>
-</ul>
-<h1>基础知识</h1>
-<ul>
-<li>python</li>
-<li>git</li>
-<li>github</li>
-</ul>
-<h1>配置文件</h1>
-<blockquote>
-<p>这个应该是说得比较多的一部分了，因为使用windows(我也不想用！！！)不得不改动一下配置文件<br />
-重点修改如下</p>
-</blockquote>
-<h2>Makefile</h2>
-<p>对于windows用户你可能要敢以下几件事</p>
-<ol>
-<li>下载make.exe, 并且添加到环境变量中</li>
-<li>修改Makefile文件关键是一些路径，具体忘记是哪些了，你可以去看这个blog的<a href="http://github.com/caimaoy">源代码</a>对比一下</li>
-</ol>
-<h2>pelicanconfig.py</h2>
-<div class="highlight"><pre>git: publish
-    git push origin <span class="k">$(</span>GITHUB_PAGES_BRANCH<span class="k">)</span>
-    ghp-import -b <span class="k">$(</span>GITHUB_PAGES_BRANCH<span class="k">)</span> <span class="k">$(</span>OUTPUTDIR<span class="k">)</span> -p
-</pre></div>
-
-
-<p>其中git的部分你懂就应该懂，说一下ghp-import<br />
-ghp-import 是用于分支发布的，也就是说你的源码是在一个分支，而生成的页面是在另外一个分支发布</p>
-<h2>ghp-import on Windows</h2>
-<p><a href="http://docs.getpelican.com/en/latest/tips.html#publishing-to-github">Until ghp-import Pull ...</a></p>
-                    <a class="btn btn-default btn-xs" href="caimaoy.github.io/build-blog-on-github-with-pelican.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="caimaoy.github.io/about-me.html">关于我</a></h2>
-                <div class="summary"><h1>一个在国人F3的打工仔</h1>
-<p><strong>The Zen of Python, by Tim Peters</strong></p>
-<ul>
-<li>Beautiful is better than ugly.</li>
-<li>Explicit is better than implicit.</li>
-<li>Simple is better than complex.</li>
-<li>Complex is better than complicated.</li>
-<li>Flat is better than nested.</li>
-<li>Sparse is better than dense.</li>
-<li>Readability counts.</li>
-<li>Special cases aren't special enough to break the rules ...</li></ul>
-                    <a class="btn btn-default btn-xs" href="caimaoy.github.io/about-me.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-
+    <h1>Authors on caimaoy's blog</h1>
+        <li><a href="caimaoy.github.io/author/caimaoy.html">caimaoy</a> (2)</li>
         </div>
         <div class="col-sm-3" id="sidebar">
             <aside>
