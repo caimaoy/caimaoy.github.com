@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>caimaoy's blog</title><link>/</link><description></description><atom:link href="/feeds/about-me.rss.xml" rel="self"></atom:link><lastBuildDate>Wed, 01 Apr 2015 15:43:00 +0800</lastBuildDate><item><title>关于我</title><link>/about-me.html</link><description>&lt;h1&gt;一个在国人F3的打工仔&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;The Zen of Python, by Tim Peters&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Beautiful is better than ugly.&lt;/li&gt;
+&lt;li&gt;Explicit is better than implicit.&lt;/li&gt;
+&lt;li&gt;Simple is better than complex.&lt;/li&gt;
+&lt;li&gt;Complex is better than complicated.&lt;/li&gt;
+&lt;li&gt;Flat is better than nested.&lt;/li&gt;
+&lt;li&gt;Sparse is better than dense.&lt;/li&gt;
+&lt;li&gt;Readability counts.&lt;/li&gt;
+&lt;li&gt;Special cases aren't special enough to break the rules.&lt;/li&gt;
+&lt;li&gt;Although practicality beats purity.&lt;/li&gt;
+&lt;li&gt;Errors should never pass silently.&lt;/li&gt;
+&lt;li&gt;Unless explicitly silenced.&lt;/li&gt;
+&lt;li&gt;In the face of ambiguity, refuse the temptation to guess.&lt;/li&gt;
+&lt;li&gt;There should be one-- and preferably only one --obvious way to do it.&lt;/li&gt;
+&lt;li&gt;Although that way may not be obvious at first unless you're Dutch.&lt;/li&gt;
+&lt;li&gt;Now is better than never.&lt;/li&gt;
+&lt;li&gt;Although never is often better than &lt;em&gt;right&lt;/em&gt; now.&lt;/li&gt;
+&lt;li&gt;If the implementation is hard to explain, it's a bad idea.&lt;/li&gt;
+&lt;li&gt;If the implementation is easy to explain, it may be a good idea.&lt;/li&gt;
+&lt;li&gt;Namespaces are one honking great idea -- let's do more of those!&lt;/li&gt;
+&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">caimaoy</dc:creator><pubDate>Wed, 01 Apr 2015 15:43:00 +0800</pubDate><guid>tag:,2015-01-01:about-me.html</guid><category>about-me</category><category>github</category><category>python</category></item></channel></rss>
