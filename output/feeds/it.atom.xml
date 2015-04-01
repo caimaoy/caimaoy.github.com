@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>caimaoy's blog</title><link>http://caimaoy.github.io/</link><description></description><atom:link href="http://caimaoy.github.io/feeds/it.rss.xml" rel="self"></atom:link><lastBuildDate>Wed, 01 Apr 2015 09:51:00 +0800</lastBuildDate><item><title>使用Pelican在Github上建立个人博客</title><link>http://caimaoy.github.io/build-blog-on-github-with-pelican.html</link><description>&lt;h1&gt;相关连接&lt;/h1&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>caimaoy's blog</title><link href="http://caimaoy.github.io/" rel="alternate"></link><link href="http://caimaoy.github.io/feeds/it.atom.xml" rel="self"></link><id>http://caimaoy.github.io/</id><updated>2015-04-01T09:51:00+08:00</updated><entry><title>使用Pelican在Github上建立个人博客</title><link href="http://caimaoy.github.io/build-blog-on-github-with-pelican.html" rel="alternate"></link><updated>2015-04-01T09:51:00+08:00</updated><author><name>caimaoy</name></author><id>tag:caimaoy.github.io,2015-04-01:build-blog-on-github-with-pelican.html</id><summary type="html">&lt;h1&gt;相关连接&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://www.xycoding.com/articles/2013/11/21/blog-create"&gt;基础篇&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://www.xycoding.com/articles/2013/11/22/blog-advance"&gt;进阶篇&lt;/a&gt;  &lt;/li&gt;
@@ -45,4 +45,4 @@ ghp-import 是用于分支发布的，也就是说你的源码是在一个分支
 
 &lt;p&gt;如果你无法用下面的方法安装，请下载&lt;a href="https://github.com/chevah/ghp-import/archive/win-support.zip"&gt;zip包&lt;/a&gt;后安装:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;python setup.py install
-&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">caimaoy</dc:creator><pubDate>Wed, 01 Apr 2015 09:51:00 +0800</pubDate><guid>tag:caimaoy.github.io,2015-04-01:build-blog-on-github-with-pelican.html</guid><category>python</category><category>github</category><category>pelican</category></item></channel></rss>
+&lt;/pre&gt;&lt;/div&gt;</summary><category term="python"></category><category term="github"></category><category term="pelican"></category></entry></feed>

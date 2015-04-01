@@ -10,7 +10,7 @@ import sys
 sys.path.append(os.curdir)
 from pelicanconf import *
 
-SITEURL = 'caimaoy.github.io'
+SITEURL = 'http://caimaoy.github.io'
 RELATIVE_URLS = False
 
 FEED_ALL_ATOM = 'feeds/all.atom.xml'
@@ -25,22 +25,22 @@ DELETE_OUTPUT_DIRECTORY = True
 
 AUTHOR = u'caimaoy'
 SITENAME = u"caimaoy's blog"
-TIMEZONE = 'Asia/Shanghai'#时区设置
+TIMEZONE = 'Asia/Shanghai' # 时区设置
 
 PATH = 'content'
 
-# DEFAULT_LANG = u'en'
-
-DEFAULT_LANG = u"zh"#默认语言设置
+DEFAULT_LANG = u"zh" # 默认语言设置
 # DATE_FORMAT={"zh":("zh_CN","%Y-%m-%d,%a"),}#日期格式设置，可按自己喜好设定
 # LOCALE = "C"
 
 # Feed generation is usually not desired when developing
+'''
 FEED_ALL_ATOM = None
 CATEGORY_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
+'''
 
 # Blogroll
 LINKS = (('Pelican', 'http://getpelican.com/'),
@@ -55,7 +55,7 @@ SOCIAL = (('You can add links in your config file', '#'),
 '''
 SOCIAL = (
     ('github', 'http://github.com/caimaoy'),
-    ('@caimaoy', 'http://weibo.com/caimaoy'),)
+    ('weibo', 'http://weibo.com/caimaoy'),)
 
 DEFAULT_PAGINATION = 7
 
