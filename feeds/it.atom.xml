@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>caimaoy's blog</title><link href="http://caimaoy.github.io/" rel="alternate"></link><link href="http://caimaoy.github.io/feeds/it.atom.xml" rel="self"></link><id>http://caimaoy.github.io/</id><updated>2015-04-01T09:51:00+08:00</updated><entry><title>使用Pelican在Github上建立个人博客</title><link href="http://caimaoy.github.io/build-blog-on-github-with-pelican.html" rel="alternate"></link><updated>2015-04-01T09:51:00+08:00</updated><author><name>caimaoy</name></author><id>tag:caimaoy.github.io,2015-04-01:build-blog-on-github-with-pelican.html</id><summary type="html">&lt;h1&gt;相关连接&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://www.xycoding.com/articles/2013/11/21/blog-create"&gt;基础篇&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.xycoding.com/articles/2013/11/22/blog-advance"&gt;进阶篇&lt;/a&gt;  &lt;/li&gt;
+&lt;li&gt;有以上的链接我就不再赘述了，讲讲一些其他的坑&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;基础知识&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;python&lt;/li&gt;
+&lt;li&gt;git&lt;/li&gt;
+&lt;li&gt;github&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;配置文件&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;这个应该是说得比较多的一部分了，因为使用windows(我也不想用！！！)不得不改动一下配置文件&lt;br /&gt;
+重点修改如下&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;Makefile&lt;/h2&gt;
+&lt;p&gt;对于windows用户你可能要敢以下几件事&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;下载make.exe, 并且添加到环境变量中&lt;/li&gt;
+&lt;li&gt;修改Makefile文件关键是一些路径，具体忘记是哪些了，你可以去看这个blog的&lt;a href="http://github.com/caimaoy"&gt;源代码&lt;/a&gt;对比一下&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;pelicanconfig.py&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;git: publish
+    git push origin &lt;span class="k"&gt;$(&lt;/span&gt;GITHUB_PAGES_BRANCH&lt;span class="k"&gt;)&lt;/span&gt;
+    ghp-import -b &lt;span class="k"&gt;$(&lt;/span&gt;GITHUB_PAGES_BRANCH&lt;span class="k"&gt;)&lt;/span&gt; &lt;span class="k"&gt;$(&lt;/span&gt;OUTPUTDIR&lt;span class="k"&gt;)&lt;/span&gt; -p
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;其中git的部分你懂就应该懂，说一下ghp-import&lt;br /&gt;
+ghp-import 是用于分支发布的，也就是说你的源码是在一个分支，而生成的页面是在另外一个分支发布&lt;/p&gt;
+&lt;h2&gt;ghp-import on Windows&lt;/h2&gt;
+&lt;p&gt;&lt;a href="http://docs.getpelican.com/en/latest/tips.html#publishing-to-github"&gt;Until ghp-import Pull Request #25 is accepted,you will need to install a custom build of ghp-import:&lt;/a&gt;  &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;pip install https://github.com/chevah/ghp-import/archive/win-support.zip
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;可以使用上面的pip安装&lt;br /&gt;
+如果你安装不上可以先卸载&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;pip uninstall ghp-import
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;如果你无法用下面的方法安装，请下载&lt;a href="https://github.com/chevah/ghp-import/archive/win-support.zip"&gt;zip包&lt;/a&gt;后安装:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;python setup.py install
+&lt;/pre&gt;&lt;/div&gt;</summary><category term="python"></category><category term="github"></category><category term="pelican"></category></entry></feed>
