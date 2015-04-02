@@ -20,8 +20,8 @@ DELETE_OUTPUT_DIRECTORY = True
 
 # Following items are often useful when publishing
 
-#DISQUS_SITENAME = "caimaoy"
-#GOOGLE_ANALYTICS = ""
+DISQUS_SITENAME = "caimaoy"
+GOOGLE_ANALYTICS = "UA-58273323-2"
 
 AUTHOR = u'caimaoy'
 SITENAME = u"caimaoy's blog"
