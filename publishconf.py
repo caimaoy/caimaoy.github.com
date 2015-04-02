@@ -20,7 +20,7 @@ DELETE_OUTPUT_DIRECTORY = True
 
 # Following items are often useful when publishing
 
-DISQUS_SITENAME = "caimaoy"
+DISQUS_SITENAME = 'caimaoygithubio'
 GOOGLE_ANALYTICS = "UA-58273323-2"
 
 AUTHOR = u'caimaoy'
@@ -63,7 +63,7 @@ DEFAULT_PAGINATION = 7
 #RELATIVE_URLS = True
 
 #
-DISQUS_SITENAME = u'caimaoy'
+DISQUS_SITENAME = 'caimaoygithubio'
 
 FEED_RSS = u"feeds/all.rss.xml"
 CATEGORY_FEED_RSS=u"feeds/%s.rss.xml"#为分类添加Feed
