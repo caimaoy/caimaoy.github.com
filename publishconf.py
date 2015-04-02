@@ -54,6 +54,7 @@ SOCIAL = (('You can add links in your config file', '#'),
           ('Another social link', '#'),)
 '''
 SOCIAL = (
+    ('RSS', '/feeds/all.atom.xml'),
     ('github', 'http://github.com/caimaoy'),
     ('weibo', 'http://weibo.com/caimaoy'),)
 

@@ -16,11 +16,13 @@ DEFAULT_LANG = u"zh"#默认语言设置
 # LOCALE = "C"
 
 # Feed generation is usually not desired when developing
+'''
 FEED_ALL_ATOM = None
 CATEGORY_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
+'''
 
 # Blogroll
 LINKS = (('Pelican', 'http://getpelican.com/'),
@@ -34,8 +36,9 @@ SOCIAL = (('You can add links in your config file', '#'),
           ('Another social link', '#'),)
 '''
 SOCIAL = (
+    ('RSS', '/feeds/all.atom.xml'),
     ('github', 'http://github.com/caimaoy'),
-    ('@caimaoy', 'http://weibo.com/caimaoy'),)
+    ('weibo', 'http://weibo.com/caimaoy'),)
 
 DEFAULT_PAGINATION = 7
 
@@ -43,7 +46,7 @@ DEFAULT_PAGINATION = 7
 #RELATIVE_URLS = True
 
 #
-DISQUS_SITENAME = u'caimaoy'
+DISQUS_SITENAME = u'caimaoygithubio'
 
 FEED_RSS = u"feeds/all.rss.xml"
 CATEGORY_FEED_RSS=u"feeds/%s.rss.xml"#为分类添加Feed
