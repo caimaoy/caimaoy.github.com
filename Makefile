@@ -111,6 +111,7 @@ github: publish
 	git push origin $(GITHUB_PAGES_BRANCH)
 
 git: publish
+	$(BASEDIR)/source_push.bat
 	ghp-import -b $(GITHUB_PAGES_BRANCH) $(OUTPUTDIR) -p
 
 git_test: publish
