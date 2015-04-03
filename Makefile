@@ -112,6 +112,7 @@ github: publish
 
 git: publish
 	$(BASEDIR)/source_push.bat
+	echo caimaoy.com>$(OUTPUTDIR)/CNAME
 	ghp-import -b $(GITHUB_PAGES_BRANCH) $(OUTPUTDIR) -p
 
 git_test: publish

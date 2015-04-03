@@ -13,9 +13,9 @@ Author: caimaoy
 
 
 #基础知识
-- python
-- git
-- github
+- [python](http://python.org/)
+- [git](http://git-scm.com/)
+- [Github Pages](https://pages.github.com/)
 
 
 #配置文件
