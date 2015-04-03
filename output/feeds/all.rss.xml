@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>caimaoy's blog</title><link>http://caimaoy.github.io/</link><description></description><atom:link href="http://caimaoy.github.io/feeds/all.rss.xml" rel="self"></atom:link><lastBuildDate>Wed, 01 Apr 2015 15:43:00 +0800</lastBuildDate><item><title>使用Pelican在Github上建立个人博客</title><link>http://caimaoy.github.io/build-blog-on-github-with-pelican.html</link><description>&lt;h1&gt;相关连接&lt;/h1&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>caimaoy's blog</title><link>http://caimaoy.github.io/</link><description></description><atom:link href="http://caimaoy.github.io/feeds/all.rss.xml" rel="self"></atom:link><lastBuildDate>Fri, 03 Apr 2015 18:36:00 +0800</lastBuildDate><item><title>外链图片测试</title><link>http://caimaoy.github.io/test-pic-vim-keyboard.html</link><description>&lt;ul&gt;
+&lt;li&gt;就是一个测试&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt="test-pic-vim-keyboard" src="http://7xif3g.com1.z0.glb.clouddn.com/caimaoy_vim_keyboard.png" title="test-pic-vim-keyboard" /&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">caimaoy</dc:creator><pubDate>Fri, 03 Apr 2015 18:36:00 +0800</pubDate><guid>tag:caimaoy.github.io,2015-04-03:test-pic-vim-keyboard.html</guid><category>test</category><category>picture</category><category>vim</category></item><item><title>使用Pelican在Github上建立个人博客</title><link>http://caimaoy.github.io/build-blog-on-github-with-pelican.html</link><description>&lt;h1&gt;相关连接&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://www.xycoding.com/articles/2013/11/21/blog-create"&gt;基础篇&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://www.xycoding.com/articles/2013/11/22/blog-advance"&gt;进阶篇&lt;/a&gt;  &lt;/li&gt;
