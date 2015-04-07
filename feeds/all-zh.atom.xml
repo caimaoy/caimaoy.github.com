@@ -1,5 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>caimaoy's blog</title><link href="http://caimaoy.github.io/" rel="alternate"></link><link href="http://caimaoy.github.io/feeds%5Call-zh.atom.xml" rel="self"></link><id>http://caimaoy.github.io/</id><updated>2015-04-03T18:36:00+08:00</updated><entry><title>外链图片测试</title><link href="http://caimaoy.github.io/test-pic-vim-keyboard.html" rel="alternate"></link><updated>2015-04-03T18:36:00+08:00</updated><author><name>caimaoy</name></author><id>tag:caimaoy.github.io,2015-04-03:test-pic-vim-keyboard.html</id><summary type="html">&lt;ul&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>caimaoy's blog</title><link href="http://caimaoy.github.io/" rel="alternate"></link><link href="http://caimaoy.github.io/feeds%5Call-zh.atom.xml" rel="self"></link><id>http://caimaoy.github.io/</id><updated>2015-04-07T13:58:00+08:00</updated><entry><title>python print</title><link href="http://caimaoy.github.io/python-print.html" rel="alternate"></link><updated>2015-04-07T13:58:00+08:00</updated><author><name>caimaoy</name></author><id>tag:caimaoy.github.io,2015-04-07:python-print.html</id><summary type="html">&lt;p&gt;今天突然想到要聊一下这个话题  &lt;/p&gt;
+&lt;p&gt;在实际的使用当中我们经常用到print来显示一些状态比如：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;In [2]: print &amp;#39;caimaoy&amp;#39;
+caimaoy
+
+In [3]: print &amp;#39;caimaoy\n&amp;#39;
+caimaoy
+
+
+In [4]:
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;strong&gt;注意一下空行数&lt;/strong&gt;  &lt;/p&gt;
+&lt;p&gt;这里面有个隐藏的参数，就是print会在每次输出后再输出一个'\n'，那如果我们是读取的
+文本的文件一行一行print操作，其实每一行会打印两个'\n', 其中一个来自文本，另外一
+个来自print的默认参数，如果我们只想要一个'\n'如何解决这个问题？&lt;/p&gt;
+&lt;h1&gt;解决方案&lt;/h1&gt;
+&lt;h2&gt;1. 使用''.join把需要的内容拼接起来然后一次性打印&lt;/h2&gt;
+&lt;p&gt;大概可以得到这样的效果：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;In [4]: a = [&amp;#39;caimaoy\n&amp;#39;, &amp;#39;caimaoy1\n&amp;#39;, &amp;#39;caimaoy3\n&amp;#39;]
+
+In [5]: print &amp;#39;&amp;#39;.join(a)
+caimaoy
+caimaoy1
+caimaoy3
+
+
+In [6]:
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;2. 使用print中的参数end&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;In [6]: print (&amp;#39;caimaoy&amp;#39;, end=&amp;#39;&amp;#39;)
+  File &amp;quot;&amp;lt;ipython-input-6-dfd4986b6077&amp;gt;&amp;quot;, line 1
+    print (&amp;#39;caimaoy&amp;#39;, end=&amp;#39;&amp;#39;)
+                         ^
+SyntaxError: invalid syntax
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;但是不幸的是在python2中我们好像不能只是这样做，&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;In&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;__future__&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;print_function&lt;/span&gt;
+
+&lt;span class="n"&gt;In&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;caimaoy&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;end&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;caimaoy&lt;/span&gt;
+&lt;span class="n"&gt;In&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;9&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;我们需要做&lt;pre&gt;from &lt;strong&gt;future&lt;/strong&gt; import print_function&lt;/pre&gt;这个操作可以正常使用。&lt;/p&gt;</summary><category term="python"></category></entry><entry><title>外链图片测试</title><link href="http://caimaoy.github.io/test-pic-vim-keyboard.html" rel="alternate"></link><updated>2015-04-03T18:36:00+08:00</updated><author><name>caimaoy</name></author><id>tag:caimaoy.github.io,2015-04-03:test-pic-vim-keyboard.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;就是一个测试&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;img alt="test-pic-vim-keyboard" src="http://7xif3g.com1.z0.glb.clouddn.com/caimaoy_vim_keyboard.png" title="test-pic-vim-keyboard" /&gt;&lt;/p&gt;</summary><category term="test"></category><category term="picture"></category><category term="vim"></category></entry><entry><title>使用Pelican在Github上建立个人博客</title><link href="http://caimaoy.github.io/build-blog-on-github-with-pelican.html" rel="alternate"></link><updated>2015-04-01T09:51:00+08:00</updated><author><name>caimaoy</name></author><id>tag:caimaoy.github.io,2015-04-01:build-blog-on-github-with-pelican.html</id><summary type="html">&lt;h1&gt;相关连接&lt;/h1&gt;
