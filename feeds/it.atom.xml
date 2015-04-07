@@ -49,7 +49,7 @@ SyntaxError: invalid syntax
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;我们需要做&lt;pre&gt;from &lt;strong&gt;future&lt;/strong&gt; import print_function&lt;/pre&gt;这个操作可以正常使用。&lt;/p&gt;</summary><category term="python"></category></entry><entry><title>使用Pelican在Github上建立个人博客</title><link href="http://caimaoy.github.io/build-blog-on-github-with-pelican.html" rel="alternate"></link><updated>2015-04-01T09:51:00+08:00</updated><author><name>caimaoy</name></author><id>tag:caimaoy.github.io,2015-04-01:build-blog-on-github-with-pelican.html</id><summary type="html">&lt;h1&gt;相关连接&lt;/h1&gt;
+&lt;p&gt;我们需要做&lt;pre&gt;from __future__ import print_function&lt;/pre&gt;这个操作可以正常使用。&lt;/p&gt;</summary><category term="python"></category></entry><entry><title>使用Pelican在Github上建立个人博客</title><link href="http://caimaoy.github.io/build-blog-on-github-with-pelican.html" rel="alternate"></link><updated>2015-04-01T09:51:00+08:00</updated><author><name>caimaoy</name></author><id>tag:caimaoy.github.io,2015-04-01:build-blog-on-github-with-pelican.html</id><summary type="html">&lt;h1&gt;相关连接&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://www.xycoding.com/articles/2013/11/21/blog-create"&gt;基础篇&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://www.xycoding.com/articles/2013/11/22/blog-advance"&gt;进阶篇&lt;/a&gt;  &lt;/li&gt;
