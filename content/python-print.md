@@ -63,4 +63,4 @@ In [8]: print ('caimaoy', end='')
 caimaoy
 In [9]:
 ```
-我们需要做<pre>from __future__ import print_function</pre>这个操作可以正常使用。
+我们需要做<pre>from \_\_future\_\_ import print_function</pre>这个操作可以正常使用。
