@@ -1,5 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>caimaoy's blog</title><link href="http://caimaoy.github.io/" rel="alternate"></link><link href="http://caimaoy.github.io/feeds%5Call-zh.atom.xml" rel="self"></link><id>http://caimaoy.github.io/</id><updated>2015-04-07T13:58:00+08:00</updated><entry><title>python print</title><link href="http://caimaoy.github.io/python-print.html" rel="alternate"></link><updated>2015-04-07T13:58:00+08:00</updated><author><name>caimaoy</name></author><id>tag:caimaoy.github.io,2015-04-07:python-print.html</id><summary type="html">&lt;p&gt;今天突然想到要聊一下这个话题  &lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>caimaoy's blog</title><link href="http://caimaoy.github.io/" rel="alternate"></link><link href="http://caimaoy.github.io/feeds%5Call-zh.atom.xml" rel="self"></link><id>http://caimaoy.github.io/</id><updated>2015-04-08T10:24:00+08:00</updated><entry><title>python 判断windows系统是32位还是64位</title><link href="http://caimaoy.github.io/win32-or-win64-python.html" rel="alternate"></link><updated>2015-04-08T10:24:00+08:00</updated><author><name>caimaoy</name></author><id>tag:caimaoy.github.io,2015-04-08:win32-or-win64-python.html</id><summary type="html">&lt;h3&gt;首先来看看错误方法：&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;以下是在64位机器下使用32位python得到的结果&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;In [14]: sys.version
+Out[14]: &amp;#39;2.7.3 (default, Apr 10 2012, 23:31:26) [MSC v.1500 32 bit (Intel)]&amp;#39;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;这里看到的其实是python的版本，而不是系统的版本&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;In [15]: platform.architecture()
+Out[15]: (&amp;#39;32bit&amp;#39;, &amp;#39;WindowsPE&amp;#39;)
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;这个运行的结果也是不正确的&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;In [16]: print sys.maxint
+2147483647
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;数字是2**31-1的话就是32位(这是错误的！！！)&lt;/li&gt;
+&lt;li&gt;数字式2**64-1的话就是64位(这也是错误的！！！)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;上面引述的方法也是不正确的，因为使用的是sys库&lt;/p&gt;
+&lt;h3&gt;正确方法&lt;/h3&gt;
+&lt;h4&gt;1. 通过环境变量进行判断&lt;/h4&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;def is_64_windows():
+    return &amp;#39;PROGRAMFILES(X86)&amp;#39; in os.environ
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4&gt;2. 通过注册表进行判断&lt;/h4&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;aReg = _winreg.OpenKey(_winreg.HKEY_LOCAL_MACHINE, \
+&amp;quot;SOFTWARE\\Wow6432Node\\Microsoft\\Windows\\CurrentVersion\\Run&amp;quot;)
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;存在即为64bits&lt;/li&gt;
+&lt;li&gt;如果不存在会抛出异常，进行捕获判断返回32bits&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;个人观点到此结束，如果有其他方法可以评论回复我，THX&lt;/p&gt;</summary><category term="python"></category><category term="windows"></category></entry><entry><title>python print</title><link href="http://caimaoy.github.io/python-print.html" rel="alternate"></link><updated>2015-04-07T13:58:00+08:00</updated><author><name>caimaoy</name></author><id>tag:caimaoy.github.io,2015-04-07:python-print.html</id><summary type="html">&lt;p&gt;今天突然想到要聊一下这个话题  &lt;/p&gt;
 &lt;p&gt;在实际的使用当中我们经常用到print来显示一些状态比如：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;In [2]: print &amp;#39;caimaoy&amp;#39;
 caimaoy
