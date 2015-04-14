@@ -1,5 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>caimaoy's blog</title><link>http://caimaoy.github.io/</link><description></description><atom:link href="http://caimaoy.github.io/feeds/it.rss.xml" rel="self"></atom:link><lastBuildDate>Wed, 08 Apr 2015 10:24:00 +0800</lastBuildDate><item><title>python 判断windows系统是32位还是64位</title><link>http://caimaoy.github.io/win32-or-win64-python.html</link><description>&lt;h3&gt;首先来看看错误方法：&lt;/h3&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>caimaoy's blog</title><link>http://caimaoy.github.io/</link><description></description><atom:link href="http://caimaoy.github.io/feeds/it.rss.xml" rel="self"></atom:link><lastBuildDate>Tue, 14 Apr 2015 19:26:00 +0800</lastBuildDate><item><title>pelican 如何添加404页面</title><link>http://caimaoy.github.io/pelican-add-404-page.html</link><description>&lt;blockquote&gt;
+&lt;p&gt;pelican 已经挂在了github上面了但是如何挂上一个404 页面&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;Title: Not Found
+Status: hidden
+Save_as: 404.html
+
+&lt;span class="nt"&gt;&amp;lt;script&lt;/span&gt; &lt;span class="na"&gt;type=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;text/javascript&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;src=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;http://www.qq.com/404/search_children.js&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;charset=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;utf-8&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;homePageUrl=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;http://www.caimaoy.com&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;homePageName=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Back to Home Page&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;源码里面要说的几点&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;添加Status: hidden这个元信息&lt;/li&gt;
+&lt;li&gt;Save_as为404.html，这样的话就满足了github的要求&lt;/li&gt;
+&lt;li&gt;挂上这一段js，出自我旁边的&lt;a href="http://www.qq.com/404/"&gt;鹅厂&lt;/a&gt;这样的事业还是要支持一下的&lt;/li&gt;
+&lt;li&gt;最后看一看:&lt;a href="http://caimaoy.github.io/404/"&gt;效果图&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;TODO&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;当然也是因为我没有找到pelican直接挂原始页面的办法，如果你知道下面disqus我&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5&gt;乱七八糟&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;我说了我今天要去跑步，不能再做一个颓废的胖纸了！！！&lt;/li&gt;
+&lt;li&gt;另外今天在H亏成狗了，可以去天台了~&lt;/li&gt;
+&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">caimaoy</dc:creator><pubDate>Tue, 14 Apr 2015 19:26:00 +0800</pubDate><guid>tag:caimaoy.github.io,2015-04-14:pelican-add-404-page.html</guid><category>github</category><category>pelican</category></item><item><title>python 判断windows系统是32位还是64位</title><link>http://caimaoy.github.io/win32-or-win64-python.html</link><description>&lt;h3&gt;首先来看看错误方法：&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;以下是在64位机器下使用32位python得到的结果&lt;/li&gt;
 &lt;/ul&gt;

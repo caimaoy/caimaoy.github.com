@@ -72,6 +72,33 @@ caimaoy's blog            </a>
         <div class="col-sm-9">
 
             <article>
+                <h2><a href="http://caimaoy.github.io/pelican-add-404-page.html">pelican 如何添加404页面</a></h2>
+                <div class="summary"><blockquote>
+<p>pelican 已经挂在了github上面了但是如何挂上一个404 页面</p>
+</blockquote>
+<div class="highlight"><pre>Title: Not Found
+Status: hidden
+Save_as: 404.html
+
+<span class="nt">&lt;script</span> <span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">src=</span><span class="s">&quot;http://www.qq.com/404/search_children.js&quot;</span> <span class="na">charset=</span><span class="s">&quot;utf-8&quot;</span> <span class="na">homePageUrl=</span><span class="s">&quot;http://www.caimaoy.com&quot;</span> <span class="na">homePageName=</span><span class="s">&quot;Back to Home Page&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+</pre></div>
+
+
+<h3>源码里面要说的几点</h3>
+<ul>
+<li>添加Status: hidden这个元信息</li>
+<li>Save_as为404.html，这样的话就满足了github的要求</li>
+<li>挂上这一段js，出自我旁边的<a href="http://www.qq.com/404/">鹅厂</a>这样的事业还是要支持一下的</li>
+<li>最后看一看:<a href="http://caimaoy.github.io/404/">效果图</a></li>
+</ul>
+<h3>TODO</h3>
+<ul>
+<li>当然也是因为我没有找到pelican直接挂原始页面的办法 ...</li></ul>
+                    <a class="btn btn-default btn-xs" href="http://caimaoy.github.io/pelican-add-404-page.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
                 <h2><a href="http://caimaoy.github.io/win32-or-win64-python.html">python 判断windows系统是32位还是64位</a></h2>
                 <div class="summary"><h3>首先来看看错误方法：</h3>
 <ul>
@@ -230,29 +257,19 @@ ghp-import 是用于分支发布的，也就是说你的源码是在一个分支
                             python
                         </a>
                     </li>
-                    <li class="list-group-item tag-2">
+                    <li class="list-group-item tag-1">
                         <a href="http://caimaoy.github.io/tag/github.html">
                             github
                         </a>
                     </li>
-                    <li class="list-group-item tag-4">
-                        <a href="http://caimaoy.github.io/tag/picture.html">
-                            picture
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
+                    <li class="list-group-item tag-2">
                         <a href="http://caimaoy.github.io/tag/pelican.html">
                             pelican
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
-                        <a href="http://caimaoy.github.io/tag/about-me.html">
-                            about-me
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="http://caimaoy.github.io/tag/test.html">
-                            test
+                        <a href="http://caimaoy.github.io/tag/vim.html">
+                            vim
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
@@ -261,8 +278,18 @@ ghp-import 是用于分支发布的，也就是说你的源码是在一个分支
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
-                        <a href="http://caimaoy.github.io/tag/vim.html">
-                            vim
+                        <a href="http://caimaoy.github.io/tag/test.html">
+                            test
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://caimaoy.github.io/tag/about-me.html">
+                            about-me
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://caimaoy.github.io/tag/picture.html">
+                            picture
                         </a>
                     </li>
                 </ul>
