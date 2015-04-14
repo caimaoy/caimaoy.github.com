@@ -64,6 +64,8 @@ DEFAULT_PAGINATION = 7
 #
 DISQUS_SITENAME = u'caimaoygithubio'
 
+GITHUB_URL = u'github.com/caimaoy'
+
 FEED_RSS = u"feeds/all.rss.xml"
 CATEGORY_FEED_RSS=u"feeds/%s.rss.xml"#为分类添加Feed
 
