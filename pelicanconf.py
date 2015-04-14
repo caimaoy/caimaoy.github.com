@@ -24,6 +24,22 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 '''
 
+# path-specific metadata
+EXTRA_PATH_METADATA = {
+    'extra/robots.txt': {'path': 'robots.txt'},
+    'extra/CNAME': {'path': 'CNAME'},
+    # 'extra/404.html': {'path': '404.html'},
+}
+
+# static paths will be copied without parsing their contents
+STATIC_PATHS = [
+    'extra/robots.txt',
+    'extra/CNAME',
+    # '404.html',
+    # 'extra'
+]
+
+
 # Blogroll
 LINKS = (('Pelican', 'http://getpelican.com/'),
          ('Python.org', 'http://python.org/'),
