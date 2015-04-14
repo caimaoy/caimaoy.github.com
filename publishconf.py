@@ -33,6 +33,18 @@ DEFAULT_LANG = u"zh" # 默认语言设置
 # DATE_FORMAT={"zh":("zh_CN","%Y-%m-%d,%a"),}#日期格式设置，可按自己喜好设定
 # LOCALE = "C"
 
+# path-specific metadata
+EXTRA_PATH_METADATA = {
+    'extra/robots.txt': {'path': 'robots.txt'},
+    'extra/CNAME': {'path': 'CNAME'},
+}
+
+# static paths will be copied without parsing their contents
+STATIC_PATHS = [
+    'extra/robots.txt',
+    'extra/CNAME',
+]
+
 # Feed generation is usually not desired when developing
 '''
 FEED_ALL_ATOM = None
