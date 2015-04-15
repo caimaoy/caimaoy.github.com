@@ -1,5 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>caimaoy's blog</title><link href="http://caimaoy.github.io/" rel="alternate"></link><link href="http://caimaoy.github.io/feeds/all.atom.xml" rel="self"></link><id>http://caimaoy.github.io/</id><updated>2015-04-15T19:36:00+08:00</updated><entry><title>PyQt 创建新窗口</title><link href="http://caimaoy.github.io/pyqt_create_a_new_window.html" rel="alternate"></link><updated>2015-04-15T19:36:00+08:00</updated><author><name>caimaoy</name></author><id>tag:caimaoy.github.io,2015-04-15:pyqt_create_a_new_window.html</id><summary type="html">&lt;blockquote&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>caimaoy's blog</title><link href="http://caimaoy.github.io/" rel="alternate"></link><link href="http://caimaoy.github.io/feeds/all.atom.xml" rel="self"></link><id>http://caimaoy.github.io/</id><updated>2015-04-15T20:14:00+08:00</updated><entry><title>pyinstaller生成exe中文路径无法运行解决方案</title><link href="http://caimaoy.github.io/pyinstaller-chinese-dir.html" rel="alternate"></link><updated>2015-04-15T20:14:00+08:00</updated><author><name>caimaoy</name></author><id>tag:caimaoy.github.io,2015-04-15:pyinstaller-chinese-dir.html</id><summary type="html">&lt;blockquote&gt;
+&lt;p&gt;pyinstaller生成的exe中文路径不能运行，错误信息如下:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;D:\测试&amp;gt;&amp;quot;D:\测试\caimaoy_tool.exe&amp;quot;
+Traceback (most recent call last):
+  File &amp;quot;&amp;lt;string&amp;gt;&amp;quot;, line 21, in &amp;lt;module&amp;gt;
+  File &amp;quot;D:\Python27\Lib\site-packages\PyInstaller\loader\pyi_importers.py&amp;quot;, line
+ 507, in install
+  File &amp;quot;D:\Python27\Lib\site-packages\PyInstaller\loader\pyi_importers.py&amp;quot;, line
+ 156, in __init__
+ImportError: Can&amp;#39;t load frozen modules.
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;直接上&lt;a href="http://hi.baidu.com/domhow/item/341817d1afd5a558ddf9bee9"&gt;解决方案&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;在此&lt;a href="https://github.com/dkw72n/pyinstaller/tree/develop"&gt;安装pyinstaller&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;但是介于他是百度空间的东西我还是备份一下的好，以下内容摘抄自解决方案&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;原文&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;想修改windows的默认字符集为 utf8 的  &lt;/p&gt;
+&lt;p&gt;请参考这篇 &lt;a href="http://superuser.com/questions/239810/setting-utf8-as-default-character-encoding-in-windows-7"&gt;http://superuser.com/questions/239810/setting-utf8-as-default-character-encoding-in-windows-7&lt;/a&gt;  &lt;/p&gt;
+&lt;p&gt;本质问题是他把我们的目录当成是utf8编码的.  &lt;/p&gt;
+&lt;p&gt;然后, 只能看代码了. 发现 bootloader 里有个 stb_to_utf8 和 stb_from_utf8  &lt;/p&gt;
+&lt;p&gt;而且是 放在 #ifdef _WIN32 里的! =.= 里面正经地实现了 UTF16 &amp;lt;-&amp;gt; UTF8 .
+于是. 把这两个函数用 MultiByteToWideChar WideCharToMultiByte 改了.重新编译.好了.  &lt;/p&gt;
+&lt;p&gt;然后我 fork 过来改了. &lt;a href="https://github.com/dkw72n/pyinstaller/tree/develop"&gt;https://github.com/dkw72n/pyinstaller/tree/develop&lt;/a&gt; 有需要的可以来取.  &lt;/p&gt;
+&lt;p&gt;(顺便整理下走过的弯路, 开始时已经知道是是模块加载的时候编码不对了, 只是一直纠结在''我怎么在模块加载的时候强行把他    的错误编码掰过来''. 无果. 可能的原因是那个阶段编码相关模块没被加载.)  &lt;/p&gt;
+&lt;p&gt;另外: 感谢 ikadog 同学两度把这个链接贴到了官方的ticket[&lt;a href="http://trac.pyinstaller.org/ticket/901"&gt;1&lt;/a&gt;,&lt;a href="http://trac.pyinstaller.org/ticket/824"&gt;2&lt;/a&gt;]. 不过貌似他们没打算处理.  &lt;/p&gt;
+&lt;p&gt;# update(2014_09_01): 之前没有编译64位的bootloader，用64位的同学直接取下来会发现还是不能用，今天补上了，之前不行的可以再试试。  &lt;/p&gt;
+&lt;/blockquote&gt;</summary><category term="pyinstaller"></category><category term="python"></category></entry><entry><title>PyQt 创建新窗口</title><link href="http://caimaoy.github.io/pyqt_create_a_new_window.html" rel="alternate"></link><updated>2015-04-15T19:36:00+08:00</updated><author><name>caimaoy</name></author><id>tag:caimaoy.github.io,2015-04-15:pyqt_create_a_new_window.html</id><summary type="html">&lt;blockquote&gt;
 &lt;p&gt;PyQt 如何新建一个窗口&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c"&gt;# -*- coding: UTF-8 -*-&lt;/span&gt;
