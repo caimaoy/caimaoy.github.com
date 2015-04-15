@@ -2,7 +2,7 @@
 <html lang="zh"
 >
 <head>
-    <title>test - caimaoy's blog</title>
+    <title>pyqt - caimaoy's blog</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -12,7 +12,7 @@
 
 
     <meta name="author" content="caimaoy" />
-    <meta name="keywords" content="test" />
+    <meta name="keywords" content="pyqt" />
 
     <!-- Open Graph tags -->
         <meta property="og:site_name" content="caimaoy's blog" />
@@ -55,7 +55,7 @@ caimaoy's blog            </a>
                         <li >
                             <a href="http://caimaoy.github.io/category/it.html">It</a>
                         </li>
-                        <li class="active">
+                        <li >
                             <a href="http://caimaoy.github.io/category/test.html">Test</a>
                         </li>
             </ul>
@@ -73,12 +73,28 @@ caimaoy's blog            </a>
         <div class="col-sm-9">
 
             <article>
-                <h2><a href="http://caimaoy.github.io/test-pic-vim-keyboard.html">外链图片测试</a></h2>
-                <div class="summary"><ul>
-<li>就是一个测试</li>
-</ul>
-<p><img alt="test-pic-vim-keyboard" src="http://7xif3g.com1.z0.glb.clouddn.com/caimaoy_vim_keyboard.png" title="test-pic-vim-keyboard" /></p>
-                    <a class="btn btn-default btn-xs" href="http://caimaoy.github.io/test-pic-vim-keyboard.html">more ...</a>
+                <h2><a href="http://caimaoy.github.io/pyqt_create_a_new_window.html">PyQt 创建新窗口</a></h2>
+                <div class="summary"><blockquote>
+<p>PyQt 如何新建一个窗口</p>
+</blockquote>
+<div class="highlight"><pre><span class="c"># -*- coding: UTF-8 -*-</span>
+
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">from</span> <span class="nn">PyQt4.QtCore</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">PyQt4.QtGui</span> <span class="kn">import</span> <span class="o">*</span>
+
+
+<span class="k">class</span> <span class="nc">mainWindow</span><span class="p">(</span><span class="n">QWidget</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parent</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">mainWindow</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="n">parent</span><span class="p">)</span>
+        <span class="n">button</span> <span class="o">=</span> <span class="n">QPushButton</span><span class="p">(</span><span class="s">u&#39;弹出新窗口&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">slavewindow</span> <span class="o">=</span> <span class="n">slaveWindow</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">button</span><span class="p">,</span> <span class="n">SIGNAL</span><span class="p">(</span><span class="s">&#39;clicked()&#39;</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">slavewindow</span><span class="o">.</span><span class="n">show</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">slaveWindow</span><span class="p">(</span><span class="n">QWidget</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parent ...</span></pre></div>
+                    <a class="btn btn-default btn-xs" href="http://caimaoy.github.io/pyqt_create_a_new_window.html">more ...</a>
                 </div>
             </article>
             <hr/>
