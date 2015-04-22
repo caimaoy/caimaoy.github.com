@@ -52,6 +52,9 @@ caimaoy's blog            </a>
                             <a href="http://caimaoy.github.io/category/about-me.html">About me</a>
                         </li>
                         <li >
+                            <a href="http://caimaoy.github.io/category/english.html">English</a>
+                        </li>
+                        <li >
                             <a href="http://caimaoy.github.io/category/it.html">It</a>
                         </li>
                         <li >
@@ -71,6 +74,18 @@ caimaoy's blog            </a>
     <div class="row">
         <div class="col-sm-9">
 
+            <article>
+                <h2><a href="http://caimaoy.github.io/Jessie-English.html">Jessie English</a></h2>
+                <div class="summary"><h3>prefix &amp; root</h3>
+<ul>
+<li>(content)[http://caimaoy.gitbooks.io/jessie-prefix-root/content/]</li>
+<li>(download_link1)[https://www.gitbook.com/book/caimaoy/jessie-prefix-root/details]</li>
+<li>(pdf_download_link2)[https://www.gitbook.com/download/pdf/book/caimaoy/jessie-prefix-root]</li>
+</ul>
+                    <a class="btn btn-default btn-xs" href="http://caimaoy.github.io/Jessie-English.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
             <article>
                 <h2><a href="http://caimaoy.github.io/pyinstaller-chinese-dir.html">pyinstaller生成exe中文路径无法运行解决方案</a></h2>
                 <div class="summary"><blockquote>
@@ -219,46 +234,6 @@ caimaoy1 ...</pre></div>
                 </div>
             </article>
             <hr/>
-            <article>
-                <h2><a href="http://caimaoy.github.io/build-blog-on-github-with-pelican.html">使用Pelican在Github上建立个人博客</a></h2>
-                <div class="summary"><h1>相关连接</h1>
-<ul>
-<li><a href="http://www.xycoding.com/articles/2013/11/21/blog-create">基础篇</a></li>
-<li><a href="http://www.xycoding.com/articles/2013/11/22/blog-advance">进阶篇</a>  </li>
-<li>有以上的链接我就不再赘述了，讲讲一些其他的坑</li>
-</ul>
-<h1>基础知识</h1>
-<ul>
-<li><a href="http://python.org/">python</a></li>
-<li><a href="http://git-scm.com/">git</a></li>
-<li><a href="https://pages.github.com/">Github Pages</a></li>
-</ul>
-<h1>配置文件</h1>
-<blockquote>
-<p>这个应该是说得比较多的一部分了，因为使用windows(我也不想用！！！)不得不改动一下配置文件<br />
-重点修改如下</p>
-</blockquote>
-<h2>Makefile</h2>
-<p>对于windows用户你可能要敢以下几件事</p>
-<ol>
-<li>下载make.exe, 并且添加到环境变量中</li>
-<li>修改Makefile文件关键是一些路径，具体忘记是哪些了，你可以去看这个blog的<a href="http://github.com/caimaoy">源代码</a>对比一下</li>
-</ol>
-<h2>pelicanconfig.py</h2>
-<div class="highlight"><pre>git: publish
-    git push origin <span class="k">$(</span>GITHUB_PAGES_BRANCH<span class="k">)</span>
-    ghp-import -b <span class="k">$(</span>GITHUB_PAGES_BRANCH<span class="k">)</span> <span class="k">$(</span>OUTPUTDIR<span class="k">)</span> -p
-</pre></div>
-
-
-<p>其中git的部分你懂就应该懂，说一下ghp-import<br />
-ghp-import 是用于分支发布的，也就是说你的源码是在一个分支，而生成的页面是在另外一个分支发布</p>
-<h2>ghp-import on Windows</h2>
-<p><a href="http://docs.getpelican.com/en/latest/tips.html#publishing-to-github">Until ghp-import ...</a></p>
-                    <a class="btn btn-default btn-xs" href="http://caimaoy.github.io/build-blog-on-github-with-pelican.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
 
         <ul class="pagination">
                 <li class="prev disabled"><a href="#">&laquo;</a></li>
@@ -303,28 +278,8 @@ ghp-import 是用于分支发布的，也就是说你的源码是在一个分支
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
-                        <a href="http://caimaoy.github.io/tag/pyinstaller.html">
-                            pyinstaller
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="http://caimaoy.github.io/tag/picture.html">
-                            picture
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
                         <a href="http://caimaoy.github.io/tag/about-me.html">
                             about-me
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="http://caimaoy.github.io/tag/windows.html">
-                            windows
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="http://caimaoy.github.io/tag/pyqt.html">
-                            pyqt
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
@@ -333,8 +288,33 @@ ghp-import 是用于分支发布的，也就是说你的源码是在一个分支
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
+                        <a href="http://caimaoy.github.io/tag/pyqt.html">
+                            pyqt
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://caimaoy.github.io/tag/windows.html">
+                            windows
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
                         <a href="http://caimaoy.github.io/tag/vim.html">
                             vim
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://caimaoy.github.io/tag/pyinstaller.html">
+                            pyinstaller
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://caimaoy.github.io/tag/english.html">
+                            English
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://caimaoy.github.io/tag/picture.html">
+                            picture
                         </a>
                     </li>
                 </ul>
