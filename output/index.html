@@ -75,6 +75,48 @@ caimaoy's blog            </a>
         <div class="col-sm-9">
 
             <article>
+                <h2><a href="http://caimaoy.github.io/vimremoving-duplicate-lines.html">VIM 去掉重复行</a></h2>
+                <div class="summary"><h3>不难理解的方法</h3>
+<ul>
+<li>先想想思路:<ul>
+<li>先排序</li>
+<li>然后去掉重复的行</li>
+</ul>
+</li>
+<li>看看具体命令</li>
+</ul>
+<div class="highlight"><pre>:sort u
+g/^\(.*\)\n\1$/d
+</pre></div>
+
+
+<h4>下面讲解一下：</h4>
+<div class="highlight"><pre>:sort u             &lt;-- 排序
+g/^\(.*\)\n\1$/d    &lt;-- kjkj
+g/            /d    &lt;-- g命令delete 满足要求的行
+  ^\(.*\)\n         &lt;-- 一行的开始到换行
+           \1$      &lt;-- \1 是前面(.*\)的内容，也就是说和前面的行内容相等
+             $      &lt;-- 结束符，两行相等是匹配条件
+</pre></div>
+
+
+<h3>一些高级vim语法的操作</h3>
+<p><a href="http://vim.wikia.com/wiki/Uniq_-_Removing_duplicate_lines">参考博文</a></p>
+<ul>
+<li>先看一下命令</li>
+</ul>
+<div class="highlight"><pre>g/\%(^\1\n\)\@&lt;=\(.*\)$/d
+g/\v%(^\1\n)@&lt;=(.*)$/d
+</pre></div>
+
+
+<h4>看一下原本博客中的解释</h4>
+<div class="highlight"><pre>g/\%(^\1\n\)\@&lt;=\(.*\)$/d ...</pre></div>
+                    <a class="btn btn-default btn-xs" href="http://caimaoy.github.io/vimremoving-duplicate-lines.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
                 <h2><a href="http://caimaoy.github.io/Jessie-English.html">Jessie English</a></h2>
                 <div class="summary"><h3>prefix &amp; root</h3>
 <ul>
@@ -224,16 +266,6 @@ caimaoy1 ...</pre></div>
                 </div>
             </article>
             <hr/>
-            <article>
-                <h2><a href="http://caimaoy.github.io/test-pic-vim-keyboard.html">外链图片测试</a></h2>
-                <div class="summary"><ul>
-<li>就是一个测试</li>
-</ul>
-<p><img alt="test-pic-vim-keyboard" src="http://7xif3g.com1.z0.glb.clouddn.com/caimaoy_vim_keyboard.png" title="test-pic-vim-keyboard" /></p>
-                    <a class="btn btn-default btn-xs" href="http://caimaoy.github.io/test-pic-vim-keyboard.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
 
         <ul class="pagination">
                 <li class="prev disabled"><a href="#">&laquo;</a></li>
@@ -268,13 +300,18 @@ caimaoy1 ...</pre></div>
                         </a>
                     </li>
                     <li class="list-group-item tag-2">
-                        <a href="http://caimaoy.github.io/tag/pelican.html">
-                            pelican
+                        <a href="http://caimaoy.github.io/tag/github.html">
+                            github
                         </a>
                     </li>
                     <li class="list-group-item tag-2">
-                        <a href="http://caimaoy.github.io/tag/github.html">
-                            github
+                        <a href="http://caimaoy.github.io/tag/vim.html">
+                            vim
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-2">
+                        <a href="http://caimaoy.github.io/tag/pelican.html">
+                            pelican
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
@@ -283,18 +320,13 @@ caimaoy1 ...</pre></div>
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
-                        <a href="http://caimaoy.github.io/tag/about-me.html">
-                            about-me
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
                         <a href="http://caimaoy.github.io/tag/pyinstaller.html">
                             pyinstaller
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
-                        <a href="http://caimaoy.github.io/tag/english.html">
-                            English
+                        <a href="http://caimaoy.github.io/tag/about-me.html">
+                            about-me
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
@@ -303,18 +335,18 @@ caimaoy1 ...</pre></div>
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
-                        <a href="http://caimaoy.github.io/tag/pyqt.html">
-                            pyqt
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="http://caimaoy.github.io/tag/vim.html">
-                            vim
+                        <a href="http://caimaoy.github.io/tag/english.html">
+                            English
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
                         <a href="http://caimaoy.github.io/tag/test.html">
                             test
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://caimaoy.github.io/tag/pyqt.html">
+                            pyqt
                         </a>
                     </li>
                 </ul>
