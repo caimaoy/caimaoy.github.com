@@ -1,5 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>caimaoy's blog</title><link href="http://caimaoy.github.io/" rel="alternate"></link><link href="http://caimaoy.github.io/feeds/it.atom.xml" rel="self"></link><id>http://caimaoy.github.io/</id><updated>2015-04-15T20:14:00+08:00</updated><entry><title>pyinstaller生成exe中文路径无法运行解决方案</title><link href="http://caimaoy.github.io/pyinstaller-chinese-dir.html" rel="alternate"></link><updated>2015-04-15T20:14:00+08:00</updated><author><name>caimaoy</name></author><id>tag:caimaoy.github.io,2015-04-15:pyinstaller-chinese-dir.html</id><summary type="html">&lt;blockquote&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>caimaoy's blog</title><link href="http://caimaoy.github.io/" rel="alternate"></link><link href="http://caimaoy.github.io/feeds/it.atom.xml" rel="self"></link><id>http://caimaoy.github.io/</id><updated>2015-05-06T10:57:00+08:00</updated><entry><title>VIM 去掉重复行</title><link href="http://caimaoy.github.io/vimremoving-duplicate-lines.html" rel="alternate"></link><updated>2015-05-06T10:57:00+08:00</updated><author><name>caimaoy</name></author><id>tag:caimaoy.github.io,2015-05-06:vimremoving-duplicate-lines.html</id><summary type="html">&lt;h3&gt;不难理解的方法&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;先想想思路:&lt;ul&gt;
+&lt;li&gt;先排序&lt;/li&gt;
+&lt;li&gt;然后去掉重复的行&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;看看具体命令&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;:sort u
+g/^\(.*\)\n\1$/d
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4&gt;下面讲解一下：&lt;/h4&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;:sort u             &amp;lt;-- 排序
+g/^\(.*\)\n\1$/d    &amp;lt;-- kjkj
+g/            /d    &amp;lt;-- g命令delete 满足要求的行
+  ^\(.*\)\n         &amp;lt;-- 一行的开始到换行
+           \1$      &amp;lt;-- \1 是前面(.*\)的内容，也就是说和前面的行内容相等
+             $      &amp;lt;-- 结束符，两行相等是匹配条件
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;一些高级vim语法的操作&lt;/h3&gt;
+&lt;p&gt;&lt;a href="http://vim.wikia.com/wiki/Uniq_-_Removing_duplicate_lines"&gt;参考博文&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;先看一下命令&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;g/\%(^\1\n\)\@&amp;lt;=\(.*\)$/d
+g/\v%(^\1\n)@&amp;lt;=(.*)$/d
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4&gt;看一下原本博客中的解释&lt;/h4&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;g/\%(^\1\n\)\@&amp;lt;=\(.*\)$/d
+g/                     /d  &amp;lt;-- Delete the lines matching the regexp
+            \@&amp;lt;=           &amp;lt;-- If the bit following matches, make sure the bit preceding this symbol directly precedes the match
+                \(.*\)$    &amp;lt;-- Match the line into subst register 1
+  \%(     \)               &amp;lt;-- Group without placing in a subst register.
+     ^\1\n                 &amp;lt;-- Match subst register 1 followed the new line between the 2 lines
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;这里面有一个reg的知识点：&lt;strong&gt;环视&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;\@&amp;lt;= 这是一个逆向环视&lt;/li&gt;
+&lt;li&gt;所以建议大家还是用第一种方法就好了&lt;/li&gt;
+&lt;/ul&gt;</summary><category term="vim"></category></entry><entry><title>pyinstaller生成exe中文路径无法运行解决方案</title><link href="http://caimaoy.github.io/pyinstaller-chinese-dir.html" rel="alternate"></link><updated>2015-04-15T20:14:00+08:00</updated><author><name>caimaoy</name></author><id>tag:caimaoy.github.io,2015-04-15:pyinstaller-chinese-dir.html</id><summary type="html">&lt;blockquote&gt;
 &lt;p&gt;pyinstaller生成的exe中文路径不能运行，错误信息如下:&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;D:\测试&amp;gt;&amp;quot;D:\测试\caimaoy_tool.exe&amp;quot;
