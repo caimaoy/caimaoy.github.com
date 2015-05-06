@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>caimaoy's blog</title><link>http://caimaoy.github.io/</link><description></description><atom:link href="http://caimaoy.github.io/feeds/it.rss.xml" rel="self"></atom:link><lastBuildDate>Wed, 06 May 2015 10:57:00 +0800</lastBuildDate><item><title>VIM 去掉重复行</title><link>http://caimaoy.github.io/vimremoving-duplicate-lines.html</link><description>&lt;h3&gt;不难理解的方法&lt;/h3&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>caimaoy's blog</title><link>http://caimaoy.github.io/</link><description></description><atom:link href="http://caimaoy.github.io/feeds/it.rss.xml" rel="self"></atom:link><lastBuildDate>Wed, 06 May 2015 10:57:00 +0800</lastBuildDate><item><title>VIM 去掉重复行</title><link>http://caimaoy.github.io/vim-removing-duplicate-lines.html</link><description>&lt;h3&gt;不难理解的方法&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;先想想思路:&lt;ul&gt;
 &lt;li&gt;先排序&lt;/li&gt;
@@ -47,7 +47,7 @@ g/                     /d  &amp;lt;-- Delete the lines matching the regexp
 &lt;li&gt;这里面有一个reg的知识点：&lt;strong&gt;环视&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;\@&amp;lt;= 这是一个逆向环视&lt;/li&gt;
 &lt;li&gt;所以建议大家还是用第一种方法就好了&lt;/li&gt;
-&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">caimaoy</dc:creator><pubDate>Wed, 06 May 2015 10:57:00 +0800</pubDate><guid>tag:caimaoy.github.io,2015-05-06:vimremoving-duplicate-lines.html</guid><category>vim</category></item><item><title>pyinstaller生成exe中文路径无法运行解决方案</title><link>http://caimaoy.github.io/pyinstaller-chinese-dir.html</link><description>&lt;blockquote&gt;
+&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">caimaoy</dc:creator><pubDate>Wed, 06 May 2015 10:57:00 +0800</pubDate><guid>tag:caimaoy.github.io,2015-05-06:vim-removing-duplicate-lines.html</guid><category>vim</category></item><item><title>pyinstaller生成exe中文路径无法运行解决方案</title><link>http://caimaoy.github.io/pyinstaller-chinese-dir.html</link><description>&lt;blockquote&gt;
 &lt;p&gt;pyinstaller生成的exe中文路径不能运行，错误信息如下:&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;D:\测试&amp;gt;&amp;quot;D:\测试\caimaoy_tool.exe&amp;quot;

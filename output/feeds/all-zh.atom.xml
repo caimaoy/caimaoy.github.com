@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>caimaoy's blog</title><link href="http://caimaoy.github.io/" rel="alternate"></link><link href="http://caimaoy.github.io/feeds%5Call-zh.atom.xml" rel="self"></link><id>http://caimaoy.github.io/</id><updated>2015-05-06T10:57:00+08:00</updated><entry><title>VIM 去掉重复行</title><link href="http://caimaoy.github.io/vimremoving-duplicate-lines.html" rel="alternate"></link><updated>2015-05-06T10:57:00+08:00</updated><author><name>caimaoy</name></author><id>tag:caimaoy.github.io,2015-05-06:vimremoving-duplicate-lines.html</id><summary type="html">&lt;h3&gt;不难理解的方法&lt;/h3&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>caimaoy's blog</title><link href="http://caimaoy.github.io/" rel="alternate"></link><link href="http://caimaoy.github.io/feeds%5Call-zh.atom.xml" rel="self"></link><id>http://caimaoy.github.io/</id><updated>2015-05-06T10:57:00+08:00</updated><entry><title>VIM 去掉重复行</title><link href="http://caimaoy.github.io/vim-removing-duplicate-lines.html" rel="alternate"></link><updated>2015-05-06T10:57:00+08:00</updated><author><name>caimaoy</name></author><id>tag:caimaoy.github.io,2015-05-06:vim-removing-duplicate-lines.html</id><summary type="html">&lt;h3&gt;不难理解的方法&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;先想想思路:&lt;ul&gt;
 &lt;li&gt;先排序&lt;/li&gt;

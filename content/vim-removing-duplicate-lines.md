@@ -3,7 +3,7 @@ Date: 2015-05-06 10:57
 Modified: 2015-05-06 10:57
 Category: it
 Tags: vim
-Slug: vimremoving-duplicate-lines
+Slug: vim-removing-duplicate-lines
 Author: caimaoy
 
 
