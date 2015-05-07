@@ -75,6 +75,22 @@ caimaoy's blog            </a>
         <div class="col-sm-9">
 
             <article>
+                <h2><a href="http://caimaoy.github.io/python-split.html">python split</a></h2>
+                <div class="summary"><h3>str.split</h3>
+<div class="highlight"><pre>Help on method_descriptor:
+
+split(...)
+    S.split([sep [,maxsplit]]) -&gt; list of strings
+
+    Return a list of the words in the string S, using sep as the
+    delimiter string.  If maxsplit is given, at most maxsplit
+    splits are done. If sep is not specified or is None, any
+    whitespace string ...</pre></div>
+                    <a class="btn btn-default btn-xs" href="http://caimaoy.github.io/python-split.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
                 <h2><a href="http://caimaoy.github.io/vim-removing-duplicate-lines.html">VIM 去掉重复行</a></h2>
                 <div class="summary"><h3>不难理解的方法</h3>
 <ul>
@@ -235,37 +251,6 @@ Out[15]: (&#39;32bit&#39;, &#39;WindowsPE&#39;)
                 </div>
             </article>
             <hr/>
-            <article>
-                <h2><a href="http://caimaoy.github.io/python-print.html">python print</a></h2>
-                <div class="summary"><p>今天突然想到要聊一下这个话题  </p>
-<p>在实际的使用当中我们经常用到print来显示一些状态比如：</p>
-<div class="highlight"><pre>In [2]: print &#39;caimaoy&#39;
-caimaoy
-
-In [3]: print &#39;caimaoy\n&#39;
-caimaoy
-
-
-In [4]:
-</pre></div>
-
-
-<p><strong>注意一下空行数</strong>  </p>
-<p>这里面有个隐藏的参数，就是print会在每次输出后再输出一个'\n'，那如果我们是读取的
-文本的文件一行一行print操作，其实每一行会打印两个'\n', 其中一个来自文本，另外一
-个来自print的默认参数，如果我们只想要一个'\n'如何解决这个问题？</p>
-<h1>解决方案</h1>
-<h2>1. 使用''.join把需要的内容拼接起来然后一次性打印</h2>
-<p>大概可以得到这样的效果：</p>
-<div class="highlight"><pre>In [4]: a = [&#39;caimaoy\n&#39;, &#39;caimaoy1\n&#39;, &#39;caimaoy3\n&#39;]
-
-In [5]: print &#39;&#39;.join(a)
-caimaoy
-caimaoy1 ...</pre></div>
-                    <a class="btn btn-default btn-xs" href="http://caimaoy.github.io/python-print.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
 
         <ul class="pagination">
                 <li class="prev disabled"><a href="#">&laquo;</a></li>
@@ -294,14 +279,14 @@ caimaoy1 ...</pre></div>
 
             <li class="list-group-item"><a href="http://caimaoy.github.io/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
                 <ul class="list-group " id="tags">
-                    <li class="list-group-item tag-0">
+                    <li class="list-group-item tag-1">
                         <a href="http://caimaoy.github.io/tag/python.html">
                             python
                         </a>
                     </li>
                     <li class="list-group-item tag-2">
-                        <a href="http://caimaoy.github.io/tag/vim.html">
-                            vim
+                        <a href="http://caimaoy.github.io/tag/pelican.html">
+                            pelican
                         </a>
                     </li>
                     <li class="list-group-item tag-2">
@@ -310,13 +295,8 @@ caimaoy1 ...</pre></div>
                         </a>
                     </li>
                     <li class="list-group-item tag-2">
-                        <a href="http://caimaoy.github.io/tag/pelican.html">
-                            pelican
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="http://caimaoy.github.io/tag/picture.html">
-                            picture
+                        <a href="http://caimaoy.github.io/tag/vim.html">
+                            vim
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
@@ -325,13 +305,8 @@ caimaoy1 ...</pre></div>
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
-                        <a href="http://caimaoy.github.io/tag/pyqt.html">
-                            pyqt
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="http://caimaoy.github.io/tag/pyinstaller.html">
-                            pyinstaller
+                        <a href="http://caimaoy.github.io/tag/windows.html">
+                            windows
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
@@ -340,8 +315,18 @@ caimaoy1 ...</pre></div>
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
-                        <a href="http://caimaoy.github.io/tag/windows.html">
-                            windows
+                        <a href="http://caimaoy.github.io/tag/picture.html">
+                            picture
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://caimaoy.github.io/tag/pyinstaller.html">
+                            pyinstaller
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://caimaoy.github.io/tag/pyqt.html">
+                            pyqt
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
