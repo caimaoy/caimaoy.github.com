@@ -1,5 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>caimaoy's blog</title><link>http://caimaoy.github.io/</link><description></description><atom:link href="http://caimaoy.github.io/feeds%5Ccaimaoy.rss.xml" rel="self"></atom:link><lastBuildDate>Wed, 06 May 2015 10:57:00 +0800</lastBuildDate><item><title>VIM 去掉重复行</title><link>http://caimaoy.github.io/vim-removing-duplicate-lines.html</link><description>&lt;h3&gt;不难理解的方法&lt;/h3&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>caimaoy's blog</title><link>http://caimaoy.github.io/</link><description></description><atom:link href="http://caimaoy.github.io/feeds%5Ccaimaoy.rss.xml" rel="self"></atom:link><lastBuildDate>Thu, 07 May 2015 10:14:00 +0800</lastBuildDate><item><title>python split</title><link>http://caimaoy.github.io/python-split.html</link><description>&lt;h3&gt;str.split&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;Help on method_descriptor:
+
+split(...)
+    S.split([sep [,maxsplit]]) -&amp;gt; list of strings
+
+    Return a list of the words in the string S, using sep as the
+    delimiter string.  If maxsplit is given, at most maxsplit
+    splits are done. If sep is not specified or is None, any
+    whitespace string is a separator and empty strings are removed
+    from the result.
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4&gt;基本用法&lt;/h4&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;In [5]: &amp;#39;caimaoy jessie HHKB Tesla&amp;#39;.split(&amp;#39; &amp;#39;)
+Out[5]: [&amp;#39;caimaoy&amp;#39;, &amp;#39;jessie&amp;#39;, &amp;#39;HHKB&amp;#39;, &amp;#39;Tesla&amp;#39;]
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;re.split&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nx"&gt;Help&lt;/span&gt; &lt;span class="nx"&gt;on&lt;/span&gt; &lt;span class="kd"&gt;function&lt;/span&gt; &lt;span class="nx"&gt;split&lt;/span&gt; &lt;span class="k"&gt;in&lt;/span&gt; &lt;span class="nx"&gt;module&lt;/span&gt; &lt;span class="nx"&gt;re&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+
+&lt;span class="nx"&gt;split&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;pattern&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;string&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;maxsplit&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;flags&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="nx"&gt;Split&lt;/span&gt; &lt;span class="nx"&gt;the&lt;/span&gt; &lt;span class="nx"&gt;source&lt;/span&gt; &lt;span class="nx"&gt;string&lt;/span&gt; &lt;span class="nx"&gt;by&lt;/span&gt; &lt;span class="nx"&gt;the&lt;/span&gt; &lt;span class="nx"&gt;occurrences&lt;/span&gt; &lt;span class="nx"&gt;of&lt;/span&gt; &lt;span class="nx"&gt;the&lt;/span&gt; &lt;span class="nx"&gt;pattern&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="nx"&gt;returning&lt;/span&gt; &lt;span class="nx"&gt;a&lt;/span&gt; &lt;span class="nx"&gt;list&lt;/span&gt; &lt;span class="nx"&gt;containing&lt;/span&gt; &lt;span class="nx"&gt;the&lt;/span&gt; &lt;span class="nx"&gt;resulting&lt;/span&gt; &lt;span class="nx"&gt;substrings&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4&gt;基本用法&lt;/h4&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;In [14]: re.split(r&amp;#39;\d&amp;#39;, &amp;#39;caimaoy1jessie2HHKB3Tesla&amp;#39;)
+Out[14]: [&amp;#39;caimaoy&amp;#39;, &amp;#39;jessie&amp;#39;, &amp;#39;HHKB&amp;#39;, &amp;#39;Tesla&amp;#39;]
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4&gt;迷惑用法&lt;/h4&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;In [15]: re.split(&amp;#39;o(o)&amp;#39;, &amp;#39;foobar&amp;#39;)
+Out[15]: [&amp;#39;f&amp;#39;, &amp;#39;o&amp;#39;, &amp;#39;bar&amp;#39;]
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;这是发生了什么啊？&lt;/li&gt;
+&lt;li&gt;书里面的解释&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;如果模式包括小括号，那么括起来的字符组合会散布在分割后的字字符串之间&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;不过上面的例子还是很让人迷惑，还是自己写几个&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;In [19]: re.split(&amp;#39;(and)&amp;#39;, &amp;#39;caimaoyandjessie&amp;#39;)
+Out[19]: [&amp;#39;caimaoy&amp;#39;, &amp;#39;and&amp;#39;, &amp;#39;jessie&amp;#39;]
+
+In [20]: re.split(&amp;#39;o(and)o&amp;#39;, &amp;#39;caimaoyoandojessie&amp;#39;)
+Out[20]: [&amp;#39;caimaoy&amp;#39;, &amp;#39;and&amp;#39;, &amp;#39;jessie&amp;#39;]
+
+In [21]: re.split(r&amp;#39;(\d)&amp;#39;, &amp;#39;caimaoy3jessie&amp;#39;)
+Out[21]: [&amp;#39;caimaoy&amp;#39;, &amp;#39;3&amp;#39;, &amp;#39;jessie&amp;#39;]
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;相信这几个例子写了之后就没有那么迷惑了&lt;/li&gt;
+&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">caimaoy</dc:creator><pubDate>Thu, 07 May 2015 10:14:00 +0800</pubDate><guid>tag:caimaoy.github.io,2015-05-07:python-split.html</guid><category>python</category></item><item><title>VIM 去掉重复行</title><link>http://caimaoy.github.io/vim-removing-duplicate-lines.html</link><description>&lt;h3&gt;不难理解的方法&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;先想想思路:&lt;ul&gt;
 &lt;li&gt;先排序&lt;/li&gt;
