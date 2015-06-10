@@ -75,6 +75,36 @@ caimaoy's blog            </a>
         <div class="col-sm-9">
 
             <article>
+                <h2><a href="http://caimaoy.github.io/python-const.html">python const</a></h2>
+                <div class="summary"><ul>
+<li>python 没有const 这样的语法，但是在项目中可能会有这样的需求？</li>
+<li>自己动手丰衣足食！！！</li>
+</ul>
+<h3>const.py</h3>
+<ul>
+<li>首先创建一个const.py文件，代码如下</li>
+</ul>
+<div class="highlight"><pre><span class="c"># -*- coding: UTF-8 -*-</span>
+
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">Last modified time: 2015-06-09 09:49:29</span>
+<span class="sd">Edit time: 2015-06-09 09:55:07</span>
+<span class="sd">File name: const.py</span>
+<span class="sd">Edit by caimaoy</span>
+<span class="sd">&#39;&#39;&#39;</span>
+
+<span class="n">__author__</span> <span class="o">=</span> <span class="s">&#39;caimaoy&#39;</span>
+
+<span class="k">class</span> <span class="nc">_const</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">class</span> <span class="nc">ConstError</span><span class="p">(</span><span class="ne">TypeError</span><span class="p">):</span> <span class="k">pass</span>
+    <span class="k">class</span> <span class="nc">ConstCaseError</span><span class="p">(</span><span class="ne">TypeError</span><span class="p">):</span> <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">__setattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value ...</span></pre></div>
+                    <a class="btn btn-default btn-xs" href="http://caimaoy.github.io/python-const.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
                 <h2><a href="http://caimaoy.github.io/python-split.html">python split</a></h2>
                 <div class="summary"><h3>str.split</h3>
 <div class="highlight"><pre>Help on method_descriptor:
@@ -214,43 +244,6 @@ Save_as: 404.html
                 </div>
             </article>
             <hr/>
-            <article>
-                <h2><a href="http://caimaoy.github.io/win32-or-win64-python.html">python 判断windows系统是32位还是64位</a></h2>
-                <div class="summary"><h3>首先来看看错误方法：</h3>
-<ul>
-<li>以下是在64位机器下使用32位python得到的结果</li>
-</ul>
-<div class="highlight"><pre>In [14]: sys.version
-Out[14]: &#39;2.7.3 (default, Apr 10 2012, 23:31:26) [MSC v.1500 32 bit (Intel)]&#39;
-</pre></div>
-
-
-<ul>
-<li>这里看到的其实是python的版本，而不是系统的版本</li>
-</ul>
-<div class="highlight"><pre>In [15]: platform.architecture()
-Out[15]: (&#39;32bit&#39;, &#39;WindowsPE&#39;)
-</pre></div>
-
-
-<ul>
-<li>这个运行的结果也是不正确的</li>
-</ul>
-<div class="highlight"><pre>In [16]: print sys.maxint
-2147483647
-</pre></div>
-
-
-<ul>
-<li>数字是2**31-1的话就是32位(这是错误的！！！)</li>
-<li>数字式2**64-1的话就是64位(这也是错误的！！！)</li>
-</ul>
-<p>上面引述的方法也是不正确的，因为使用的是sys库</p>
-<h3>正确方法 ...</h3>
-                    <a class="btn btn-default btn-xs" href="http://caimaoy.github.io/win32-or-win64-python.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
 
         <ul class="pagination">
                 <li class="prev disabled"><a href="#">&laquo;</a></li>
@@ -285,23 +278,38 @@ Out[15]: (&#39;32bit&#39;, &#39;WindowsPE&#39;)
                         </a>
                     </li>
                     <li class="list-group-item tag-2">
-                        <a href="http://caimaoy.github.io/tag/vim.html">
-                            vim
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-2">
                         <a href="http://caimaoy.github.io/tag/github.html">
                             github
                         </a>
                     </li>
-                    <li class="list-group-item tag-2">
+                    <li class="list-group-item tag-3">
                         <a href="http://caimaoy.github.io/tag/pelican.html">
                             pelican
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-3">
+                        <a href="http://caimaoy.github.io/tag/vim.html">
+                            vim
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://caimaoy.github.io/tag/about-me.html">
+                            about-me
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
                         <a href="http://caimaoy.github.io/tag/pyinstaller.html">
                             pyinstaller
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://caimaoy.github.io/tag/picture.html">
+                            picture
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://caimaoy.github.io/tag/pyqt.html">
+                            pyqt
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
@@ -317,21 +325,6 @@ Out[15]: (&#39;32bit&#39;, &#39;WindowsPE&#39;)
                     <li class="list-group-item tag-4">
                         <a href="http://caimaoy.github.io/tag/windows.html">
                             windows
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="http://caimaoy.github.io/tag/about-me.html">
-                            about-me
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="http://caimaoy.github.io/tag/picture.html">
-                            picture
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="http://caimaoy.github.io/tag/pyqt.html">
-                            pyqt
                         </a>
                     </li>
                 </ul>
