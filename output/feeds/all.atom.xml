@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>caimaoy's blog</title><link href="http://caimaoy.github.io/" rel="alternate"></link><link href="http://caimaoy.github.io/feeds/all.atom.xml" rel="self"></link><id>http://caimaoy.github.io/</id><updated>2015-06-10T16:55:00+08:00</updated><entry><title>python const</title><link href="http://caimaoy.github.io/python-const.html" rel="alternate"></link><updated>2015-06-10T16:55:00+08:00</updated><author><name>caimaoy</name></author><id>tag:caimaoy.github.io,2015-06-10:python-const.html</id><summary type="html">&lt;ul&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>caimaoy's blog</title><link href="http://caimaoy.github.io/" rel="alternate"></link><link href="http://caimaoy.github.io/feeds/all.atom.xml" rel="self"></link><id>http://caimaoy.github.io/</id><updated>2015-06-16T20:01:00+08:00</updated><entry><title>HHKB初体验</title><link href="http://caimaoy.github.io/diary-HHKB.html" rel="alternate"></link><updated>2015-06-16T20:01:00+08:00</updated><author><name>caimaoy</name></author><id>tag:caimaoy.github.io,2015-06-16:diary-HHKB.html</id><summary type="html">&lt;h3&gt;首先庆祝一下COC冠军杯&lt;/h3&gt;
+&lt;p&gt;&lt;img alt="COC冠军杯" src="http://7xif3g.com1.z0.glb.clouddn.com/COC冠军杯.PNG" /&gt;&lt;/p&gt;
+&lt;h3&gt;然后上一张CHERRY&lt;/h3&gt;
+&lt;p&gt;&lt;img alt="CHERRY" src="http://7xif3g.com1.z0.glb.clouddn.com/CHERRY.JPG" /&gt;&lt;/p&gt;
+&lt;h3&gt;今天的主角: HHKB&lt;/h3&gt;
+&lt;p&gt;&lt;img alt="HHKB" src="http://7xif3g.com1.z0.glb.clouddn.com/HHKB.JPG" /&gt;&lt;/p&gt;</summary><category term="diary"></category><category term="HHKB"></category></entry><entry><title>python const</title><link href="http://caimaoy.github.io/python-const.html" rel="alternate"></link><updated>2015-06-10T16:55:00+08:00</updated><author><name>caimaoy</name></author><id>tag:caimaoy.github.io,2015-06-10:python-const.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;python 没有const 这样的语法，但是在项目中可能会有这样的需求？&lt;/li&gt;
 &lt;li&gt;自己动手丰衣足食！！！&lt;/li&gt;
 &lt;/ul&gt;
