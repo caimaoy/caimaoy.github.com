@@ -1,7 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>caimaoy's blog</title><link>http://caimaoy.github.io/</link><description></description><atom:link href="http://caimaoy.github.io/feeds/diary.rss.xml" rel="self"></atom:link><lastBuildDate>Tue, 16 Jun 2015 20:01:00 +0800</lastBuildDate><item><title>HHKB初体验</title><link>http://caimaoy.github.io/diary-HHKB.html</link><description>&lt;h3&gt;首先庆祝一下COC冠军杯&lt;/h3&gt;
 &lt;p&gt;&lt;img alt="COC冠军杯" src="http://7xif3g.com1.z0.glb.clouddn.com/COC冠军杯.PNG" /&gt;&lt;/p&gt;
-&lt;h3&gt;然后上一张CHERRY&lt;/h3&gt;
-&lt;p&gt;&lt;img alt="CHERRY" src="http://7xif3g.com1.z0.glb.clouddn.com/CHERRY.JPG" /&gt;&lt;/p&gt;
 &lt;h3&gt;今天的主角: HHKB&lt;/h3&gt;
-&lt;p&gt;&lt;img alt="HHKB" src="http://7xif3g.com1.z0.glb.clouddn.com/HHKB.JPG" /&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">caimaoy</dc:creator><pubDate>Tue, 16 Jun 2015 20:01:00 +0800</pubDate><guid>tag:caimaoy.github.io,2015-06-16:diary-HHKB.html</guid><category>diary</category><category>HHKB</category></item></channel></rss>
+&lt;p&gt;&lt;img alt="HHKB" src="http://7xif3g.com1.z0.glb.clouddn.com/HHKB.JPG" /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;同事漂洋过海从岛国带回一个无刻版HHKB Pro2&lt;/li&gt;
+&lt;li&gt;因为是无刻版，到现在都非常痛苦&lt;/li&gt;
+&lt;li&gt;不记得键位，所以下面先来一个HHKB Professional 2 Layout&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt="HHKB Professional 2 Layout" src="http://7xif3g.com1.z0.glb.clouddn.com/HHKB_Pro2_Layout.jpg" /&gt;&lt;/p&gt;
+&lt;h4&gt;键盘设置&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;什么？键盘还要设置？又不是鼠标还要设置PPI？&lt;/li&gt;
+&lt;li&gt;是的你没有听错，这键盘就是要设置，主要是满足不同系统需要&lt;/li&gt;
+&lt;li&gt;HHKB Pro 2 是有一排跳线6个开关，理论上是可以有2^6==64种不同的组合&lt;/li&gt;
+&lt;li&gt;先来看看跳线的模式说明&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt="跳线模式" src="http://7xif3g.com1.z0.glb.clouddn.com/HHKB_跳线说明.JPG" /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;再来看看跳线前两位模式的说明
+&lt;img alt="模式说明" src="http://7xif3g.com1.z0.glb.clouddn.com/HHKB_模式说明.JPG" /&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;如果看懂了这个，你也就配置好了自己的键盘&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5&gt;本人配置&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;本人工作在windos环境！（对！你没有看错，就是万恶的windows！！！）&lt;/li&gt;
+&lt;li&gt;跳线打开1、3、5&lt;/li&gt;
+&lt;li&gt;Delete键改为BackSpace键&lt;/li&gt;
+&lt;li&gt;最下面一排按键为：win、alt、空格、alt、win&lt;/li&gt;
+&lt;li&gt;这样基本满足在windows下面的操作&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;FAQ&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;- 如何退格？
+- 使用Fn + Delete 或者跳线3打开使用Delete
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="highlight"&gt;&lt;pre&gt;- 如何关闭窗口？
+- 使用Alt + Fn + F4 或者有些窗口可以使用Ctrl + w
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="highlight"&gt;&lt;pre&gt;- 如何在Vim中按Esc？
+- 这个要算是我很痛苦的一个问题了
+- 我本来通过注册表吧Caps和Esc的位置调换了
+- 现在Caps的位置变成了Ctrl
+
+- 方案一：
+- 直接按 Esc
+
+- 方案二：
+- &amp;lt;C-[&amp;gt;在vim中也是Esc
+- 但是我还没有习惯，经常按错成&amp;lt;C-p&amp;gt;,同时经常把Shift按成Ctrl
+
+- 方案三：
+- 黑魔法 jk 或者 jj 或者什么 map到Esc
+- 我个人试验过，个人不习惯
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="highlight"&gt;&lt;pre&gt;- 上下左右如何按？
+- Fn + [/;&amp;#39;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="highlight"&gt;&lt;pre&gt;- 翻页、End如何按？
+- Fn + keyboard layout 自己看了
+- 反正我是打印了一个layout在桌面上，囧
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;blockquote&gt;
+&lt;p&gt;这是我用HHKB在Vim下面写的第一篇文章，误操作无数
+ 希望慢慢能够适应
+ HHKB真的手感超一流，相比原厂CHERRY，我更喜欢HHKB的手感
+ 希望有体验的大神们，告诉一下小白我更多tips，THX&lt;/p&gt;
+&lt;/blockquote&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">caimaoy</dc:creator><pubDate>Tue, 16 Jun 2015 20:01:00 +0800</pubDate><guid>tag:caimaoy.github.io,2015-06-16:diary-HHKB.html</guid><category>diary</category><category>HHKB</category></item></channel></rss>
