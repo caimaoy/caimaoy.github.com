@@ -78,6 +78,21 @@ caimaoy's blog            </a>
         <div class="col-sm-9">
 
             <article>
+                <h2><a href="http://caimaoy.github.io/python-re-sub.html">python re.sub</a></h2>
+                <div class="summary"><ul>
+<li>经常遇到使用re.sub的情况，但经常忘记，所以记录一下</li>
+<li>首先还是看看大神的简介：<a href="http://www.crifan.com/python_re_sub_detailed_introduction/">crifan【整理】详解Python中re.sub</a></li>
+</ul>
+<div class="highlight"><pre>sub(pattern, repl, string, count=0, flags=0)
+    Return the string obtained by replacing the leftmost
+    non-overlapping occurrences of the pattern in string by the
+    replacement repl.  repl can be either a string or a callable;
+    if a string, backslash escapes ...</pre></div>
+                    <a class="btn btn-default btn-xs" href="http://caimaoy.github.io/python-re-sub.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
                 <h2><a href="http://caimaoy.github.io/diary-HHKB.html">HHKB初体验</a></h2>
                 <div class="summary"><h3>首先庆祝一下COC冠军杯</h3>
 <p><img alt="COC冠军杯" src="http://7xif3g.com1.z0.glb.clouddn.com/COC冠军杯.PNG" /></p>
@@ -238,32 +253,6 @@ ImportError: Can&#39;t load frozen ...</pre></div>
                 </div>
             </article>
             <hr/>
-            <article>
-                <h2><a href="http://caimaoy.github.io/pyqt_create_a_new_window.html">PyQt 创建新窗口</a></h2>
-                <div class="summary"><blockquote>
-<p>PyQt 如何新建一个窗口</p>
-</blockquote>
-<div class="highlight"><pre><span class="c"># -*- coding: UTF-8 -*-</span>
-
-<span class="kn">import</span> <span class="nn">sys</span>
-<span class="kn">from</span> <span class="nn">PyQt4.QtCore</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">PyQt4.QtGui</span> <span class="kn">import</span> <span class="o">*</span>
-
-
-<span class="k">class</span> <span class="nc">mainWindow</span><span class="p">(</span><span class="n">QWidget</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parent</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
-        <span class="nb">super</span><span class="p">(</span><span class="n">mainWindow</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="n">parent</span><span class="p">)</span>
-        <span class="n">button</span> <span class="o">=</span> <span class="n">QPushButton</span><span class="p">(</span><span class="s">u&#39;弹出新窗口&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">slavewindow</span> <span class="o">=</span> <span class="n">slaveWindow</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">button</span><span class="p">,</span> <span class="n">SIGNAL</span><span class="p">(</span><span class="s">&#39;clicked()&#39;</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">slavewindow</span><span class="o">.</span><span class="n">show</span><span class="p">)</span>
-
-
-<span class="k">class</span> <span class="nc">slaveWindow</span><span class="p">(</span><span class="n">QWidget</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parent ...</span></pre></div>
-                    <a class="btn btn-default btn-xs" href="http://caimaoy.github.io/pyqt_create_a_new_window.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
 
         <ul class="pagination">
                 <li class="prev disabled"><a href="#">&laquo;</a></li>
@@ -313,6 +302,31 @@ ImportError: Can&#39;t load frozen ...</pre></div>
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
+                        <a href="http://caimaoy.github.io/tag/hhkb.html">
+                            HHKB
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://caimaoy.github.io/tag/about-me.html">
+                            about-me
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://caimaoy.github.io/tag/test.html">
+                            test
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://caimaoy.github.io/tag/windows.html">
+                            windows
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://caimaoy.github.io/tag/english.html">
+                            English
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
                         <a href="http://caimaoy.github.io/tag/picture.html">
                             picture
                         </a>
@@ -323,16 +337,6 @@ ImportError: Can&#39;t load frozen ...</pre></div>
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
-                        <a href="http://caimaoy.github.io/tag/hhkb.html">
-                            HHKB
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="http://caimaoy.github.io/tag/test.html">
-                            test
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
                         <a href="http://caimaoy.github.io/tag/diary.html">
                             diary
                         </a>
@@ -340,21 +344,6 @@ ImportError: Can&#39;t load frozen ...</pre></div>
                     <li class="list-group-item tag-4">
                         <a href="http://caimaoy.github.io/tag/pyqt.html">
                             pyqt
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="http://caimaoy.github.io/tag/english.html">
-                            English
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="http://caimaoy.github.io/tag/windows.html">
-                            windows
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="http://caimaoy.github.io/tag/about-me.html">
-                            about-me
                         </a>
                     </li>
                 </ul>

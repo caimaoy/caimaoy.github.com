@@ -79,6 +79,21 @@ caimaoy's blog            </a>
         <div class="col-sm-9">
 
             <article>
+                <h2><a href="http://caimaoy.github.io/python-re-sub.html">python re.sub</a></h2>
+                <div class="summary"><ul>
+<li>经常遇到使用re.sub的情况，但经常忘记，所以记录一下</li>
+<li>首先还是看看大神的简介：<a href="http://www.crifan.com/python_re_sub_detailed_introduction/">crifan【整理】详解Python中re.sub</a></li>
+</ul>
+<div class="highlight"><pre>sub(pattern, repl, string, count=0, flags=0)
+    Return the string obtained by replacing the leftmost
+    non-overlapping occurrences of the pattern in string by the
+    replacement repl.  repl can be either a string or a callable;
+    if a string, backslash escapes ...</pre></div>
+                    <a class="btn btn-default btn-xs" href="http://caimaoy.github.io/python-re-sub.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
                 <h2><a href="http://caimaoy.github.io/python-const.html">python const</a></h2>
                 <div class="summary"><ul>
 <li>python 没有const 这样的语法，但是在项目中可能会有这样的需求？</li>
@@ -236,43 +251,6 @@ Save_as: 404.html
                 </div>
             </article>
             <hr/>
-            <article>
-                <h2><a href="http://caimaoy.github.io/win32-or-win64-python.html">python 判断windows系统是32位还是64位</a></h2>
-                <div class="summary"><h3>首先来看看错误方法：</h3>
-<ul>
-<li>以下是在64位机器下使用32位python得到的结果</li>
-</ul>
-<div class="highlight"><pre>In [14]: sys.version
-Out[14]: &#39;2.7.3 (default, Apr 10 2012, 23:31:26) [MSC v.1500 32 bit (Intel)]&#39;
-</pre></div>
-
-
-<ul>
-<li>这里看到的其实是python的版本，而不是系统的版本</li>
-</ul>
-<div class="highlight"><pre>In [15]: platform.architecture()
-Out[15]: (&#39;32bit&#39;, &#39;WindowsPE&#39;)
-</pre></div>
-
-
-<ul>
-<li>这个运行的结果也是不正确的</li>
-</ul>
-<div class="highlight"><pre>In [16]: print sys.maxint
-2147483647
-</pre></div>
-
-
-<ul>
-<li>数字是2**31-1的话就是32位(这是错误的！！！)</li>
-<li>数字式2**64-1的话就是64位(这也是错误的！！！)</li>
-</ul>
-<p>上面引述的方法也是不正确的，因为使用的是sys库</p>
-<h3>正确方法 ...</h3>
-                    <a class="btn btn-default btn-xs" href="http://caimaoy.github.io/win32-or-win64-python.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
 
         <ul class="pagination">
                 <li class="prev disabled"><a href="#">&laquo;</a></li>
@@ -322,6 +300,31 @@ Out[15]: (&#39;32bit&#39;, &#39;WindowsPE&#39;)
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
+                        <a href="http://caimaoy.github.io/tag/hhkb.html">
+                            HHKB
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://caimaoy.github.io/tag/about-me.html">
+                            about-me
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://caimaoy.github.io/tag/test.html">
+                            test
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://caimaoy.github.io/tag/windows.html">
+                            windows
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://caimaoy.github.io/tag/english.html">
+                            English
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
                         <a href="http://caimaoy.github.io/tag/picture.html">
                             picture
                         </a>
@@ -332,16 +335,6 @@ Out[15]: (&#39;32bit&#39;, &#39;WindowsPE&#39;)
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
-                        <a href="http://caimaoy.github.io/tag/hhkb.html">
-                            HHKB
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="http://caimaoy.github.io/tag/test.html">
-                            test
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
                         <a href="http://caimaoy.github.io/tag/diary.html">
                             diary
                         </a>
@@ -349,21 +342,6 @@ Out[15]: (&#39;32bit&#39;, &#39;WindowsPE&#39;)
                     <li class="list-group-item tag-4">
                         <a href="http://caimaoy.github.io/tag/pyqt.html">
                             pyqt
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="http://caimaoy.github.io/tag/english.html">
-                            English
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="http://caimaoy.github.io/tag/windows.html">
-                            windows
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="http://caimaoy.github.io/tag/about-me.html">
-                            about-me
                         </a>
                     </li>
                 </ul>
