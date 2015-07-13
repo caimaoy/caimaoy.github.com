@@ -1,5 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>caimaoy's blog</title><link>http://caimaoy.github.io/</link><description></description><atom:link href="http://caimaoy.github.io/feeds/it.rss.xml" rel="self"></atom:link><lastBuildDate>Wed, 10 Jun 2015 16:55:00 +0800</lastBuildDate><item><title>python const</title><link>http://caimaoy.github.io/python-const.html</link><description>&lt;ul&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>caimaoy's blog</title><link>http://caimaoy.github.io/</link><description></description><atom:link href="http://caimaoy.github.io/feeds/it.rss.xml" rel="self"></atom:link><lastBuildDate>Mon, 13 Jul 2015 11:17:00 +0800</lastBuildDate><item><title>python re.sub</title><link>http://caimaoy.github.io/python-re-sub.html</link><description>&lt;ul&gt;
+&lt;li&gt;经常遇到使用re.sub的情况，但经常忘记，所以记录一下&lt;/li&gt;
+&lt;li&gt;首先还是看看大神的简介：&lt;a href="http://www.crifan.com/python_re_sub_detailed_introduction/"&gt;crifan【整理】详解Python中re.sub&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;sub(pattern, repl, string, count=0, flags=0)
+    Return the string obtained by replacing the leftmost
+    non-overlapping occurrences of the pattern in string by the
+    replacement repl.  repl can be either a string or a callable;
+    if a string, backslash escapes in it are processed.  If it is
+    a callable, it&amp;#39;s passed the match object and must return
+    a replacement string to be used.
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://docs.python.org/2/library/re.html#re.sub"&gt;re.sub官方文档&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;用法和功能我就不详述了，下面看看一些奇葩需求&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;首先是换位的需求&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;def change_place(s):
+    &amp;#39;&amp;#39;&amp;#39;
+    &amp;gt;&amp;gt;&amp;gt; change_place(&amp;#39;caimaoy&amp;amp;jessie&amp;#39;)
+    &amp;#39;jessie&amp;amp;caimaoy&amp;#39;
+    &amp;#39;&amp;#39;&amp;#39;
+    return re.sub(r&amp;#39;(caimaoy)(&amp;amp;)(jessie)&amp;#39;, r&amp;#39;\3\2\1&amp;#39;, s)
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;然后是换位换字符的需求&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;def change_place_and_joiner(s):
+    &amp;#39;&amp;#39;&amp;#39;
+    &amp;gt;&amp;gt;&amp;gt; change_place_and_joiner(&amp;#39;caimaoy&amp;amp;jessie&amp;#39;)
+    &amp;#39;jessie with caimaoy&amp;#39;
+    &amp;#39;&amp;#39;&amp;#39;
+    return re.sub(r&amp;#39;(caimaoy)(&amp;amp;)(jessie)&amp;#39;, r&amp;#39;\3 with \1&amp;#39;, s)
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;看起来不错，但是如果我要换的字符是数值，会发生什么？&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;def change_place_and_joiner_with_number(s):
+    &amp;#39;&amp;#39;&amp;#39;
+    &amp;gt;&amp;gt;&amp;gt; change_place_and_joiner_with_number(&amp;#39;caimaoy&amp;amp;jessie&amp;#39;)
+    &amp;#39;jessie0caimaoy&amp;#39;
+    &amp;#39;&amp;#39;&amp;#39;
+    return re.sub(r&amp;#39;(caimaoy)(&amp;amp;)(jessie)&amp;#39;, r&amp;#39;\30\1&amp;#39;, s)
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="highlight"&gt;&lt;pre&gt;File &amp;quot;test_doc_test.py&amp;quot;, line 37, in __main__.change_place_and_joiner_with_numbe
+r
+Failed example:
+    change_place_and_joiner_with_number(&amp;#39;caimaoy&amp;amp;jessie&amp;#39;)
+Exception raised:
+    Traceback (most recent call last):
+      File &amp;quot;D:\Python27\lib\doctest.py&amp;quot;, line 1289, in __run
+        compileflags, 1) in test.globs
+      File &amp;quot;&amp;lt;doctest __main__.change_place_and_joiner_with_number[0]&amp;gt;&amp;quot;, line 1,
+in &amp;lt;module&amp;gt;
+        change_place_and_joiner_with_number(&amp;#39;caimaoy&amp;amp;jessie&amp;#39;)
+      File &amp;quot;test_doc_test.py&amp;quot;, line 40, in change_place_and_joiner_with_number
+        return re.sub(r&amp;#39;(caimaoy)(&amp;amp;)(jessie)&amp;#39;, r&amp;#39;\30\1&amp;#39;, s)
+      File &amp;quot;D:\Python27\lib\re.py&amp;quot;, line 151, in sub
+        return _compile(pattern, flags).sub(repl, string, count)
+      File &amp;quot;D:\Python27\lib\re.py&amp;quot;, line 275, in filter
+        return sre_parse.expand_template(template, match)
+      File &amp;quot;D:\Python27\lib\sre_parse.py&amp;quot;, line 789, in expand_template
+        raise error, &amp;quot;invalid group reference&amp;quot;
+    error: invalid group reference
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;报错了！大概的描述就是我们根本就没有30这个组&lt;/li&gt;
+&lt;li&gt;如何解决？看看文档，下面是解决方案，&lt;strong&gt;用\g&lt;n&gt;来替代\n&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;def change_place_and_joiner_with_number(s):
+    &amp;#39;&amp;#39;&amp;#39;
+    &amp;gt;&amp;gt;&amp;gt; change_place_and_joiner_with_number(&amp;#39;caimaoy&amp;amp;jessie&amp;#39;)
+    &amp;#39;jessie0caimaoy&amp;#39;
+    &amp;#39;&amp;#39;&amp;#39;
+    return re.sub(r&amp;#39;(caimaoy)(&amp;amp;)(jessie)&amp;#39;, r&amp;#39;\g&amp;lt;3&amp;gt;0\g&amp;lt;1&amp;gt;&amp;#39;, s)
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;好像没有进一步的需求了，其实上面的需求re.sub的第二个参数传入一个函数是可以解决的&lt;/li&gt;
+&lt;li&gt;不过就是懒（优秀品质）&lt;/li&gt;
+&lt;li&gt;最后给一个传入函数的例子&lt;/li&gt;
+&lt;li&gt;要replace为大写&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;def change_place_and_upper(s):
+    &amp;#39;&amp;#39;&amp;#39;
+    &amp;gt;&amp;gt;&amp;gt; change_place_and_upper(&amp;#39;caimaoy&amp;amp;jessie&amp;#39;)
+    &amp;#39;JESSIE&amp;amp;CAIMAOY&amp;#39;
+    &amp;#39;&amp;#39;&amp;#39;
+    def _upper(matched):
+        return matched.group(3).upper() + matched.group(2) + matched.group(1).upper()
+    return re.sub(r&amp;#39;(caimaoy)(&amp;amp;)(jessie)&amp;#39;, _upper, s)
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;看看以后还有什么需求，估计传入函数基本都能解决&lt;/li&gt;
+&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">caimaoy</dc:creator><pubDate>Mon, 13 Jul 2015 11:17:00 +0800</pubDate><guid>tag:caimaoy.github.io,2015-07-13:python-re-sub.html</guid><category>python</category></item><item><title>python const</title><link>http://caimaoy.github.io/python-const.html</link><description>&lt;ul&gt;
 &lt;li&gt;python 没有const 这样的语法，但是在项目中可能会有这样的需求？&lt;/li&gt;
 &lt;li&gt;自己动手丰衣足食！！！&lt;/li&gt;
 &lt;/ul&gt;
