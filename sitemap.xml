@@ -5,30 +5,37 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://caimaoy.github.io/</loc>
-<lastmod>2015-07-13T14:43:17-00:00</lastmod>
+<lastmod>2015-08-05T15:41:51-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://caimaoy.github.io/archives.html</loc>
-<lastmod>2015-07-13T14:43:17-00:00</lastmod>
+<lastmod>2015-08-05T15:41:51-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://caimaoy.github.io/tags.html</loc>
-<lastmod>2015-07-13T14:43:17-00:00</lastmod>
+<lastmod>2015-08-05T15:41:51-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://caimaoy.github.io/categories.html</loc>
-<lastmod>2015-07-13T14:43:17-00:00</lastmod>
+<lastmod>2015-08-05T15:41:51-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://caimaoy.github.io/how-to-deploy-webservice-by-axis-wsdd.html</loc>
+<lastmod>2015-08-05T15:36:00+08:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
 </url>
 
 <url>
@@ -152,7 +159,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://caimaoy.github.io/category/it.html</loc>
-<lastmod>2015-07-13T11:17:00+08:06</lastmod>
+<lastmod>2015-08-05T15:36:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -186,8 +193,15 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>http://caimaoy.github.io/tag/pyinstaller.html</loc>
-<lastmod>2015-04-15T20:14:00+08:06</lastmod>
+<loc>http://caimaoy.github.io/tag/java.html</loc>
+<lastmod>2015-08-05T15:36:00+08:06</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://caimaoy.github.io/tag/webservice.html</loc>
+<lastmod>2015-08-05T15:36:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -235,6 +249,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+<loc>http://caimaoy.github.io/tag/wsdd.html</loc>
+<lastmod>2015-08-05T15:36:00+08:06</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
 <loc>http://caimaoy.github.io/tag/diary.html</loc>
 <lastmod>2015-06-16T20:01:00+08:06</lastmod>
 <changefreq>daily</changefreq>
@@ -256,8 +277,22 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+<loc>http://caimaoy.github.io/tag/pyinstaller.html</loc>
+<lastmod>2015-04-15T20:14:00+08:06</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://caimaoy.github.io/tag/axis.html</loc>
+<lastmod>2015-08-05T15:36:00+08:06</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
 <loc>http://caimaoy.github.io/author/caimaoy.html</loc>
-<lastmod>2015-07-13T11:17:00+08:06</lastmod>
+<lastmod>2015-08-05T15:36:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>

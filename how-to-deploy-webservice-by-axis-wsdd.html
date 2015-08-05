@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="zh"
+>
+<head>
+    <title>如何用axis的wsdd方法部署WebService - caimaoy's blog</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="http://caimaoy.github.io/how-to-deploy-webservice-by-axis-wsdd.html">
+
+        <meta name="author" content="caimaoy" />
+        <meta name="keywords" content="java,webservice,axis,wsdd" />
+        <meta name="description" content="编写 deploy.wsdd 文件 放置于 %Tomcat_Home%\webapps\axis\WEB-INF 中 内容如下 &lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt; &lt;deployment xmlns=&#34;http://xml.apache.org/axis/wsdd/&#34; xmlns:java=&#34;http://xml.apache.org/axis/wsdd/providers/java&#34;&gt; &lt;service name=&#34;WSDD&#34; provider=&#34;java:RPC&#34;&gt; &lt;parameter name=&#34;className&#34; value=&#34;com.caimaoy&#34; /&gt; &lt;!-- * 代表所有的方法都暴露 --&gt; &lt;parameter name ..." />
+
+        <meta property="og:site_name" content="caimaoy's blog" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="如何用axis的wsdd方法部署WebService"/>
+        <meta property="og:url" content="http://caimaoy.github.io/how-to-deploy-webservice-by-axis-wsdd.html"/>
+        <meta property="og:description" content="编写 deploy.wsdd 文件 放置于 %Tomcat_Home%\webapps\axis\WEB-INF 中 内容如下 &lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt; &lt;deployment xmlns=&#34;http://xml.apache.org/axis/wsdd/&#34; xmlns:java=&#34;http://xml.apache.org/axis/wsdd/providers/java&#34;&gt; &lt;service name=&#34;WSDD&#34; provider=&#34;java:RPC&#34;&gt; &lt;parameter name=&#34;className&#34; value=&#34;com.caimaoy&#34; /&gt; &lt;!-- * 代表所有的方法都暴露 --&gt; &lt;parameter name ..."/>
+        <meta property="article:published_time" content="2015-08-05" />
+            <meta property="article:section" content="it" />
+            <meta property="article:tag" content="java" />
+            <meta property="article:tag" content="webservice" />
+            <meta property="article:tag" content="axis" />
+            <meta property="article:tag" content="wsdd" />
+            <meta property="article:author" content="caimaoy" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="http://caimaoy.github.io/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="http://caimaoy.github.io/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="http://caimaoy.github.io/theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://caimaoy.github.io/theme/css/style.css" type="text/css"/>
+
+        <link href="http://caimaoy.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+              title="caimaoy's blog ATOM Feed"/>
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="http://caimaoy.github.io/" class="navbar-brand">
+caimaoy's blog            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                        <li >
+                            <a href="http://caimaoy.github.io/category/about-me.html">About me</a>
+                        </li>
+                        <li >
+                            <a href="http://caimaoy.github.io/category/diary.html">Diary</a>
+                        </li>
+                        <li >
+                            <a href="http://caimaoy.github.io/category/english.html">English</a>
+                        </li>
+                        <li class="active">
+                            <a href="http://caimaoy.github.io/category/it.html">It</a>
+                        </li>
+                        <li >
+                            <a href="http://caimaoy.github.io/category/test.html">Test</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="http://caimaoy.github.io/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="http://caimaoy.github.io/how-to-deploy-webservice-by-axis-wsdd.html"
+                       rel="bookmark"
+                       title="Permalink to 如何用axis的wsdd方法部署WebService">
+                        如何用axis的wsdd方法部署WebService
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2015-08-05T15:36:00+08:00"> 周三 05 八月 2015</time>
+    </span>
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="http://caimaoy.github.io/tag/java.html">java</a>
+        /
+	<a href="http://caimaoy.github.io/tag/webservice.html">webservice</a>
+        /
+	<a href="http://caimaoy.github.io/tag/axis.html">axis</a>
+        /
+	<a href="http://caimaoy.github.io/tag/wsdd.html">wsdd</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <h2>编写 deploy.wsdd 文件</h2>
+<ul>
+<li>放置于 %Tomcat_Home%\webapps\axis\WEB-INF 中</li>
+<li>内容如下</li>
+</ul>
+<div class="highlight"><pre><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="nt">&lt;deployment</span> <span class="na">xmlns=</span><span class="s">&quot;http://xml.apache.org/axis/wsdd/&quot;</span>
+    <span class="na">xmlns:java=</span><span class="s">&quot;http://xml.apache.org/axis/wsdd/providers/java&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;service</span> <span class="na">name=</span><span class="s">&quot;WSDD&quot;</span> <span class="na">provider=</span><span class="s">&quot;java:RPC&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;parameter</span> <span class="na">name=</span><span class="s">&quot;className&quot;</span> <span class="na">value=</span><span class="s">&quot;com.caimaoy&quot;</span> <span class="nt">/&gt;</span>
+        <span class="c">&lt;!-- * 代表所有的方法都暴露 --&gt;</span>
+        <span class="nt">&lt;parameter</span> <span class="na">name=</span><span class="s">&quot;allowedMethods&quot;</span> <span class="na">value=</span><span class="s">&quot;*&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;parameter</span> <span class="na">name=</span><span class="s">&quot;scope&quot;</span> <span class="na">value=</span><span class="s">&quot;request&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/service&gt;</span>
+<span class="nt">&lt;/deployment&gt;</span>
+</pre></div>
+
+
+<ul>
+<li>service标签代表一个WebService服务，HelloWorldWSDD就是当前WebService的名称</li>
+<li>provider是java的WebService类型，分别有： RPC、Document、Wrapped、Message、EJB、RMI</li>
+<li>有兴趣的可以看看org.apache.axis.providers.java包下面的WebService的实现类或是文档</li>
+<li>parameter的参数className代表当前WebService的class类路径</li>
+<li>allowedMethods代表暴露的方法，那些方法在客户端可以调用；</li>
+<li><parameter name="scope" value="request" /></li>
+<li>这个是当前WebService的作用域，它有3个值，分别是：request、session、application</li>
+<li>request代表为每个WebService SOAP的请求都产生一个服务对象，和Spring的scope很像，在服务请求频繁的话会消耗很多资源</li>
+<li>session 是给每个调用当前WebService的客户端创建一个服务对象</li>
+<li>application 是个当前所有的请求创建一个服务对象</li>
+</ul>
+<h2>发布 WebService</h2>
+<ul>
+<li>写完配置后，就需要用axis提供的AdminClient工具类帮我们发布WebService，直到生成server-config.wsdd</li>
+<li>步骤如下:</li>
+<li>启动Tomcat</li>
+<li>
+<p>运行cmd命令，然后进入当前工程发布的目录，即%tomcat_home%/webapps/project/WEB-INF</p>
+</li>
+<li>
+<p>输入命令</p>
+</li>
+</ul>
+<div class="highlight"><pre>java -Djava.ext.dirs=lib org.apache.axis.client.AdminClient deploy.wsdd
+java -Djava.ext.dirs=lib org.apache.axis.client.AdminClient -p 8082 -s /axis/servlet/AxisServlet deploy.wsdd
+</pre></div>
+
+
+<ul>
+<li>-p 表示端口Tomcat端口号，AdminClient 默认为__8080__</li>
+<li>这里的deploy.wsdd是我们刚才定制的wsdd文件，java当然是jvm的命令</li>
+<li>-Djava.ext.dirs=lib设置当前命令的依赖包</li>
+<li>AdminClient是axis提供的工具类，这个类本来是可以在官方的工程中admin可以直接运行的（这里不可以，下载下来的少了AdminServlet，有兴趣的可以研究下，就是前面说的官方的示例）；</li>
+</ul>
+<p>如果运行命令后，看到：</p>
+<div class="highlight"><pre>Processing file deploy.wsdd
+<span class="nt">&lt;Admin&gt;</span>Done processing<span class="nt">&lt;/Admin&gt;</span>
+</pre></div>
+
+
+<ul>
+<li>就代表快成功了，why？快！看看deploy.wsdd同级目录有没有生成server-config.wsdd如果有这个文件就成功了，没有就失败了</li>
+<li>如果失败了还有解决办法，首先你得启动tomcat，将我们的工程发布出去。然后在重复上面的命令，不行就换命令行代码如下：</li>
+</ul>
+<div class="highlight"><pre>java -Djava.ext.dirs=lib org.apache.axis.client.AdminClient -lhttp://localhost:8080/AxisWebService/services/AdminService deploy.wsdd
+</pre></div>
+
+
+<ul>
+<li>-lhttp://localhost:8080/AxisWebService/services/AdminService是因为你的端口可能被axis占用了，我们将指定AdminService来完成转换，运行上面命令就没有问题了。</li>
+</ul>
+<h2>WebService 客户端</h2>
+<ul>
+<li>我这里只说一种客户端的实现方法，在网上看了好像有超过6种以上的方法</li>
+<li>大概的代码如下：</li>
+</ul>
+<div class="highlight"><pre><span class="kn">import</span> <span class="nn">org.apache.axis.client.Call</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.axis.client.Service</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">javax.xml.namespace.QName</span><span class="p">;</span>
+
+<span class="n">public</span> <span class="k">class</span> <span class="nc">TestClient</span> <span class="p">{</span>
+    <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span> <span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">try</span> <span class="p">{</span>
+        <span class="n">String</span> <span class="n">endpoint</span> <span class="o">=</span> <span class="s">&quot;http://caimaoy.com/axis/services/WSDD?wsdl=1&amp;test=test&quot;</span><span class="p">;</span>
+
+        <span class="n">Service</span>  <span class="n">service</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Service</span><span class="p">();</span>
+        <span class="n">Call</span>  <span class="n">call</span>  <span class="o">=</span> <span class="p">(</span><span class="n">Call</span><span class="p">)</span> <span class="n">service</span><span class="o">.</span><span class="n">createCall</span><span class="p">();</span>
+
+        <span class="n">call</span><span class="o">.</span><span class="n">setTargetEndpointAddress</span><span class="p">(</span><span class="n">new</span> <span class="n">java</span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">URL</span><span class="p">(</span><span class="n">endpoint</span><span class="p">)</span> <span class="p">);</span>
+        <span class="n">call</span><span class="o">.</span><span class="n">setOperationName</span><span class="p">(</span><span class="n">new</span> <span class="n">QName</span><span class="p">(</span><span class="s">&quot;http://soapinterop.org/&quot;</span><span class="p">,</span> <span class="s">&quot;querySingle&quot;</span><span class="p">));</span>
+
+        <span class="n">String</span> <span class="n">ret</span> <span class="o">=</span> <span class="p">(</span><span class="n">String</span><span class="p">)</span> <span class="n">call</span><span class="o">.</span><span class="n">invoke</span><span class="p">(</span><span class="n">new</span> <span class="n">Object</span><span class="p">[]</span> <span class="p">{</span> <span class="s">&quot;Hello!&quot;</span> <span class="p">}</span> <span class="p">);</span>
+
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;got:&quot;</span> <span class="o">+</span> <span class="n">ret</span><span class="p">);</span>
+    <span class="p">}</span> <span class="n">catch</span> <span class="p">(</span><span class="ne">Exception</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">System</span><span class="o">.</span><span class="n">err</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">toString</span><span class="p">());</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<h2>FAQ</h2>
+<ul>
+<li>提问：如果我出现了 java.lang.reflect.InvocationTargetException 这样的异常如何处理？</li>
+<li>
+<p>回答：这是映射出错，我遇到的情况是在 %Tomcat_Home%\webapps\axis\WEB-INF 中添加缺失是jar包</p>
+</li>
+<li>
+<p>提问：作为一个WebService能够获取到客户端的IP、请求的requestString吗？</p>
+</li>
+<li>回答：可以大概的获取方式如下,获取到了 HttpServletRequest requsest,也就有了想要的东西了</li>
+</ul>
+<div class="highlight"><pre><span class="kn">import</span> <span class="nn">javax.servlet.http.HttpServletRequest</span><span class="p">;</span>
+
+<span class="kn">import</span> <span class="nn">org.apache.axis.MessageContext</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.axis.transport.http.HTTPConstants</span><span class="p">;</span>
+
+<span class="n">public</span> <span class="k">class</span> <span class="nc">HelloWorld</span> <span class="p">{</span>
+
+    <span class="n">public</span> <span class="n">String</span> <span class="n">getClientInfo</span><span class="p">(</span><span class="n">String</span> <span class="n">asYouLike</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="o">/*</span> <span class="n">get</span> <span class="n">HttpRequest</span><span class="o">*/</span>
+        <span class="n">MessageContext</span> <span class="n">mc</span> <span class="o">=</span> <span class="n">null</span><span class="p">;</span>
+        <span class="n">HttpServletRequest</span> <span class="n">request</span> <span class="o">=</span> <span class="n">null</span><span class="p">;</span>
+        <span class="k">try</span> <span class="p">{</span>
+            <span class="o">//</span><span class="n">mc</span> <span class="o">=</span> <span class="n">MessageContext</span><span class="o">.</span><span class="n">getCurrentMessageContext</span><span class="p">();</span>
+            <span class="n">mc</span> <span class="o">=</span> <span class="n">MessageContext</span><span class="o">.</span><span class="n">getCurrentContext</span><span class="p">();</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">mc</span> <span class="o">==</span> <span class="n">null</span><span class="p">)</span>
+                <span class="n">throw</span> <span class="n">new</span> <span class="ne">Exception</span><span class="p">(</span><span class="s">&quot;无法获取到MessageContext&quot;</span><span class="p">);</span>
+            <span class="n">request</span> <span class="o">=</span> <span class="p">(</span><span class="n">HttpServletRequest</span><span class="p">)</span> <span class="n">mc</span><span class="o">.</span><span class="n">getProperty</span><span class="p">(</span><span class="n">HTTPConstants</span><span class="o">.</span><span class="n">MC_HTTP_SERVLETREQUEST</span><span class="p">);</span>
+            <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;remote  ip:  &quot;</span> <span class="o">+</span> <span class="n">request</span><span class="o">.</span><span class="n">getRemoteAddr</span><span class="p">());</span>
+            <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;request URI:  &quot;</span> <span class="o">+</span> <span class="n">request</span><span class="o">.</span><span class="n">getRequestURI</span><span class="p">());</span>
+            <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;quesryString :  &quot;</span> <span class="o">+</span> <span class="n">request</span><span class="o">.</span><span class="n">getQueryString</span><span class="p">());</span>
+
+        <span class="p">}</span> <span class="n">catch</span> <span class="p">(</span><span class="ne">Exception</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">getMessage</span><span class="p">());</span>
+            <span class="n">e</span><span class="o">.</span><span class="n">printStackTrace</span><span class="p">();</span>
+        <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+            </div>
+            <!-- /.entry-content -->
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'caimaoygithubio'; // required: replace example with your forum shortname
+
+                    var disqus_identifier = 'how-to-deploy-webservice-by-axis-wsdd';
+                var disqus_url = 'http://caimaoy.github.io/how-to-deploy-webservice-by-axis-wsdd.html';
+
+            var disqus_config = function () {
+                this.language = "zh";
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+              <ul class="list-group" id="social">
+                <li class="list-group-item"><a href="/feeds/all.atom.xml"><i class="fa fa-rss-square fa-lg"></i> RSS</a></li>
+                <li class="list-group-item"><a href="http://github.com/caimaoy"><i class="fa fa-github-square fa-lg"></i> github</a></li>
+                <li class="list-group-item"><a href="http://weibo.com/caimaoy"><i class="fa fa-weibo fa-lg"></i> weibo</a></li>
+              </ul>
+            </li>
+
+
+
+            <li class="list-group-item"><a href="http://caimaoy.github.io/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+                <ul class="list-group " id="tags">
+                    <li class="list-group-item tag-1">
+                        <a href="http://caimaoy.github.io/tag/python.html">
+                            python
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-2">
+                        <a href="http://caimaoy.github.io/tag/github.html">
+                            github
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-3">
+                        <a href="http://caimaoy.github.io/tag/pelican.html">
+                            pelican
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-3">
+                        <a href="http://caimaoy.github.io/tag/vim.html">
+                            vim
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://caimaoy.github.io/tag/java.html">
+                            java
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://caimaoy.github.io/tag/test.html">
+                            test
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://caimaoy.github.io/tag/diary.html">
+                            diary
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://caimaoy.github.io/tag/windows.html">
+                            windows
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://caimaoy.github.io/tag/hhkb.html">
+                            HHKB
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://caimaoy.github.io/tag/wsdd.html">
+                            wsdd
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://caimaoy.github.io/tag/pyinstaller.html">
+                            pyinstaller
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://caimaoy.github.io/tag/english.html">
+                            English
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://caimaoy.github.io/tag/webservice.html">
+                            webservice
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://caimaoy.github.io/tag/axis.html">
+                            axis
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://caimaoy.github.io/tag/about-me.html">
+                            about-me
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://caimaoy.github.io/tag/pyqt.html">
+                            pyqt
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://caimaoy.github.io/tag/picture.html">
+                            picture
+                        </a>
+                    </li>
+                </ul>
+            </li>
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://getpelican.com/" target="_blank">
+                Pelican
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://python.org/" target="_blank">
+                Python.org
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://jinja.pocoo.org/" target="_blank">
+                Jinja2
+            </a>
+        </li>
+      </ul>
+    </li>
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2015 caimaoy
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>
+            <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1254050673'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1254050673' type='text/javascript'%3E%3C/script%3E"));</script>         </div>
+         <!-- bShare start >
+         <a class="bshareDiv" href="http://www.bshare.cn/share">分享按钮</a><script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/buttonLite.js#uuid=a65ec209-4cf6-4b7d-8eff-e02e0160c5dc&style=5&fs=2&bgcolor=LightBlue"></script>
+         <- bShare end -->
+         <!-- JiaThis Button BEGIN -->
+        <script type="text/javascript">
+        var jiathis_config = {data_track_clickback:'true'};
+        </script>
+        <script type="text/javascript" src="http://v3.jiathis.com/code/jiathis_r.js?type=left&amp;move=0&amp;btn=l1.gif&amp;uid=1605300" charset="utf-8"></script>
+    <!-- JiaThis Button END -->
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="http://caimaoy.github.io/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="http://caimaoy.github.io/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="http://caimaoy.github.io/theme/js/respond.min.js"></script>
+
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'caimaoygithubio'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-58273323-2']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+    <!-- End Google Analytics Code -->
+
+</body>
+</html>
