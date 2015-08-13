@@ -2,7 +2,7 @@
 <html lang="zh"
 >
 <head>
-    <title>axis - caimaoy's blog</title>
+    <title>soap webservice - caimaoy's blog</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -12,7 +12,7 @@
 
 
     <meta name="author" content="caimaoy" />
-    <meta name="keywords" content="axis" />
+    <meta name="keywords" content="soap webservice" />
 
     <!-- Open Graph tags -->
         <meta property="og:site_name" content="caimaoy's blog" />
@@ -79,20 +79,16 @@ caimaoy's blog            </a>
         <div class="col-sm-9">
 
             <article>
-                <h2><a href="http://caimaoy.github.io/how-to-deploy-webservice-by-axis-wsdd.html">如何用axis的wsdd方法部署WebService</a></h2>
-                <div class="summary"><h2>编写 deploy.wsdd 文件</h2>
+                <h2><a href="http://caimaoy.github.io/introduction-of-soap.html">Introduction of SOAP</a></h2>
+                <div class="summary"><h3>SOAP</h3>
 <ul>
-<li>放置于 %Tomcat_Home%\webapps\axis\WEB-INF 中</li>
-<li>内容如下</li>
+<li>这里说的SOAP不是肥皂，和捡肥皂也没有关系</li>
+<li>先来看一下官方介绍,以下内容来自<a href="https://zh.wikipedia.org/wiki/SOAP">wiki</a></li>
 </ul>
-<div class="highlight"><pre><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
-<span class="nt">&lt;deployment</span> <span class="na">xmlns=</span><span class="s">&quot;http://xml.apache.org/axis/wsdd/&quot;</span>
-    <span class="na">xmlns:java=</span><span class="s">&quot;http://xml.apache.org/axis/wsdd/providers/java&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;service</span> <span class="na">name=</span><span class="s">&quot;WSDD&quot;</span> <span class="na">provider=</span><span class="s">&quot;java:RPC&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;parameter</span> <span class="na">name=</span><span class="s">&quot;className&quot;</span> <span class="na">value=</span><span class="s">&quot;com.caimaoy&quot;</span> <span class="nt">/&gt;</span>
-        <span class="c">&lt;!-- * 代表所有的方法都暴露 --&gt;</span>
-        <span class="nt">&lt;parameter</span> <span class="na">name ...</span></pre></div>
-                    <a class="btn btn-default btn-xs" href="http://caimaoy.github.io/how-to-deploy-webservice-by-axis-wsdd.html">more ...</a>
+<div class="highlight"><pre>SOAP（原为Simple Object Access Protocol的首字母缩写，即简单对象访问协议）是交换数据的一种协议规范，使用在计算机网络Web服务（web service）中，交换带结构信息。SOAP为了简化网页服务器（Web Server）从XML数据库中提取数据时，节省去格式化页面时间，以及不同应用程序之间按照HTTP通信协议，遵从XML格式执行资料互换，使其抽象于语言实现、平台和硬件。此标准由IBM、Microsoft、UserLand和DevelopMentor在1998年共同提出，并得到IBM，莲花（Lotus），康柏（Compaq）等公司的支持，于2000年提交给万维网联盟（World Wide Web Consortium；W3C），目前SOAP 1.1版是业界共同的标准，属于第二代的XML协定（第一代具主要代表性的技术为XML-RPC以及WDDX）。
+
+用一个简单的例子来说明SOAP使用过程，一个SOAP消息可以发送到一个具有Web Service功能的Web站点 ...</pre></div>
+                    <a class="btn btn-default btn-xs" href="http://caimaoy.github.io/introduction-of-soap.html">more ...</a>
                 </div>
             </article>
             <hr/>

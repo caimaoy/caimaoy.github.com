@@ -79,6 +79,20 @@ caimaoy's blog            </a>
         <div class="col-sm-9">
 
             <article>
+                <h2><a href="http://caimaoy.github.io/introduction-of-soap.html">Introduction of SOAP</a></h2>
+                <div class="summary"><h3>SOAP</h3>
+<ul>
+<li>这里说的SOAP不是肥皂，和捡肥皂也没有关系</li>
+<li>先来看一下官方介绍,以下内容来自<a href="https://zh.wikipedia.org/wiki/SOAP">wiki</a></li>
+</ul>
+<div class="highlight"><pre>SOAP（原为Simple Object Access Protocol的首字母缩写，即简单对象访问协议）是交换数据的一种协议规范，使用在计算机网络Web服务（web service）中，交换带结构信息。SOAP为了简化网页服务器（Web Server）从XML数据库中提取数据时，节省去格式化页面时间，以及不同应用程序之间按照HTTP通信协议，遵从XML格式执行资料互换，使其抽象于语言实现、平台和硬件。此标准由IBM、Microsoft、UserLand和DevelopMentor在1998年共同提出，并得到IBM，莲花（Lotus），康柏（Compaq）等公司的支持，于2000年提交给万维网联盟（World Wide Web Consortium；W3C），目前SOAP 1.1版是业界共同的标准，属于第二代的XML协定（第一代具主要代表性的技术为XML-RPC以及WDDX）。
+
+用一个简单的例子来说明SOAP使用过程，一个SOAP消息可以发送到一个具有Web Service功能的Web站点 ...</pre></div>
+                    <a class="btn btn-default btn-xs" href="http://caimaoy.github.io/introduction-of-soap.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
                 <h2><a href="http://caimaoy.github.io/how-to-deploy-webservice-by-axis-wsdd.html">如何用axis的wsdd方法部署WebService</a></h2>
                 <div class="summary"><h2>编写 deploy.wsdd 文件</h2>
 <ul>
@@ -216,32 +230,6 @@ ImportError: Can&#39;t load frozen ...</pre></div>
                 </div>
             </article>
             <hr/>
-            <article>
-                <h2><a href="http://caimaoy.github.io/pyqt_create_a_new_window.html">PyQt 创建新窗口</a></h2>
-                <div class="summary"><blockquote>
-<p>PyQt 如何新建一个窗口</p>
-</blockquote>
-<div class="highlight"><pre><span class="c"># -*- coding: UTF-8 -*-</span>
-
-<span class="kn">import</span> <span class="nn">sys</span>
-<span class="kn">from</span> <span class="nn">PyQt4.QtCore</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">PyQt4.QtGui</span> <span class="kn">import</span> <span class="o">*</span>
-
-
-<span class="k">class</span> <span class="nc">mainWindow</span><span class="p">(</span><span class="n">QWidget</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parent</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
-        <span class="nb">super</span><span class="p">(</span><span class="n">mainWindow</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="n">parent</span><span class="p">)</span>
-        <span class="n">button</span> <span class="o">=</span> <span class="n">QPushButton</span><span class="p">(</span><span class="s">u&#39;弹出新窗口&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">slavewindow</span> <span class="o">=</span> <span class="n">slaveWindow</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">button</span><span class="p">,</span> <span class="n">SIGNAL</span><span class="p">(</span><span class="s">&#39;clicked()&#39;</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">slavewindow</span><span class="o">.</span><span class="n">show</span><span class="p">)</span>
-
-
-<span class="k">class</span> <span class="nc">slaveWindow</span><span class="p">(</span><span class="n">QWidget</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parent ...</span></pre></div>
-                    <a class="btn btn-default btn-xs" href="http://caimaoy.github.io/pyqt_create_a_new_window.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
 
         <ul class="pagination">
                 <li class="prev disabled"><a href="#">&laquo;</a></li>
@@ -281,43 +269,13 @@ ImportError: Can&#39;t load frozen ...</pre></div>
                         </a>
                     </li>
                     <li class="list-group-item tag-3">
-                        <a href="http://caimaoy.github.io/tag/pelican.html">
-                            pelican
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-3">
                         <a href="http://caimaoy.github.io/tag/vim.html">
                             vim
                         </a>
                     </li>
-                    <li class="list-group-item tag-4">
-                        <a href="http://caimaoy.github.io/tag/java.html">
-                            java
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="http://caimaoy.github.io/tag/test.html">
-                            test
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="http://caimaoy.github.io/tag/diary.html">
-                            diary
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="http://caimaoy.github.io/tag/windows.html">
-                            windows
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="http://caimaoy.github.io/tag/hhkb.html">
-                            HHKB
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="http://caimaoy.github.io/tag/wsdd.html">
-                            wsdd
+                    <li class="list-group-item tag-3">
+                        <a href="http://caimaoy.github.io/tag/pelican.html">
+                            pelican
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
@@ -326,8 +284,13 @@ ImportError: Can&#39;t load frozen ...</pre></div>
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
-                        <a href="http://caimaoy.github.io/tag/english.html">
-                            English
+                        <a href="http://caimaoy.github.io/tag/java.html">
+                            java
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://caimaoy.github.io/tag/wsdd.html">
+                            wsdd
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
@@ -341,8 +304,33 @@ ImportError: Can&#39;t load frozen ...</pre></div>
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
-                        <a href="http://caimaoy.github.io/tag/about-me.html">
-                            about-me
+                        <a href="http://caimaoy.github.io/tag/diary.html">
+                            diary
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://caimaoy.github.io/tag/picture.html">
+                            picture
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://caimaoy.github.io/tag/english.html">
+                            English
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://caimaoy.github.io/tag/windows.html">
+                            windows
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://caimaoy.github.io/tag/test.html">
+                            test
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://caimaoy.github.io/tag/hhkb.html">
+                            HHKB
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
@@ -351,8 +339,13 @@ ImportError: Can&#39;t load frozen ...</pre></div>
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
-                        <a href="http://caimaoy.github.io/tag/picture.html">
-                            picture
+                        <a href="http://caimaoy.github.io/tag/soap-webservice.html">
+                            soap webservice
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://caimaoy.github.io/tag/about-me.html">
+                            about-me
                         </a>
                     </li>
                 </ul>
