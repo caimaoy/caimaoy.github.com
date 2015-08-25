@@ -5,30 +5,37 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://caimaoy.github.io/</loc>
-<lastmod>2015-08-13T16:50:23-00:00</lastmod>
+<lastmod>2015-08-25T20:08:15-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://caimaoy.github.io/archives.html</loc>
-<lastmod>2015-08-13T16:50:23-00:00</lastmod>
+<lastmod>2015-08-25T20:08:15-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://caimaoy.github.io/tags.html</loc>
-<lastmod>2015-08-13T16:50:23-00:00</lastmod>
+<lastmod>2015-08-25T20:08:15-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://caimaoy.github.io/categories.html</loc>
-<lastmod>2015-08-13T16:50:23-00:00</lastmod>
+<lastmod>2015-08-25T20:08:15-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://caimaoy.github.io/test-pelican-on-mac.html</loc>
+<lastmod>2015-08-25T18:36:00+08:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
 </url>
 
 <url>
@@ -173,7 +180,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://caimaoy.github.io/category/test.html</loc>
-<lastmod>2015-04-03T18:36:00+08:06</lastmod>
+<lastmod>2015-08-25T18:36:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -228,8 +235,8 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>http://caimaoy.github.io/tag/hhkb.html</loc>
-<lastmod>2015-06-16T20:01:00+08:06</lastmod>
+<loc>http://caimaoy.github.io/tag/english.html</loc>
+<lastmod>2015-04-22T10:24:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -242,8 +249,8 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>http://caimaoy.github.io/tag/pyqt.html</loc>
-<lastmod>2015-04-15T19:36:00+08:06</lastmod>
+<loc>http://caimaoy.github.io/tag/wsdd.html</loc>
+<lastmod>2015-08-05T15:36:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -263,8 +270,8 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>http://caimaoy.github.io/tag/wsdd.html</loc>
-<lastmod>2015-08-05T15:36:00+08:06</lastmod>
+<loc>http://caimaoy.github.io/tag/mac.html</loc>
+<lastmod>2015-08-25T18:36:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -277,15 +284,22 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>http://caimaoy.github.io/tag/english.html</loc>
-<lastmod>2015-04-22T10:24:00+08:06</lastmod>
+<loc>http://caimaoy.github.io/tag/pyqt.html</loc>
+<lastmod>2015-04-15T19:36:00+08:06</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://caimaoy.github.io/tag/hhkb.html</loc>
+<lastmod>2015-06-16T20:01:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://caimaoy.github.io/tag/test.html</loc>
-<lastmod>2015-04-03T18:36:00+08:06</lastmod>
+<lastmod>2015-08-25T18:36:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -306,7 +320,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://caimaoy.github.io/author/caimaoy.html</loc>
-<lastmod>2015-08-13T10:14:00+08:06</lastmod>
+<lastmod>2015-08-25T18:36:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>

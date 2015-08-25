@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>caimaoy's blog</title><link>http://caimaoy.github.io/</link><description></description><atom:link href="http://caimaoy.github.io/feeds%5Ccaimaoy.rss.xml" rel="self"></atom:link><lastBuildDate>Thu, 13 Aug 2015 10:14:00 +0800</lastBuildDate><item><title>Introduction of SOAP</title><link>http://caimaoy.github.io/introduction-of-soap.html</link><description>&lt;h3&gt;SOAP&lt;/h3&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>caimaoy's blog</title><link>http://caimaoy.github.io/</link><description></description><atom:link href="http://caimaoy.github.io/feeds/caimaoy.rss.xml" rel="self"></atom:link><lastBuildDate>Tue, 25 Aug 2015 18:36:00 +0800</lastBuildDate><item><title>Mac 机器测试</title><link>http://caimaoy.github.io/test-pelican-on-mac.html</link><description>&lt;ul&gt;
+&lt;li&gt;就是一个测试&lt;/li&gt;
+&lt;li&gt;在Mac机器上面使用pelican，很多的配置都有更改，如果测试通过了，我会把diff贴在下面的&lt;/li&gt;
+&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">caimaoy</dc:creator><pubDate>Tue, 25 Aug 2015 18:36:00 +0800</pubDate><guid>tag:caimaoy.github.io,2015-08-25:test-pelican-on-mac.html</guid><category>test</category><category>mac</category></item><item><title>Introduction of SOAP</title><link>http://caimaoy.github.io/introduction-of-soap.html</link><description>&lt;h3&gt;SOAP&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;这里说的SOAP不是肥皂，和捡肥皂也没有关系&lt;/li&gt;
 &lt;li&gt;先来看一下官方介绍,以下内容来自&lt;a href="https://zh.wikipedia.org/wiki/SOAP"&gt;wiki&lt;/a&gt;&lt;/li&gt;
