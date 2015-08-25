@@ -79,6 +79,26 @@ caimaoy's blog            </a>
         <div class="col-sm-9">
 
             <article>
+                <h2><a href="http://caimaoy.github.io/test-pelican-on-mac.html">windows 迁移 pelican 到 Mac 机器测试</a></h2>
+                <div class="summary"><ul>
+<li>就是一个测试</li>
+<li>在Mac机器上面使用pelican，很多的配置都有更改，如果测试通过了，我会把diff贴在下面的</li>
+<li>先看看一下 diff Makefile</li>
+</ul>
+<div class="highlight"><pre><span class="gh">diff --git a/Makefile b/Makefile</span>
+<span class="gh">index e69e9c8..c98df1f 100644</span>
+<span class="gd">--- a/Makefile</span>
+<span class="gi">+++ b/Makefile</span>
+<span class="gu">@@ -107,6 +107,12 @@ cf_upload: publish</span>
+        cd $(OUTPUTDIR) &amp;&amp; swift -v -A https://auth.api.rackspacecloud.com/v1.0 -U $(CLOUDFILES_USERNAME) -K $(CLOUDFILES_API_KEY) upload -c $(CLOUDFILES_CONTAINER) .
+
+ github: publish
+<span class="gi">+       git ...</span></pre></div>
+                    <a class="btn btn-default btn-xs" href="http://caimaoy.github.io/test-pelican-on-mac.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
                 <h2><a href="http://caimaoy.github.io/pelican-add-404-page.html">pelican 如何添加404页面</a></h2>
                 <div class="summary"><blockquote>
 <p>pelican 已经挂在了github上面了但是如何挂上一个404 页面</p>

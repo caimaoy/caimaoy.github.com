@@ -1,8 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>caimaoy's blog</title><link href="http://caimaoy.github.io/" rel="alternate"></link><link href="http://caimaoy.github.io/feeds/caimaoy.atom.xml" rel="self"></link><id>http://caimaoy.github.io/</id><updated>2015-08-25T18:36:00+08:00</updated><entry><title>Mac 机器测试</title><link href="http://caimaoy.github.io/test-pelican-on-mac.html" rel="alternate"></link><updated>2015-08-25T18:36:00+08:00</updated><author><name>caimaoy</name></author><id>tag:caimaoy.github.io,2015-08-25:test-pelican-on-mac.html</id><summary type="html">&lt;ul&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>caimaoy's blog</title><link href="http://caimaoy.github.io/" rel="alternate"></link><link href="http://caimaoy.github.io/feeds/caimaoy.atom.xml" rel="self"></link><id>http://caimaoy.github.io/</id><updated>2015-08-25T18:36:00+08:00</updated><entry><title>windows 迁移 pelican 到 Mac 机器测试</title><link href="http://caimaoy.github.io/test-pelican-on-mac.html" rel="alternate"></link><updated>2015-08-25T18:36:00+08:00</updated><author><name>caimaoy</name></author><id>tag:caimaoy.github.io,2015-08-25:test-pelican-on-mac.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;就是一个测试&lt;/li&gt;
 &lt;li&gt;在Mac机器上面使用pelican，很多的配置都有更改，如果测试通过了，我会把diff贴在下面的&lt;/li&gt;
-&lt;/ul&gt;</summary><category term="test"></category><category term="mac"></category></entry><entry><title>Introduction of SOAP</title><link href="http://caimaoy.github.io/introduction-of-soap.html" rel="alternate"></link><updated>2015-08-13T10:14:00+08:00</updated><author><name>caimaoy</name></author><id>tag:caimaoy.github.io,2015-08-13:introduction-of-soap.html</id><summary type="html">&lt;h3&gt;SOAP&lt;/h3&gt;
+&lt;li&gt;先看看一下 diff Makefile&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="gh"&gt;diff --git a/Makefile b/Makefile&lt;/span&gt;
+&lt;span class="gh"&gt;index e69e9c8..c98df1f 100644&lt;/span&gt;
+&lt;span class="gd"&gt;--- a/Makefile&lt;/span&gt;
+&lt;span class="gi"&gt;+++ b/Makefile&lt;/span&gt;
+&lt;span class="gu"&gt;@@ -107,6 +107,12 @@ cf_upload: publish&lt;/span&gt;
+        cd $(OUTPUTDIR) &amp;amp;&amp;amp; swift -v -A https://auth.api.rackspacecloud.com/v1.0 -U $(CLOUDFILES_USERNAME) -K $(CLOUDFILES_API_KEY) upload -c $(CLOUDFILES_CONTAINER) .
+
+ github: publish
+&lt;span class="gi"&gt;+       git add .&lt;/span&gt;
+&lt;span class="gi"&gt;+       git ci -a -m &amp;quot;update&amp;quot;&lt;/span&gt;
+&lt;span class="gi"&gt;+       git push origin source&lt;/span&gt;
+&lt;span class="gi"&gt;+       echo caimaoy.com &amp;gt; $(OUTPUTDIR)/CNAME&lt;/span&gt;
+&lt;span class="gi"&gt;+       cp googledabe3ca1b7fa15.html  $(OUTPUTDIR)/googledabe3ca1b7fa15.html&lt;/span&gt;
+        ghp-import -m &amp;quot;Generate Pelican site&amp;quot; -b $(GITHUB_PAGES_BRANCH) $(OUTPUTDIR)
+        git push origin $(GITHUB_PAGES_BRANCH)
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;使用上面的命令进行提交&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;因为是从 windows 迁移到mac机器上面，所以配置文件的分隔符要修改一下&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="gh"&gt;diff --git a/publishconf.py b/publishconf.py&lt;/span&gt;
+&lt;span class="gh"&gt;index 30d0156..bfb60d8 100644&lt;/span&gt;
+&lt;span class="gd"&gt;--- a/publishconf.py&lt;/span&gt;
+&lt;span class="gi"&gt;+++ b/publishconf.py&lt;/span&gt;
+&lt;span class="gu"&gt;@@ -88,7 +88,7 @@ USE_FOLDER_AS_CATEGORY = True&lt;/span&gt;
+
+ # plugin config
+ # PLUGIN_PATHS = [&amp;#39;./plugins&amp;#39;]
+&lt;span class="gd"&gt;-PLUGIN_PATHS = [r&amp;#39;.\pelican-plugins&amp;#39;]&lt;/span&gt;
+&lt;span class="gi"&gt;+PLUGIN_PATHS = [r&amp;#39;./pelican-plugins&amp;#39;]&lt;/span&gt;
+ PLUGINS = [
+     #&amp;#39;pandoc_reader&amp;#39;,
+     #&amp;#39;gzip_cache&amp;#39;,
+&lt;span class="gu"&gt;@@ -121,4 +121,4 @@ SITEMAP = {&lt;/span&gt;
+
+ # THEME = r&amp;#39;.\pelican-themes\bootstrap2-dark&amp;#39;
+ # THEME = r&amp;#39;.\pelican-themes\SoMA&amp;#39;
+&lt;span class="gd"&gt;-THEME = r&amp;#39;.\pelican-themes\pelican-bootstrap3&amp;#39;&lt;/span&gt;
+&lt;span class="gi"&gt;+THEME = r&amp;#39;./pelican-themes/pelican-bootstrap3&amp;#39;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;主题文件和插件文件因为是在另外的两个git仓库里面，不需要修改&lt;/li&gt;
+&lt;li&gt;一切看起来还很美好？！&lt;/li&gt;
+&lt;li&gt;NO！ Tags 不见了！&lt;/li&gt;
+&lt;li&gt;生产过程中没有报错，目前还在排查中！&lt;/li&gt;
+&lt;li&gt;囧！但是我已经上线了，又不想回滚 555&lt;/li&gt;
+&lt;/ul&gt;</summary><category term="test"></category><category term="mac"></category><category term="pelican"></category><category term="python"></category></entry><entry><title>Introduction of SOAP</title><link href="http://caimaoy.github.io/introduction-of-soap.html" rel="alternate"></link><updated>2015-08-13T10:14:00+08:00</updated><author><name>caimaoy</name></author><id>tag:caimaoy.github.io,2015-08-13:introduction-of-soap.html</id><summary type="html">&lt;h3&gt;SOAP&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;这里说的SOAP不是肥皂，和捡肥皂也没有关系&lt;/li&gt;
 &lt;li&gt;先来看一下官方介绍,以下内容来自&lt;a href="https://zh.wikipedia.org/wiki/SOAP"&gt;wiki&lt;/a&gt;&lt;/li&gt;
