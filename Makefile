@@ -107,6 +107,12 @@ cf_upload: publish
 	cd $(OUTPUTDIR) && swift -v -A https://auth.api.rackspacecloud.com/v1.0 -U $(CLOUDFILES_USERNAME) -K $(CLOUDFILES_API_KEY) upload -c $(CLOUDFILES_CONTAINER) .
 
 github: publish
+	git add .
+	git ci -a -m "update"
+	git push origin source
+	echo caimaoy.com > $(OUTPUTDIR)/CNAME
+	cp google0dab5e3ca1b7fa15.html  $(OUTPUTDIR)/google0dab5e3ca1b7fa15.html
+	# cp baidu_verify_fZeT7Gyz3G.html $(OUTPUTDIR)/baidu_verify_fZeT7Gyz3G.html
 	ghp-import -m "Generate Pelican site" -b $(GITHUB_PAGES_BRANCH) $(OUTPUTDIR)
 	git push origin $(GITHUB_PAGES_BRANCH)
 

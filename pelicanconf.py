@@ -76,7 +76,7 @@ USE_FOLDER_AS_CATEGORY = True
 
 # plugin config
 # PLUGIN_PATHS = ['./plugins']
-PLUGIN_PATHS = [r'.\pelican-plugins']
+PLUGIN_PATHS = [r'./pelican-plugins']
 PLUGINS = [
     #'pandoc_reader',
     #'gzip_cache',
@@ -109,4 +109,4 @@ SITEMAP = {
 
 # THEME = r'.\pelican-themes\bootstrap2-dark'
 # THEME = r'.\pelican-themes\SoMA'
-THEME = r'.\pelican-themes\pelican-bootstrap3'
+THEME = r'./pelican-themes/pelican-bootstrap3'
