@@ -6,7 +6,7 @@ Tags: python, translation
 Slug: best-python-resources
 Author: caimaoy
 
-翻译了一篇文章，原文链接为 [http://www.fullstackpython.com/best-python-resources.html]()
+翻译了一篇文章，原文链接为 [http://www.fullstackpython.com/best-python-resources.html](http://www.fullstackpython.com/best-python-resources.html)
 
 # Full Stack Python
 ## Best Python Resources
