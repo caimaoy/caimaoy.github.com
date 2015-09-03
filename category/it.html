@@ -79,6 +79,24 @@ caimaoy's blog            </a>
         <div class="col-sm-9">
 
             <article>
+                <h2><a href="http://caimaoy.github.io/best-python-resources.html">Best Python Resources</a></h2>
+                <div class="summary"><p>翻译了一篇文章，原文链接为 <a href="">http://www.fullstackpython.com/best-python-resources.html</a></p>
+<h1>Full Stack Python</h1>
+<h2>Best Python Resources</h2>
+<p>Python 社区在分享细节的学习资源和帮助初学者掌握语言方面总是很积极热情的，但是也就是因为太多的资源导致人们很难知道如何找到它们。 
+本文整理了最好、最通用的 Python 资源，并且简述了其内容。</p>
+<p>如果您更喜欢通过视频的方式来学习可以点击<a href="http://www.fullstackpython.com/best-python-videos.html">最好的python视频</a>。如果有兴趣您也可以阅读一下<a href="http://www.fullstackpython.com/development-environments.html">代码开发环境</a>。</p>
+<h3>写给编程新手的</h3>
+<p>如果你是学习第一门编程语言，本小节的书是比较适合你的。如何在学习Python之前你已经学习过其他的编程语言，请跳过此小节直接到下一小节——“有经验的开发者”。  </p>
+<ul>
+<li>想要同一时间了解 Python，Django 和 Flask，可以考虑购买Fletcher，Michael和Jeremy三人提供<a href="https://realpython.com/?utm_source=fsp&amp;utm_medium=promo&amp;utm_campaign=bestresources">Real Python</a>课程</li>
+<li><a href="https://www.youtube.com/watch?v=mvK0UzFNw1Q">短短 5 分钟的视频</a>告诉你为什么去思考自己想要构建的项目，去编程解决自己想要解决的问题是更好的选择。在这些项目和问题上花心思比一头栽进一个朋友推荐的特定语言要好。</li>
+<li><a href="http://www.cs.hmc.edu/csforall/">全民计算机</a>是一本由哈威穆德学院教授编写的公开图书 ...</li></ul>
+                    <a class="btn btn-default btn-xs" href="http://caimaoy.github.io/best-python-resources.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
                 <h2><a href="http://caimaoy.github.io/test-pelican-on-mac.html">windows 迁移 pelican 到 Mac 机器测试</a></h2>
                 <div class="summary"><ul>
 <li>就是一个测试</li>
@@ -188,48 +206,6 @@ split(...)
     splits are done. If sep is not specified or is None, any
     whitespace string ...</pre></div>
                     <a class="btn btn-default btn-xs" href="http://caimaoy.github.io/python-split.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="http://caimaoy.github.io/vim-removing-duplicate-lines.html">VIM 去掉重复行</a></h2>
-                <div class="summary"><h3>不难理解的方法</h3>
-<ul>
-<li>先想想思路:<ul>
-<li>先排序</li>
-<li>然后去掉重复的行</li>
-</ul>
-</li>
-<li>看看具体命令</li>
-</ul>
-<div class="highlight"><pre>:sort u
-g/^\(.*\)\n\1$/d
-</pre></div>
-
-
-<h4>下面讲解一下：</h4>
-<div class="highlight"><pre>:sort u             &lt;-- 排序
-g/^\(.*\)\n\1$/d    &lt;-- kjkj
-g/            /d    &lt;-- g命令delete 满足要求的行
-  ^\(.*\)\n         &lt;-- 一行的开始到换行
-           \1$      &lt;-- \1 是前面(.*\)的内容，也就是说和前面的行内容相等
-             $      &lt;-- 结束符，两行相等是匹配条件
-</pre></div>
-
-
-<h3>一些高级vim语法的操作</h3>
-<p><a href="http://vim.wikia.com/wiki/Uniq_-_Removing_duplicate_lines">参考博文</a></p>
-<ul>
-<li>先看一下命令</li>
-</ul>
-<div class="highlight"><pre>g/\%(^\1\n\)\@&lt;=\(.*\)$/d
-g/\v%(^\1\n)@&lt;=(.*)$/d
-</pre></div>
-
-
-<h4>看一下原本博客中的解释</h4>
-<div class="highlight"><pre>g/\%(^\1\n\)\@&lt;=\(.*\)$/d ...</pre></div>
-                    <a class="btn btn-default btn-xs" href="http://caimaoy.github.io/vim-removing-duplicate-lines.html">more ...</a>
                 </div>
             </article>
             <hr/>
