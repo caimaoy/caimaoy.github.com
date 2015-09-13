@@ -2,7 +2,7 @@
 <html lang="zh"
 >
 <head>
-    <title>Authors - caimaoy's blog</title>
+    <title>flask - caimaoy's blog</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -11,7 +11,8 @@
 
 
 
-        <meta name="author" content="caimaoy" />
+    <meta name="author" content="caimaoy" />
+    <meta name="keywords" content="flask" />
 
     <!-- Open Graph tags -->
         <meta property="og:site_name" content="caimaoy's blog" />
@@ -77,8 +78,28 @@ caimaoy's blog            </a>
     <div class="row">
         <div class="col-sm-9">
 
-    <h1>Authors on caimaoy's blog</h1>
-        <li><a href="http://caimaoy.github.io/author/caimaoy.html">caimaoy</a> (19)</li>
+            <article>
+                <h2><a href="http://caimaoy.github.io/deploy-python-web.html">nginx + gunicorn + supervisior + flask 部署 python web</a></h2>
+                <div class="summary"><h1>简介</h1>
+<ul>
+<li>最近离职休假，在家研究 python 的 web 框架</li>
+<li>本来是要来 tornado 的，但是因为 Falsk 文档更为齐全，并且更易上手，所以先来了flask</li>
+<li>做了一个小 web 之后就想发布，看了一下官方文档说了 Heroku 云服务和其他的 VPS，于是上Heroku 上面去折腾了一番</li>
+<li>除了 git 和 Heroku 自己的东西，中间在启动的时候有如下代码：</li>
+</ul>
+<div class="highlight"><pre><span class="n">web</span><span class="o">:</span> <span class="n">gunicorn</span> <span class="n">gettingstarted</span><span class="o">.</span><span class="na">wsgi</span> <span class="o">--</span><span class="n">log</span><span class="o">-</span><span class="n">file</span> <span class="o">-</span>
+</pre></div>
+
+
+<ul>
+<li>gunicorn 是什么？</li>
+<li>继续 google 发现了一套比较通用的部署 python web app 的解决方案</li>
+<li>nginx + gunicorn + supervisior + flask 来吧在本地折腾一番吧 ...</li></ul>
+                    <a class="btn btn-default btn-xs" href="http://caimaoy.github.io/deploy-python-web.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+
         </div>
         <div class="col-sm-3" id="sidebar">
             <aside>
