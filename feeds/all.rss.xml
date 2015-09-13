@@ -1,5 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>caimaoy's blog</title><link>http://caimaoy.github.io/</link><description></description><atom:link href="http://caimaoy.github.io/feeds/all.rss.xml" rel="self"></atom:link><lastBuildDate>Thu, 03 Sep 2015 23:58:00 +0800</lastBuildDate><item><title>Best Python Resources</title><link>http://caimaoy.github.io/best-python-resources.html</link><description>&lt;p&gt;翻译了一篇文章，原文链接为 &lt;a href="http://www.fullstackpython.com/best-python-resources.html"&gt;http://www.fullstackpython.com/best-python-resources.html&lt;/a&gt;&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>caimaoy's blog</title><link>http://caimaoy.github.io/</link><description></description><atom:link href="http://caimaoy.github.io/feeds/all.rss.xml" rel="self"></atom:link><lastBuildDate>Sun, 13 Sep 2015 10:00:00 +0800</lastBuildDate><item><title>nginx + gunicorn + supervisior + flask 部署 python web</title><link>http://caimaoy.github.io/deploy-python-web.html</link><description>&lt;h1&gt;简介&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;最近离职休假，在家研究 python 的 web 框架&lt;/li&gt;
+&lt;li&gt;本来是要来 tornado 的，但是因为 Falsk 文档更为齐全，并且更易上手，所以先来了flask&lt;/li&gt;
+&lt;li&gt;做了一个小 web 之后就想发布，看了一下官方文档说了 Heroku 云服务和其他的 VPS，于是上Heroku 上面去折腾了一番&lt;/li&gt;
+&lt;li&gt;除了 git 和 Heroku 自己的东西，中间在启动的时候有如下代码：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;web&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;gunicorn&lt;/span&gt; &lt;span class="n"&gt;gettingstarted&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;wsgi&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;log&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;file&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;gunicorn 是什么？&lt;/li&gt;
+&lt;li&gt;继续 google 发现了一套比较通用的部署 python web app 的解决方案&lt;/li&gt;
+&lt;li&gt;nginx + gunicorn + supervisior + flask 来吧在本地折腾一番吧&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;大体介绍&lt;/h1&gt;
+&lt;h2&gt;创建一个项目&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;mkdir myproject
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;创建 python 虚拟环境&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;virtualenv is a tool to create isolated Python environments.&lt;/li&gt;
+&lt;li&gt;不同项目完全隔离的 python 虚拟环境&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;mkdir myproject
+cd myproject
+virtualenv venv
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;使用 venv 环境&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;source venv/bin/activate
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;安装 python web 框架 flask&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Flask is a microframework for Python based on Werkzeug, Jinja 2 and good intentions. And before you ask: It's BSD licensed!&lt;/li&gt;
+&lt;li&gt;使用 pip 安装 flask&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;pip install flask
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;mpapp.py 文件&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;flask&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Flask&lt;/span&gt;
+&lt;span class="n"&gt;app&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Flask&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;__name__&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="nd"&gt;@app.route&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;/&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;index&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;hello world&amp;#39;&lt;/span&gt;
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;__name__&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;__main__&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="n"&gt;app&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;debug&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;True&lt;/span&gt;
+    &lt;span class="n"&gt;app&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;run&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;启动flask&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;python myapp.py
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;正常情况下可以在浏览器中访问 &lt;a href="http://127.0.0.1:5000"&gt;http://127.0.0.1:5000&lt;/a&gt; 查看到 hello world&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;使用 gunicorn 部署 python web&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Gunicorn 'Green Unicorn' is a Python WSGI HTTP Server for UNIX. It's a pre-fork worker model ported from Ruby's Unicorn project. The Gunicorn server is broadly compatible with various web frameworks, simply implemented, light on server resources, and fairly speedy.&lt;/li&gt;
+&lt;li&gt;安装 gunicorn&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;pip install gunicorn
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;pip 是用于 python 的包管理工具&lt;/li&gt;
+&lt;li&gt;我们现在在这个项目中又安装了新的 python 库，所以我们需要记录在 requirements.txt 文件中&lt;/li&gt;
+&lt;li&gt;这样方便方便别人部署&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;pip freeze &amp;gt; requirements.txt
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;当我们安装好 gunicorn 之后，需要用 gunicorn 启动 flask&lt;/li&gt;
+&lt;li&gt;注意 flask 里面的name 里面的代码启动了 app.run()&lt;/li&gt;
+&lt;li&gt;这个含义是用 flask 自带的服务器启动 app&lt;/li&gt;
+&lt;li&gt;这里我们使用了 gunicorn，myapp.py 就等同于一个库文件，被 gunicorn 调用&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;gunicron -w4 -b0.0.0.0:8000 myapp:app
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;此时，我们需要用 8000 的端口进行访问，原先的5000 并没有启用&lt;/li&gt;
+&lt;li&gt;其中 gunicorn 的部署中，-w 表示开启多少个 worker&lt;/li&gt;
+&lt;li&gt;b 表示 gunicorn 开发的访问地址&lt;/li&gt;
+&lt;li&gt;想要结束 gunicorn 只需执行 pkill gunicorn&lt;/li&gt;
+&lt;li&gt;有时候还的 ps 找到 pid 进程号才能 kill&lt;/li&gt;
+&lt;li&gt;可是这对于一个开发来说，太过于繁琐，因此出现了另外一个神器---supervisor&lt;/li&gt;
+&lt;li&gt;一个专门用来管理进程的工具，还可以管理系统的工具进程&lt;/li&gt;
+&lt;li&gt;到此 python web 应用 可以正常使用&lt;/li&gt;
+&lt;li&gt;之后的进程管理和 nginx 部署还够写很多，之后再见&lt;/li&gt;
+&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">caimaoy</dc:creator><pubDate>Sun, 13 Sep 2015 10:00:00 +0800</pubDate><guid>tag:caimaoy.github.io,2015-09-13:deploy-python-web.html</guid><category>python</category><category>web</category><category>nginx</category><category>gunicorn</category><category>supervisior</category><category>flask</category></item><item><title>Best Python Resources</title><link>http://caimaoy.github.io/best-python-resources.html</link><description>&lt;p&gt;翻译了一篇文章，原文链接为 &lt;a href="http://www.fullstackpython.com/best-python-resources.html"&gt;http://www.fullstackpython.com/best-python-resources.html&lt;/a&gt;&lt;/p&gt;
 &lt;h1&gt;Full Stack Python&lt;/h1&gt;
 &lt;h2&gt;Best Python Resources&lt;/h2&gt;
 &lt;p&gt;Python 社区在分享细节的学习资源和帮助初学者掌握语言方面总是很积极热情的，但是也就是因为太多的资源导致人们很难知道如何找到它们。 

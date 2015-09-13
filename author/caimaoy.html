@@ -78,6 +78,27 @@ caimaoy's blog            </a>
         <div class="col-sm-9">
 
             <article>
+                <h2><a href="http://caimaoy.github.io/deploy-python-web.html">nginx + gunicorn + supervisior + flask 部署 python web</a></h2>
+                <div class="summary"><h1>简介</h1>
+<ul>
+<li>最近离职休假，在家研究 python 的 web 框架</li>
+<li>本来是要来 tornado 的，但是因为 Falsk 文档更为齐全，并且更易上手，所以先来了flask</li>
+<li>做了一个小 web 之后就想发布，看了一下官方文档说了 Heroku 云服务和其他的 VPS，于是上Heroku 上面去折腾了一番</li>
+<li>除了 git 和 Heroku 自己的东西，中间在启动的时候有如下代码：</li>
+</ul>
+<div class="highlight"><pre><span class="n">web</span><span class="o">:</span> <span class="n">gunicorn</span> <span class="n">gettingstarted</span><span class="o">.</span><span class="na">wsgi</span> <span class="o">--</span><span class="n">log</span><span class="o">-</span><span class="n">file</span> <span class="o">-</span>
+</pre></div>
+
+
+<ul>
+<li>gunicorn 是什么？</li>
+<li>继续 google 发现了一套比较通用的部署 python web app 的解决方案</li>
+<li>nginx + gunicorn + supervisior + flask 来吧在本地折腾一番吧 ...</li></ul>
+                    <a class="btn btn-default btn-xs" href="http://caimaoy.github.io/deploy-python-web.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
                 <h2><a href="http://caimaoy.github.io/best-python-resources.html">Best Python Resources</a></h2>
                 <div class="summary"><p>翻译了一篇文章，原文链接为 <a href="http://www.fullstackpython.com/best-python-resources.html">http://www.fullstackpython.com/best-python-resources.html</a></p>
 <h1>Full Stack Python</h1>
@@ -203,36 +224,6 @@ caimaoy's blog            </a>
 <div class="highlight"><pre>- 如何退格？
 - 使用Fn + Delete ...</pre></div>
                     <a class="btn btn-default btn-xs" href="http://caimaoy.github.io/diary-HHKB.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="http://caimaoy.github.io/python-const.html">python const</a></h2>
-                <div class="summary"><ul>
-<li>python 没有const 这样的语法，但是在项目中可能会有这样的需求？</li>
-<li>自己动手丰衣足食！！！</li>
-</ul>
-<h3>const.py</h3>
-<ul>
-<li>首先创建一个const.py文件，代码如下</li>
-</ul>
-<div class="highlight"><pre><span class="c"># -*- coding: UTF-8 -*-</span>
-
-<span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">Last modified time: 2015-06-09 09:49:29</span>
-<span class="sd">Edit time: 2015-06-09 09:55:07</span>
-<span class="sd">File name: const.py</span>
-<span class="sd">Edit by caimaoy</span>
-<span class="sd">&#39;&#39;&#39;</span>
-
-<span class="n">__author__</span> <span class="o">=</span> <span class="s">&#39;caimaoy&#39;</span>
-
-<span class="k">class</span> <span class="nc">_const</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="k">class</span> <span class="nc">ConstError</span><span class="p">(</span><span class="ne">TypeError</span><span class="p">):</span> <span class="k">pass</span>
-    <span class="k">class</span> <span class="nc">ConstCaseError</span><span class="p">(</span><span class="ne">TypeError</span><span class="p">):</span> <span class="k">pass</span>
-
-    <span class="k">def</span> <span class="nf">__setattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value ...</span></pre></div>
-                    <a class="btn btn-default btn-xs" href="http://caimaoy.github.io/python-const.html">more ...</a>
                 </div>
             </article>
             <hr/>
