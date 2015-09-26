@@ -88,7 +88,7 @@ USE_FOLDER_AS_CATEGORY = True
 
 # plugin config
 # PLUGIN_PATHS = ['./plugins']
-PLUGIN_PATHS = [r'./pelican-plugins']
+PLUGIN_PATHS = ['pelican-plugins']
 PLUGINS = [
     #'pandoc_reader',
     #'gzip_cache',
@@ -99,7 +99,13 @@ PLUGINS = [
     #'niux2_lazyload_helper',
     #'niux2_hermit_player',
     #'minify',
+    'tag_cloud',
 ]
+
+# tag_cloud
+DISPLAY_TAGS_INLINE = True
+DISPLAY_TAGS_ON_SIDEBAR = True
+TAG_CLOUD_STEPS = 4
 
 # PLUGIN_PATH = u'pelican-plugins'  # 设置插件路径
 # PLUGINS = ['sitemap', 'related_posts', 'random_article',               'neighbors']  # 设置启用的插件
