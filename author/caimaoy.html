@@ -78,6 +78,32 @@ caimaoy's blog            </a>
         <div class="col-sm-9">
 
             <article>
+                <h2><a href="http://caimaoy.github.io/pelican-tag-cloud.html">修复pelican 3.6 后没有标签云</a></h2>
+                <div class="summary"><h3>提问：我的标签咋不见了？</h3>
+<ul>
+<li>换了新的电脑 pelican 还是要先安装</li>
+<li>使用了如下的命令：</li>
+</ul>
+<div class="highlight"><pre>pip install pelican
+</pre></div>
+
+
+<ul>
+<li>好像一切正常，拉取一下仓库，make 一下，发现标签云没有了</li>
+<li>为什么？</li>
+</ul>
+<h3>回答：pelican 版本升级，标签云 tag_cloud 被移除了</h3>
+<ul>
+<li>看看官网的 faq 吧—— <a href="http://docs.getpelican.com/en/3.6.3/faq.html?#my-tag-cloud-is-missing-broken-since-i-upgraded-pelican">http://docs.getpelican.com/en/3.6.3/faq.html</a></li>
+</ul>
+<blockquote>
+<p>My tag-cloud is missing/broken since I upgraded Pelican
+In an ongoing effort to steamline Pelican ...</p></blockquote>
+                    <a class="btn btn-default btn-xs" href="http://caimaoy.github.io/pelican-tag-cloud.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
                 <h2><a href="http://caimaoy.github.io/deploy-python-web.html">nginx + gunicorn + supervisior + flask 部署 python web</a></h2>
                 <div class="summary"><h1>简介</h1>
 <ul>
@@ -183,50 +209,6 @@ caimaoy's blog            </a>
                 </div>
             </article>
             <hr/>
-            <article>
-                <h2><a href="http://caimaoy.github.io/diary-HHKB.html">HHKB初体验</a></h2>
-                <div class="summary"><h3>首先庆祝一下COC冠军杯</h3>
-<p><img alt="COC冠军杯" src="http://7xif3g.com1.z0.glb.clouddn.com/COC冠军杯.PNG" /></p>
-<h3>今天的主角: HHKB</h3>
-<p><img alt="HHKB" src="http://7xif3g.com1.z0.glb.clouddn.com/HHKB.JPG" /></p>
-<ul>
-<li>同事漂洋过海从岛国带回一个无刻版HHKB Pro2</li>
-<li>因为是无刻版，到现在都非常痛苦</li>
-<li>不记得键位，所以下面先来一个HHKB Professional 2 Layout</li>
-</ul>
-<p><img alt="HHKB Professional 2 Layout" src="http://7xif3g.com1.z0.glb.clouddn.com/HHKB_Pro2_Layout.jpg" /></p>
-<h4>键盘设置</h4>
-<ul>
-<li>什么？键盘还要设置？又不是鼠标还要设置PPI？</li>
-<li>是的你没有听错，这键盘就是要设置，主要是满足不同系统需要</li>
-<li>HHKB Pro 2 是有一排跳线6个开关，理论上是可以有2^6==64种不同的组合</li>
-<li>先来看看跳线的模式说明</li>
-</ul>
-<p><img alt="跳线模式" src="http://7xif3g.com1.z0.glb.clouddn.com/HHKB_跳线说明.JPG" /></p>
-<ul>
-<li>
-<p>再来看看跳线前两位模式的说明
-<img alt="模式说明" src="http://7xif3g.com1.z0.glb.clouddn.com/HHKB_模式说明.JPG" /></p>
-</li>
-<li>
-<p>如果看懂了这个，你也就配置好了自己的键盘</p>
-</li>
-</ul>
-<h5>本人配置</h5>
-<ul>
-<li>本人工作在windos环境！（对！你没有看错，就是万恶的windows！！！）</li>
-<li>跳线打开1、3、5</li>
-<li>Delete键改为BackSpace键</li>
-<li>最下面一排按键为：win、alt、空格、alt、win</li>
-<li>这样基本满足在windows下面的操作</li>
-</ul>
-<h3>FAQ</h3>
-<div class="highlight"><pre>- 如何退格？
-- 使用Fn + Delete ...</pre></div>
-                    <a class="btn btn-default btn-xs" href="http://caimaoy.github.io/diary-HHKB.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
 
         <ul class="pagination">
                 <li class="prev disabled"><a href="#">&laquo;</a></li>
@@ -263,18 +245,13 @@ caimaoy's blog            </a>
                         </a>
                     </li>
                     <li class="list-group-item tag-2">
-                        <a href="http://caimaoy.github.io/tag/pelican.html">
-                            pelican
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-2">
                         <a href="http://caimaoy.github.io/tag/github.html">
                             github
                         </a>
                     </li>
-                    <li class="list-group-item tag-3">
-                        <a href="http://caimaoy.github.io/tag/vim.html">
-                            vim
+                    <li class="list-group-item tag-2">
+                        <a href="http://caimaoy.github.io/tag/pelican.html">
+                            pelican
                         </a>
                     </li>
                     <li class="list-group-item tag-3">
@@ -282,94 +259,9 @@ caimaoy's blog            </a>
                             test
                         </a>
                     </li>
-                    <li class="list-group-item tag-4">
-                        <a href="http://caimaoy.github.io/tag/translation.html">
-                            translation
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="http://caimaoy.github.io/tag/picture.html">
-                            picture
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="http://caimaoy.github.io/tag/axis.html">
-                            axis
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="http://caimaoy.github.io/tag/webservice.html">
-                            webservice
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="http://caimaoy.github.io/tag/about-me.html">
-                            about-me
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="http://caimaoy.github.io/tag/gunicorn.html">
-                            gunicorn
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="http://caimaoy.github.io/tag/nginx.html">
-                            nginx
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="http://caimaoy.github.io/tag/hhkb.html">
-                            HHKB
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="http://caimaoy.github.io/tag/pyqt.html">
-                            pyqt
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="http://caimaoy.github.io/tag/supervisior.html">
-                            supervisior
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="http://caimaoy.github.io/tag/english.html">
-                            English
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="http://caimaoy.github.io/tag/web.html">
-                            web
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="http://caimaoy.github.io/tag/flask.html">
-                            flask
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="http://caimaoy.github.io/tag/mac.html">
-                            mac
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="http://caimaoy.github.io/tag/diary.html">
-                            diary
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="http://caimaoy.github.io/tag/wsdd.html">
-                            wsdd
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="http://caimaoy.github.io/tag/java.html">
-                            java
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="http://caimaoy.github.io/tag/pyinstaller.html">
-                            pyinstaller
+                    <li class="list-group-item tag-3">
+                        <a href="http://caimaoy.github.io/tag/vim.html">
+                            vim
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
@@ -378,8 +270,103 @@ caimaoy's blog            </a>
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
+                        <a href="http://caimaoy.github.io/tag/gunicorn.html">
+                            gunicorn
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
                         <a href="http://caimaoy.github.io/tag/windows.html">
                             windows
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://caimaoy.github.io/tag/diary.html">
+                            diary
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://caimaoy.github.io/tag/hhkb.html">
+                            HHKB
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://caimaoy.github.io/tag/python-pelican.html">
+                            python pelican
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://caimaoy.github.io/tag/flask.html">
+                            flask
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://caimaoy.github.io/tag/about-me.html">
+                            about-me
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://caimaoy.github.io/tag/translation.html">
+                            translation
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://caimaoy.github.io/tag/pyqt.html">
+                            pyqt
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://caimaoy.github.io/tag/mac.html">
+                            mac
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://caimaoy.github.io/tag/pyinstaller.html">
+                            pyinstaller
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://caimaoy.github.io/tag/wsdd.html">
+                            wsdd
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://caimaoy.github.io/tag/picture.html">
+                            picture
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://caimaoy.github.io/tag/web.html">
+                            web
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://caimaoy.github.io/tag/java.html">
+                            java
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://caimaoy.github.io/tag/english.html">
+                            English
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://caimaoy.github.io/tag/webservice.html">
+                            webservice
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://caimaoy.github.io/tag/axis.html">
+                            axis
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://caimaoy.github.io/tag/nginx.html">
+                            nginx
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://caimaoy.github.io/tag/supervisior.html">
+                            supervisior
                         </a>
                     </li>
                 </ul>

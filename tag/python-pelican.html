@@ -2,7 +2,7 @@
 <html lang="zh"
 >
 <head>
-    <title>java - caimaoy's blog</title>
+    <title>python pelican - caimaoy's blog</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -12,7 +12,7 @@
 
 
     <meta name="author" content="caimaoy" />
-    <meta name="keywords" content="java" />
+    <meta name="keywords" content="python pelican" />
 
     <!-- Open Graph tags -->
         <meta property="og:site_name" content="caimaoy's blog" />
@@ -79,20 +79,28 @@ caimaoy's blog            </a>
         <div class="col-sm-9">
 
             <article>
-                <h2><a href="http://caimaoy.github.io/how-to-deploy-webservice-by-axis-wsdd.html">如何用axis的wsdd方法部署WebService</a></h2>
-                <div class="summary"><h2>编写 deploy.wsdd 文件</h2>
+                <h2><a href="http://caimaoy.github.io/pelican-tag-cloud.html">修复pelican 3.6 后没有标签云</a></h2>
+                <div class="summary"><h3>提问：我的标签咋不见了？</h3>
 <ul>
-<li>放置于 %Tomcat_Home%\webapps\axis\WEB-INF 中</li>
-<li>内容如下</li>
+<li>换了新的电脑 pelican 还是要先安装</li>
+<li>使用了如下的命令：</li>
 </ul>
-<div class="highlight"><pre><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
-<span class="nt">&lt;deployment</span> <span class="na">xmlns=</span><span class="s">&quot;http://xml.apache.org/axis/wsdd/&quot;</span>
-    <span class="na">xmlns:java=</span><span class="s">&quot;http://xml.apache.org/axis/wsdd/providers/java&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;service</span> <span class="na">name=</span><span class="s">&quot;WSDD&quot;</span> <span class="na">provider=</span><span class="s">&quot;java:RPC&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;parameter</span> <span class="na">name=</span><span class="s">&quot;className&quot;</span> <span class="na">value=</span><span class="s">&quot;com.caimaoy&quot;</span> <span class="nt">/&gt;</span>
-        <span class="c">&lt;!-- * 代表所有的方法都暴露 --&gt;</span>
-        <span class="nt">&lt;parameter</span> <span class="na">name ...</span></pre></div>
-                    <a class="btn btn-default btn-xs" href="http://caimaoy.github.io/how-to-deploy-webservice-by-axis-wsdd.html">more ...</a>
+<div class="highlight"><pre>pip install pelican
+</pre></div>
+
+
+<ul>
+<li>好像一切正常，拉取一下仓库，make 一下，发现标签云没有了</li>
+<li>为什么？</li>
+</ul>
+<h3>回答：pelican 版本升级，标签云 tag_cloud 被移除了</h3>
+<ul>
+<li>看看官网的 faq 吧—— <a href="http://docs.getpelican.com/en/3.6.3/faq.html?#my-tag-cloud-is-missing-broken-since-i-upgraded-pelican">http://docs.getpelican.com/en/3.6.3/faq.html</a></li>
+</ul>
+<blockquote>
+<p>My tag-cloud is missing/broken since I upgraded Pelican
+In an ongoing effort to steamline Pelican ...</p></blockquote>
+                    <a class="btn btn-default btn-xs" href="http://caimaoy.github.io/pelican-tag-cloud.html">more ...</a>
                 </div>
             </article>
             <hr/>
