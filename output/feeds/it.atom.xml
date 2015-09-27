@@ -1,5 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>caimaoy's blog</title><link href="http://caimaoy.github.io/" rel="alternate"></link><link href="http://caimaoy.github.io/feeds/it.atom.xml" rel="self"></link><id>http://caimaoy.github.io/</id><updated>2015-09-13T10:00:00+08:00</updated><entry><title>nginx + gunicorn + supervisior + flask 部署 python web</title><link href="http://caimaoy.github.io/deploy-python-web.html" rel="alternate"></link><updated>2015-09-13T10:00:00+08:00</updated><author><name>caimaoy</name></author><id>tag:caimaoy.github.io,2015-09-13:deploy-python-web.html</id><summary type="html">&lt;h1&gt;简介&lt;/h1&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>caimaoy's blog</title><link href="http://caimaoy.github.io/" rel="alternate"></link><link href="http://caimaoy.github.io/feeds/it.atom.xml" rel="self"></link><id>http://caimaoy.github.io/</id><updated>2015-09-27T16:55:00+08:00</updated><entry><title>修复pelican 3.6 后没有标签云</title><link href="http://caimaoy.github.io/pelican-tag-cloud.html" rel="alternate"></link><updated>2015-09-27T16:55:00+08:00</updated><author><name>caimaoy</name></author><id>tag:caimaoy.github.io,2015-09-27:pelican-tag-cloud.html</id><summary type="html">&lt;h3&gt;提问：我的标签咋不见了？&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;换了新的电脑 pelican 还是要先安装&lt;/li&gt;
+&lt;li&gt;使用了如下的命令：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;pip install pelican
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;好像一切正常，拉取一下仓库，make 一下，发现标签云没有了&lt;/li&gt;
+&lt;li&gt;为什么？&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;回答：pelican 版本升级，标签云 tag_cloud 被移除了&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;看看官网的 faq 吧—— &lt;a href="http://docs.getpelican.com/en/3.6.3/faq.html?#my-tag-cloud-is-missing-broken-since-i-upgraded-pelican"&gt;http://docs.getpelican.com/en/3.6.3/faq.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;My tag-cloud is missing/broken since I upgraded Pelican
+In an ongoing effort to steamline Pelican, tag_cloud generation has been moved out of the pelican core and into a separate plugin. See the Plugins documentation further information about the Pelican plugin system.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3&gt;解决：添加插件&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/getpelican/pelican-plugins"&gt;pelican 的插件库地址&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;拉取仓库下来，修改 pelicanconf.py 或者 publishconf.py 文件&lt;/li&gt;
+&lt;li&gt;添加类似于如下的配置&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;# 插件路径
+PLUGIN_PATHS = [&amp;#39;pelican-plugins&amp;#39;]
+# 添加插件
+PLUGINS = [&amp;#39;tag_cloud&amp;#39;,]
+
+# tag_cloud 配置(自己个性配置)
+DISPLAY_TAGS_INLINE = True
+DISPLAY_TAGS_ON_SIDEBAR = True
+TAG_CLOUD_STEPS = 4
+&lt;/pre&gt;&lt;/div&gt;</summary><category term="python pelican"></category></entry><entry><title>nginx + gunicorn + supervisior + flask 部署 python web</title><link href="http://caimaoy.github.io/deploy-python-web.html" rel="alternate"></link><updated>2015-09-13T10:00:00+08:00</updated><author><name>caimaoy</name></author><id>tag:caimaoy.github.io,2015-09-13:deploy-python-web.html</id><summary type="html">&lt;h1&gt;简介&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;最近离职休假，在家研究 python 的 web 框架&lt;/li&gt;
 &lt;li&gt;本来是要来 tornado 的，但是因为 Falsk 文档更为齐全，并且更易上手，所以先来了flask&lt;/li&gt;

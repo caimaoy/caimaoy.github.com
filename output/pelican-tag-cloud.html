@@ -2,7 +2,7 @@
 <html lang="zh"
 >
 <head>
-    <title>java - caimaoy's blog</title>
+    <title>修复pelican 3.6 后没有标签云 - caimaoy's blog</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -10,16 +10,21 @@
 
 
 
+<link rel="canonical" href="http://caimaoy.github.io/pelican-tag-cloud.html">
 
-    <meta name="author" content="caimaoy" />
-    <meta name="keywords" content="java" />
+        <meta name="author" content="caimaoy" />
+        <meta name="keywords" content="python pelican" />
+        <meta name="description" content="提问：我的标签咋不见了？ 换了新的电脑 pelican 还是要先安装 使用了如下的命令： pip install pelican 好像一切正常，拉取一下仓库，make 一下，发现标签云没有了 为什么？ 回答：pelican 版本升级，标签云 tag_cloud 被移除了 看看官网的 faq 吧—— http://docs.getpelican.com/en/3.6.3/faq.html My tag-cloud is missing/broken since I upgraded Pelican In an ongoing effort to steamline Pelican ..." />
 
-    <!-- Open Graph tags -->
         <meta property="og:site_name" content="caimaoy's blog" />
-        <meta property="og:type" content="website"/>
-        <meta property="og:title" content="caimaoy's blog"/>
-        <meta property="og:url" content="http://caimaoy.github.io"/>
-        <meta property="og:description" content="caimaoy's blog"/>
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="修复pelican 3.6 后没有标签云"/>
+        <meta property="og:url" content="http://caimaoy.github.io/pelican-tag-cloud.html"/>
+        <meta property="og:description" content="提问：我的标签咋不见了？ 换了新的电脑 pelican 还是要先安装 使用了如下的命令： pip install pelican 好像一切正常，拉取一下仓库，make 一下，发现标签云没有了 为什么？ 回答：pelican 版本升级，标签云 tag_cloud 被移除了 看看官网的 faq 吧—— http://docs.getpelican.com/en/3.6.3/faq.html My tag-cloud is missing/broken since I upgraded Pelican In an ongoing effort to steamline Pelican ..."/>
+        <meta property="article:published_time" content="2015-09-27" />
+            <meta property="article:section" content="it" />
+            <meta property="article:tag" content="python pelican" />
+            <meta property="article:author" content="caimaoy" />
 
 
     <!-- Bootstrap -->
@@ -58,7 +63,7 @@ caimaoy's blog            </a>
                         <li >
                             <a href="http://caimaoy.github.io/category/english.html">English</a>
                         </li>
-                        <li >
+                        <li class="active">
                             <a href="http://caimaoy.github.io/category/it.html">It</a>
                         </li>
                         <li >
@@ -78,24 +83,104 @@ caimaoy's blog            </a>
     <div class="row">
         <div class="col-sm-9">
 
-            <article>
-                <h2><a href="http://caimaoy.github.io/how-to-deploy-webservice-by-axis-wsdd.html">如何用axis的wsdd方法部署WebService</a></h2>
-                <div class="summary"><h2>编写 deploy.wsdd 文件</h2>
-<ul>
-<li>放置于 %Tomcat_Home%\webapps\axis\WEB-INF 中</li>
-<li>内容如下</li>
-</ul>
-<div class="highlight"><pre><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
-<span class="nt">&lt;deployment</span> <span class="na">xmlns=</span><span class="s">&quot;http://xml.apache.org/axis/wsdd/&quot;</span>
-    <span class="na">xmlns:java=</span><span class="s">&quot;http://xml.apache.org/axis/wsdd/providers/java&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;service</span> <span class="na">name=</span><span class="s">&quot;WSDD&quot;</span> <span class="na">provider=</span><span class="s">&quot;java:RPC&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;parameter</span> <span class="na">name=</span><span class="s">&quot;className&quot;</span> <span class="na">value=</span><span class="s">&quot;com.caimaoy&quot;</span> <span class="nt">/&gt;</span>
-        <span class="c">&lt;!-- * 代表所有的方法都暴露 --&gt;</span>
-        <span class="nt">&lt;parameter</span> <span class="na">name ...</span></pre></div>
-                    <a class="btn btn-default btn-xs" href="http://caimaoy.github.io/how-to-deploy-webservice-by-axis-wsdd.html">more ...</a>
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="http://caimaoy.github.io/pelican-tag-cloud.html"
+                       rel="bookmark"
+                       title="Permalink to 修复pelican 3.6 后没有标签云">
+                        修复pelican 3.6 后没有标签云
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2015-09-27T16:55:00+08:00"> 日 27 九月 2015</time>
+    </span>
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="http://caimaoy.github.io/tag/python-pelican.html">python pelican</a>
+    
+</footer><!-- /.post-info -->                    </div>
                 </div>
-            </article>
-            <hr/>
+                <h3>提问：我的标签咋不见了？</h3>
+<ul>
+<li>换了新的电脑 pelican 还是要先安装</li>
+<li>使用了如下的命令：</li>
+</ul>
+<div class="highlight"><pre>pip install pelican
+</pre></div>
+
+
+<ul>
+<li>好像一切正常，拉取一下仓库，make 一下，发现标签云没有了</li>
+<li>为什么？</li>
+</ul>
+<h3>回答：pelican 版本升级，标签云 tag_cloud 被移除了</h3>
+<ul>
+<li>看看官网的 faq 吧—— <a href="http://docs.getpelican.com/en/3.6.3/faq.html?#my-tag-cloud-is-missing-broken-since-i-upgraded-pelican">http://docs.getpelican.com/en/3.6.3/faq.html</a></li>
+</ul>
+<blockquote>
+<p>My tag-cloud is missing/broken since I upgraded Pelican
+In an ongoing effort to steamline Pelican, tag_cloud generation has been moved out of the pelican core and into a separate plugin. See the Plugins documentation further information about the Pelican plugin system.</p>
+</blockquote>
+<h3>解决：添加插件</h3>
+<ul>
+<li><a href="https://github.com/getpelican/pelican-plugins">pelican 的插件库地址</a></li>
+<li>拉取仓库下来，修改 pelicanconf.py 或者 publishconf.py 文件</li>
+<li>添加类似于如下的配置</li>
+</ul>
+<div class="highlight"><pre># 插件路径
+PLUGIN_PATHS = [&#39;pelican-plugins&#39;]
+# 添加插件
+PLUGINS = [&#39;tag_cloud&#39;,]
+
+# tag_cloud 配置(自己个性配置)
+DISPLAY_TAGS_INLINE = True
+DISPLAY_TAGS_ON_SIDEBAR = True
+TAG_CLOUD_STEPS = 4
+</pre></div>
+            </div>
+            <!-- /.entry-content -->
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'caimaoygithubio'; // required: replace example with your forum shortname
+
+                    var disqus_identifier = 'pelican-tag-cloud';
+                var disqus_url = 'http://caimaoy.github.io/pelican-tag-cloud.html';
+
+            var disqus_config = function () {
+                this.language = "zh";
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
 
         </div>
         <div class="col-sm-3" id="sidebar">
