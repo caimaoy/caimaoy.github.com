@@ -1,5 +1,167 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>caimaoy's blog</title><link>http://caimaoy.github.io/</link><description></description><atom:link href="http://caimaoy.github.io/feeds/all.rss.xml" rel="self"></atom:link><lastBuildDate>Sun, 27 Sep 2015 16:55:00 +0800</lastBuildDate><item><title>修复pelican 3.6 后没有标签云</title><link>http://caimaoy.github.io/pelican-tag-cloud.html</link><description>&lt;h3&gt;提问：我的标签咋不见了？&lt;/h3&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>caimaoy's blog</title><link>http://caimaoy.github.io/</link><description></description><atom:link href="http://caimaoy.github.io/feeds/all.rss.xml" rel="self"></atom:link><lastBuildDate>Fri, 16 Oct 2015 17:47:00 +0800</lastBuildDate><item><title>python list implementation</title><link>http://caimaoy.github.io/python-list-implementation.html</link><description>&lt;h1&gt;Python list implementation&lt;/h1&gt;
+&lt;h1&gt;深入 Python 列表的内部实现&lt;/h1&gt;
+&lt;p&gt;This post describes the CPython implementation of the list object. CPython is the most used Python implementation.  &lt;/p&gt;
+&lt;p&gt;Lists in Python are powerful and it is interesting to see how they are implemented internally.  &lt;/p&gt;
+&lt;p&gt;Following is a simple Python script appending some integers to a list and printing them.  &lt;/p&gt;
+&lt;p&gt;Cpython 是 Python 最为常见的实现。 Python 中的列表非常强大，本文介绍了列表在 CPython 内部是如何实现的，一定非常有趣。  &lt;/p&gt;
+&lt;p&gt;下面是一段 Python 脚本，在列表中添加几个整数，然后打印列表。  &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&amp;gt;&amp;gt;&amp;gt; l = []
+&amp;gt;&amp;gt;&amp;gt; l.append(1)
+&amp;gt;&amp;gt;&amp;gt; l.append(2)
+&amp;gt;&amp;gt;&amp;gt; l.append(3)
+&amp;gt;&amp;gt;&amp;gt; l
+[1, 2, 3]
+&amp;gt;&amp;gt;&amp;gt; for e in l:
+...   print e
+...
+1
+2
+3
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;As you can see, lists are iterable.  &lt;/p&gt;
+&lt;p&gt;可以发现，列表是一个迭代器。&lt;/p&gt;
+&lt;h2&gt;List object C structure&lt;/h2&gt;
+&lt;h2&gt;列表对象的 C 语言结构体&lt;/h2&gt;
+&lt;p&gt;A list object in CPython is represented by the following C structure. ob_item is a list of pointers to the list elements. allocated is the number of slots allocated in memory.  &lt;/p&gt;
+&lt;p&gt;Cpython 中的列表实现类似于下面的 C 结构体。ob_item 是指向列表对象的指针数组。allocated 是申请内存的槽的个数。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;typedef struct {
+    PyObject_VAR_HEAD
+    PyObject **ob_item;
+    Py_ssize_t allocated;
+} PyListObject;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;List initialization&lt;/h2&gt;
+&lt;h2&gt;列表初始化&lt;/h2&gt;
+&lt;p&gt;Let’s look at what happens when we initialize an empty list. e.g. l = [].  &lt;/p&gt;
+&lt;p&gt;看看列表初始化的时候发生了什么，例如：l = []。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;arguments&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;size&lt;/span&gt; &lt;span class="n"&gt;of&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;list&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;
+&lt;span class="n"&gt;returns&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;list&lt;/span&gt; &lt;span class="n"&gt;object&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;[]&lt;/span&gt;
+&lt;span class="n"&gt;PyListNew&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+    &lt;span class="n"&gt;nbytes&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;size&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;size&lt;/span&gt; &lt;span class="n"&gt;of&lt;/span&gt; &lt;span class="n"&gt;global&lt;/span&gt; &lt;span class="n"&gt;Python&lt;/span&gt; &lt;span class="n"&gt;object&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;
+    &lt;span class="n"&gt;allocate&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="n"&gt;list&lt;/span&gt; &lt;span class="n"&gt;object&lt;/span&gt;
+    &lt;span class="n"&gt;allocate&lt;/span&gt; &lt;span class="n"&gt;list&lt;/span&gt; &lt;span class="n"&gt;of&lt;/span&gt; &lt;span class="n"&gt;pointers&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ob_item&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="n"&gt;of&lt;/span&gt; &lt;span class="n"&gt;size&lt;/span&gt; &lt;span class="n"&gt;nbytes&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;
+    &lt;span class="n"&gt;clear&lt;/span&gt; &lt;span class="n"&gt;ob_item&lt;/span&gt;
+    &lt;span class="kd"&gt;set&lt;/span&gt; &lt;span class="n"&gt;list&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt; &lt;span class="n"&gt;allocated&lt;/span&gt; &lt;span class="n"&gt;var&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt; &lt;span class="n"&gt;slots&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;list&lt;/span&gt; &lt;span class="n"&gt;object&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;It is important to notice the difference between allocated slots and the size of the list. The size of a list is the same as len(l). The number of allocated slots is what has been allocated in memory. Often, you will see that allocated can be greater than size. This is to avoid needing calling realloc each time a new elements is appended to the list. We will see more about that later.  &lt;/p&gt;
+&lt;p&gt;要分清列表大小和分配的槽大小，这很重要。列表的大小和 len(l) 的大小相同。分配槽的大小是指已经在内存中已经分配了的槽空间数。通常分配的槽的大小要大于列表大小，这是为了避免每次列表添加元素的时候都调用分配内存的函数。下面会具体介绍。&lt;/p&gt;
+&lt;h2&gt;Append&lt;/h2&gt;
+&lt;h2&gt;Append 操作&lt;/h2&gt;
+&lt;p&gt;We append an integer to the list: l.append(1). What happens? The internal C function app1() is called:  &lt;/p&gt;
+&lt;p&gt;向列表添加一个整数：l.append(1) 时发生了什么？调用了底层的 C 函数 app1()。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;arguments&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;list&lt;/span&gt; &lt;span class="n"&gt;object&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="n"&gt;element&lt;/span&gt;
+&lt;span class="n"&gt;returns&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;OK&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;not&lt;/span&gt;
+&lt;span class="n"&gt;app1&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+    &lt;span class="n"&gt;n&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;size&lt;/span&gt; &lt;span class="n"&gt;of&lt;/span&gt; &lt;span class="n"&gt;list&lt;/span&gt;
+    &lt;span class="n"&gt;call&lt;/span&gt; &lt;span class="n"&gt;list_resize&lt;/span&gt;&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="n"&gt;resize&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;list&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="n"&gt;size&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;
+    &lt;span class="n"&gt;list&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;list&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="n"&gt;element&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Let’s look at list_resize(). It over-allocates memory to avoid calling list_resize too many time. The growth pattern of the list is: 0, 4, 8, 16, 25, 35, 46, 58, 72, 88, …  &lt;/p&gt;
+&lt;p&gt;下面是 list_resize() 函数。它会多申请一些内存，避免频繁调用 list_resize() 函数。列表的增长系列为：0，4，8，16，25，35，46，58，72，88……&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;arguments&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;list&lt;/span&gt; &lt;span class="n"&gt;object&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="n"&gt;size&lt;/span&gt;
+&lt;span class="n"&gt;returns&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;OK&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;not&lt;/span&gt;
+&lt;span class="n"&gt;list_resize&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+    &lt;span class="n"&gt;new_allocated&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;newsize&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;newsize&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="mi"&gt;9&lt;/span&gt; &lt;span class="o"&gt;?&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt; &lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;
+    &lt;span class="n"&gt;new_allocated&lt;/span&gt; &lt;span class="o"&gt;+=&lt;/span&gt; &lt;span class="n"&gt;newsize&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;
+    &lt;span class="n"&gt;resize&lt;/span&gt; &lt;span class="n"&gt;ob_item&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;list&lt;/span&gt; &lt;span class="n"&gt;of&lt;/span&gt; &lt;span class="n"&gt;pointers&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="n"&gt;size&lt;/span&gt; &lt;span class="n"&gt;new_allocated&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;4 slots are now allocated to contain elements and the first one is the integer 1. You can see on the following diagram that l[0] points to the integer object that we just appended. The dashed squares represent the slots allocated but not used yet.  &lt;/p&gt;
+&lt;p&gt;现在分配了 4 个用来装列表元素的槽空间，并且第一个空间中为整数 1。如下图显示 l[0] 指向我们新添加的整数对象。虚线的方框表示已经分配但没有使用的槽空间。&lt;/p&gt;
+&lt;p&gt;Append operation amortized complexity is O(1).  &lt;/p&gt;
+&lt;p&gt;列表追加元素操作的平均复杂度为 O(1)。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="http://ww4.sinaimg.cn/large/61203d71gw1ex3418lleoj204h05twef.jpg" /&gt;&lt;/p&gt;
+&lt;p&gt;We continue by adding one more element: l.append(2). list_resize is called with n+1 = 2 but because the allocated size is 4, there is no need to allocate more memory. Same thing happens when we add 2 more integers: l.append(3), l.append(4). The following diagram shows what we have so far.  &lt;/p&gt;
+&lt;p&gt;继续添加新的元素：l.append(2)。调用 list_resize 函数，参数为 n+1 = 2， 但是因为已经申请了 4 个槽空间，所以不需要再申请内存空间。再添加两个整数的情况也是一样的：l.append(2)，l.append(2)。下图显示了我们现在的情况。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="http://ww3.sinaimg.cn/mw690/61203d71gw1ex3418cf9uj204h07gjrf.jpg" /&gt;&lt;/p&gt;
+&lt;h2&gt;Insert&lt;/h2&gt;
+&lt;h2&gt;Insert 操作&lt;/h2&gt;
+&lt;p&gt;Let’s insert a new integer (5) at position 1: l.insert(1,5) and look at what happens internally. ins1() is called:  &lt;/p&gt;
+&lt;p&gt;在列表偏移量 1 的位置插入新元素，整数 5：l.insert(1,5)，内部调用ins1() 函数。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;arguments&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;list&lt;/span&gt; &lt;span class="n"&gt;object&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;where&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="n"&gt;element&lt;/span&gt;
+&lt;span class="n"&gt;returns&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;OK&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;not&lt;/span&gt;
+&lt;span class="n"&gt;ins1&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+    &lt;span class="n"&gt;resize&lt;/span&gt; &lt;span class="n"&gt;list&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="n"&gt;size&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt; &lt;span class="n"&gt;more&lt;/span&gt; &lt;span class="n"&gt;slots&lt;/span&gt; &lt;span class="n"&gt;will&lt;/span&gt; &lt;span class="n"&gt;be&lt;/span&gt; &lt;span class="n"&gt;allocated&lt;/span&gt;
+    &lt;span class="n"&gt;starting&lt;/span&gt; &lt;span class="n"&gt;at&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;last&lt;/span&gt; &lt;span class="n"&gt;element&lt;/span&gt; &lt;span class="n"&gt;up&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;offset&lt;/span&gt; &lt;span class="n"&gt;where&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;right&lt;/span&gt; &lt;span class="n"&gt;shift&lt;/span&gt; &lt;span class="k"&gt;each&lt;/span&gt; &lt;span class="n"&gt;element&lt;/span&gt;
+    &lt;span class="kd"&gt;set&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="n"&gt;element&lt;/span&gt; &lt;span class="n"&gt;at&lt;/span&gt; &lt;span class="n"&gt;offset&lt;/span&gt; &lt;span class="n"&gt;where&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;img alt="" src="http://ww4.sinaimg.cn/mw690/61203d71gw1ex34198im9j20ht0ad0tn.jpg" /&gt;&lt;/p&gt;
+&lt;p&gt;The dashed squares represent the slots allocated but not used yet. Here, 8 slots are allocated but the size or length of the list is only 5.  &lt;/p&gt;
+&lt;p&gt;虚线的方框依旧表示已经分配但没有使用的槽空间。现在分配了 8 个槽空间，但是列表的大小却只是 5。&lt;/p&gt;
+&lt;p&gt;Insert operation complexity is O(n).  &lt;/p&gt;
+&lt;p&gt;列表插入操作的平均复杂度为 O(n)。&lt;/p&gt;
+&lt;h2&gt;Pop&lt;/h2&gt;
+&lt;h2&gt;Pop 操作&lt;/h2&gt;
+&lt;p&gt;When you pop the last element: l.pop(), listpop() is called. list_resize is called inside listpop() and if the new size is less than half of the allocated size then the list is shrunk.  &lt;/p&gt;
+&lt;p&gt;弹出列表最后一个元素：调用 listpop() 函数。在 listpop() 函数中会调用 list_resize 函数，如果弹出元素后列表的大小小于分配的槽空间数的一半，将会缩减列表的大小。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;arguments&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;list&lt;/span&gt; &lt;span class="n"&gt;object&lt;/span&gt;
+&lt;span class="n"&gt;returns&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;element&lt;/span&gt; &lt;span class="n"&gt;popped&lt;/span&gt;
+&lt;span class="n"&gt;listpop&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;list&lt;/span&gt; &lt;span class="n"&gt;empty&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="kc"&gt;null&lt;/span&gt;
+    &lt;span class="n"&gt;resize&lt;/span&gt; &lt;span class="n"&gt;list&lt;/span&gt; &lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="n"&gt;size&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt; &lt;span class="k"&gt;is&lt;/span&gt; &lt;span class="n"&gt;not&lt;/span&gt; &lt;span class="n"&gt;less&lt;/span&gt; &lt;span class="n"&gt;than&lt;/span&gt; &lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt; &lt;span class="n"&gt;so&lt;/span&gt; &lt;span class="n"&gt;no&lt;/span&gt; &lt;span class="n"&gt;shrinkage&lt;/span&gt;
+    &lt;span class="kd"&gt;set&lt;/span&gt; &lt;span class="n"&gt;list&lt;/span&gt; &lt;span class="n"&gt;object&lt;/span&gt; &lt;span class="n"&gt;size&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;last&lt;/span&gt; &lt;span class="n"&gt;element&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Pop operation complexity is O(1).&lt;br /&gt;
+列表 pop 操作的平均复杂度为 O(1)。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="http://ww2.sinaimg.cn/mw690/61203d71gw1ex3419wrvaj20fg0adwf9.jpg" /&gt;&lt;/p&gt;
+&lt;p&gt;You can observe that slot 4 still points to the integer but the important thing is the size of the list which is now 4.  &lt;/p&gt;
+&lt;p&gt;可以看到 pop 操作后槽空间 4 依然指向原先的整数对象，但是最为关键的是现在列表的大小已经变为 4。  &lt;/p&gt;
+&lt;p&gt;Let’s pop one more element. In list_resize(), size – 1 = 4 – 1 = 3 is less than half of the allocated slots so the list is shrunk to 6 slots and the new size of the list is now 3.  &lt;/p&gt;
+&lt;p&gt;继续 pop 一个元素。在 list_resize() 函数中，size – 1 = 4 – 1 = 3 已经小于所分配的槽空间大小的一半，所以缩减分配的槽空间为 6，同时现在列表的大小为 3。  &lt;/p&gt;
+&lt;p&gt;You can observe that slot 3 and 4 still point to some integers but the important thing is the size of the list which is now 3.  &lt;/p&gt;
+&lt;p&gt;可以看到槽空间 3 和 4 依然指向原先的整数，但是现在列表的大小已经变为 3。  &lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="http://ww1.sinaimg.cn/mw690/61203d71gw1ex3419ln7uj20fc0aa3zb.jpg" /&gt;&lt;/p&gt;
+&lt;h2&gt;Remove&lt;/h2&gt;
+&lt;h2&gt;Remove 操作&lt;/h2&gt;
+&lt;p&gt;Python list object has a method to remove a specific element: l.remove(5). listremove() is called.  &lt;/p&gt;
+&lt;p&gt;Python 的列表对象有个方法，删除指定的元素： l.remove(5)。底层调用 listremove() 函数。  &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;arguments&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;list&lt;/span&gt; &lt;span class="n"&gt;object&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;element&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="n"&gt;remove&lt;/span&gt;
+&lt;span class="n"&gt;returns&lt;/span&gt; &lt;span class="n"&gt;none&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;OK&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="kc"&gt;null&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;not&lt;/span&gt;
+&lt;span class="n"&gt;listremove&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+    &lt;span class="n"&gt;loop&lt;/span&gt; &lt;span class="n"&gt;through&lt;/span&gt; &lt;span class="k"&gt;each&lt;/span&gt; &lt;span class="n"&gt;list&lt;/span&gt; &lt;span class="n"&gt;element&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;correct&lt;/span&gt; &lt;span class="n"&gt;element&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+            &lt;span class="n"&gt;slice&lt;/span&gt; &lt;span class="n"&gt;list&lt;/span&gt; &lt;span class="n"&gt;between&lt;/span&gt; &lt;span class="n"&gt;element&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;s slot and element&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt; &lt;span class="n"&gt;slot&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;
+            &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;none&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="kc"&gt;null&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;To slice the list and remove the element, list_ass_slice() is called and it is interesting to see how it works. Here, low offset is 1 and high offset is 2 as we are removing the element 5 at position 1.  &lt;/p&gt;
+&lt;p&gt;为了做列表的切片并且删除元素，调用了 list_ass_slice() 函数，它的实现方法比较有趣。我们在删除列表位置 1 的元素 5 的时候，低位的偏移量为 1 同时高位的偏移量为 2.  &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;arguments&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;list&lt;/span&gt; &lt;span class="n"&gt;object&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;low&lt;/span&gt; &lt;span class="n"&gt;offset&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;high&lt;/span&gt; &lt;span class="n"&gt;offset&lt;/span&gt;
+&lt;span class="n"&gt;returns&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;OK&lt;/span&gt;
+&lt;span class="n"&gt;list_ass_slice&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+    &lt;span class="n"&gt;copy&lt;/span&gt; &lt;span class="n"&gt;integer&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="n"&gt;recycle&lt;/span&gt; &lt;span class="n"&gt;list&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="n"&gt;dereference&lt;/span&gt; &lt;span class="n"&gt;it&lt;/span&gt;
+    &lt;span class="n"&gt;shift&lt;/span&gt; &lt;span class="n"&gt;elements&lt;/span&gt; &lt;span class="n"&gt;from&lt;/span&gt; &lt;span class="n"&gt;slot&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="n"&gt;slot&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;
+    &lt;span class="n"&gt;resize&lt;/span&gt; &lt;span class="n"&gt;list&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt; &lt;span class="n"&gt;slots&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Remove operation complexity is O(n).  &lt;/p&gt;
+&lt;p&gt;列表 remove 操作的复杂度为 O(n)。  &lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="http://ww3.sinaimg.cn/mw690/61203d71gw1ex341ajn3fj20c9096wf2.jpg" /&gt;&lt;/p&gt;
+&lt;p&gt;文章翻译自：&lt;a href="http://www.laurentluce.com/posts/python-list-implementation/"&gt;http://www.laurentluce.com/posts/python-list-implementation/&lt;/a&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">caimaoy</dc:creator><pubDate>Fri, 16 Oct 2015 17:47:00 +0800</pubDate><guid>tag:caimaoy.github.io,2015-10-16:python-list-implementation.html</guid><category>python</category><category>list</category><category>implementation</category></item><item><title>修复pelican 3.6 后没有标签云</title><link>http://caimaoy.github.io/pelican-tag-cloud.html</link><description>&lt;h3&gt;提问：我的标签咋不见了？&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;换了新的电脑 pelican 还是要先安装&lt;/li&gt;
 &lt;li&gt;使用了如下的命令：&lt;/li&gt;
