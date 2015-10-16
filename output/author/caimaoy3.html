@@ -78,6 +78,32 @@ caimaoy's blog            </a>
         <div class="col-sm-9">
 
             <article>
+                <h2><a href="http://caimaoy.github.io/pyqt_create_a_new_window.html">PyQt 创建新窗口</a></h2>
+                <div class="summary"><blockquote>
+<p>PyQt 如何新建一个窗口</p>
+</blockquote>
+<div class="highlight"><pre><span class="c"># -*- coding: UTF-8 -*-</span>
+
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">from</span> <span class="nn">PyQt4.QtCore</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">PyQt4.QtGui</span> <span class="kn">import</span> <span class="o">*</span>
+
+
+<span class="k">class</span> <span class="nc">mainWindow</span><span class="p">(</span><span class="n">QWidget</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parent</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">mainWindow</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="n">parent</span><span class="p">)</span>
+        <span class="n">button</span> <span class="o">=</span> <span class="n">QPushButton</span><span class="p">(</span><span class="s">u&#39;弹出新窗口&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">slavewindow</span> <span class="o">=</span> <span class="n">slaveWindow</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">button</span><span class="p">,</span> <span class="n">SIGNAL</span><span class="p">(</span><span class="s">&#39;clicked()&#39;</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">slavewindow</span><span class="o">.</span><span class="n">show</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">slaveWindow</span><span class="p">(</span><span class="n">QWidget</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parent ...</span></pre></div>
+                    <a class="btn btn-default btn-xs" href="http://caimaoy.github.io/pyqt_create_a_new_window.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
                 <h2><a href="http://caimaoy.github.io/pelican-add-404-page.html">pelican 如何添加404页面</a></h2>
                 <div class="summary"><blockquote>
 <p>pelican 已经挂在了github上面了但是如何挂上一个404 页面</p>
@@ -275,13 +301,13 @@ ghp-import 是用于分支发布的，也就是说你的源码是在一个分支
                         </a>
                     </li>
                     <li class="list-group-item tag-2">
-                        <a href="http://caimaoy.github.io/tag/github.html">
-                            github
+                        <a href="http://caimaoy.github.io/tag/pelican.html">
+                            pelican
                         </a>
                     </li>
                     <li class="list-group-item tag-2">
-                        <a href="http://caimaoy.github.io/tag/pelican.html">
-                            pelican
+                        <a href="http://caimaoy.github.io/tag/github.html">
+                            github
                         </a>
                     </li>
                     <li class="list-group-item tag-3">
@@ -295,18 +321,8 @@ ghp-import 是用于分支发布的，也就是说你的源码是在一个分支
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
-                        <a href="http://caimaoy.github.io/tag/soap-webservice.html">
-                            soap webservice
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="http://caimaoy.github.io/tag/gunicorn.html">
-                            gunicorn
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="http://caimaoy.github.io/tag/windows.html">
-                            windows
+                        <a href="http://caimaoy.github.io/tag/supervisior.html">
+                            supervisior
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
@@ -315,33 +331,8 @@ ghp-import 是用于分支发布的，也就是说你的源码是在一个分支
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
-                        <a href="http://caimaoy.github.io/tag/hhkb.html">
-                            HHKB
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="http://caimaoy.github.io/tag/python-pelican.html">
-                            python pelican
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="http://caimaoy.github.io/tag/flask.html">
-                            flask
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="http://caimaoy.github.io/tag/about-me.html">
-                            about-me
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="http://caimaoy.github.io/tag/translation.html">
-                            translation
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="http://caimaoy.github.io/tag/pyqt.html">
-                            pyqt
+                        <a href="http://caimaoy.github.io/tag/gunicorn.html">
+                            gunicorn
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
@@ -350,8 +341,13 @@ ghp-import 是用于分支发布的，也就是说你的源码是在一个分支
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
-                        <a href="http://caimaoy.github.io/tag/pyinstaller.html">
-                            pyinstaller
+                        <a href="http://caimaoy.github.io/tag/java.html">
+                            java
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://caimaoy.github.io/tag/flask.html">
+                            flask
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
@@ -360,23 +356,38 @@ ghp-import 是用于分支发布的，也就是说你的源码是在一个分支
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
-                        <a href="http://caimaoy.github.io/tag/picture.html">
-                            picture
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
                         <a href="http://caimaoy.github.io/tag/web.html">
                             web
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
-                        <a href="http://caimaoy.github.io/tag/java.html">
-                            java
+                        <a href="http://caimaoy.github.io/tag/hhkb.html">
+                            HHKB
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
-                        <a href="http://caimaoy.github.io/tag/english.html">
-                            English
+                        <a href="http://caimaoy.github.io/tag/about-me.html">
+                            about-me
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://caimaoy.github.io/tag/windows.html">
+                            windows
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://caimaoy.github.io/tag/picture.html">
+                            picture
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://caimaoy.github.io/tag/python-pelican.html">
+                            python pelican
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://caimaoy.github.io/tag/implementation.html">
+                            implementation
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
@@ -385,8 +396,23 @@ ghp-import 是用于分支发布的，也就是说你的源码是在一个分支
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
-                        <a href="http://caimaoy.github.io/tag/axis.html">
-                            axis
+                        <a href="http://caimaoy.github.io/tag/list.html">
+                            list
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://caimaoy.github.io/tag/english.html">
+                            English
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://caimaoy.github.io/tag/translation.html">
+                            translation
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://caimaoy.github.io/tag/pyinstaller.html">
+                            pyinstaller
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
@@ -395,8 +421,18 @@ ghp-import 是用于分支发布的，也就是说你的源码是在一个分支
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
-                        <a href="http://caimaoy.github.io/tag/supervisior.html">
-                            supervisior
+                        <a href="http://caimaoy.github.io/tag/pyqt.html">
+                            pyqt
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://caimaoy.github.io/tag/soap-webservice.html">
+                            soap webservice
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://caimaoy.github.io/tag/axis.html">
+                            axis
                         </a>
                     </li>
                 </ul>

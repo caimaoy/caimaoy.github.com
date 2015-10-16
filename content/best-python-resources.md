@@ -1,7 +1,7 @@
 Title: Best Python Resources
 Date: 2015-09-03 23:58
 Modified: 2015-09-03 23:58
-Category: it 
+Category: it
 Tags: python, translation
 Slug: best-python-resources
 Author: caimaoy
