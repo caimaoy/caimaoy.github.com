@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh"
+        xmlns:wb="http://open.weibo.com/wb"
 >
 <head>
     <title>pelican 如何添加404页面 - caimaoy's blog</title>
@@ -37,6 +38,7 @@
 
         <link href="http://caimaoy.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
               title="caimaoy's blog ATOM Feed"/>
+        <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
 
 </head>
 <body>
@@ -183,9 +185,10 @@ Save_as: 404.html
     <ul class="list-group list-group-flush">
             <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
               <ul class="list-group" id="social">
-                <li class="list-group-item"><a href="/feeds/all.atom.xml"><i class="fa fa-rss-square fa-lg"></i> RSS</a></li>
-                <li class="list-group-item"><a href="http://github.com/caimaoy"><i class="fa fa-github-square fa-lg"></i> github</a></li>
-                <li class="list-group-item"><a href="http://weibo.com/caimaoy"><i class="fa fa-weibo fa-lg"></i> weibo</a></li>
+                    <li class="list-group-item"><a href="/feeds/all.atom.xml"><i class="fa fa-rss-square fa-lg"></i> RSS</a></li>
+                    <li class="list-group-item"><a href="http://github.com/caimaoy"><i class="fa fa-github-square fa-lg"></i> github</a></li>
+                    <li class="list-group-item"><a href="http://weibo.com/caimaoy"><i class="fa fa-weibo fa-lg"></i> weibo</a>
+                    <wb:follow-button uid="1629502833" type="red_3" width="100%" height="24" ></wb:follow-button></li>
               </ul>
             </li>
 
@@ -209,73 +212,18 @@ Save_as: 404.html
                         </a>
                     </li>
                     <li class="list-group-item tag-3">
-                        <a href="http://caimaoy.github.io/tag/test.html">
-                            test
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-3">
                         <a href="http://caimaoy.github.io/tag/vim.html">
                             vim
                         </a>
                     </li>
-                    <li class="list-group-item tag-4">
-                        <a href="http://caimaoy.github.io/tag/supervisior.html">
-                            supervisior
+                    <li class="list-group-item tag-3">
+                        <a href="http://caimaoy.github.io/tag/test.html">
+                            test
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
-                        <a href="http://caimaoy.github.io/tag/diary.html">
-                            diary
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="http://caimaoy.github.io/tag/gunicorn.html">
-                            gunicorn
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="http://caimaoy.github.io/tag/mac.html">
-                            mac
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="http://caimaoy.github.io/tag/java.html">
-                            java
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="http://caimaoy.github.io/tag/flask.html">
-                            flask
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="http://caimaoy.github.io/tag/wsdd.html">
-                            wsdd
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="http://caimaoy.github.io/tag/web.html">
-                            web
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="http://caimaoy.github.io/tag/hhkb.html">
-                            HHKB
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="http://caimaoy.github.io/tag/about-me.html">
-                            about-me
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="http://caimaoy.github.io/tag/windows.html">
-                            windows
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="http://caimaoy.github.io/tag/picture.html">
-                            picture
+                        <a href="http://caimaoy.github.io/tag/pyinstaller.html">
+                            pyinstaller
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
@@ -289,13 +237,23 @@ Save_as: 404.html
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
-                        <a href="http://caimaoy.github.io/tag/webservice.html">
-                            webservice
+                        <a href="http://caimaoy.github.io/tag/windows.html">
+                            windows
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
-                        <a href="http://caimaoy.github.io/tag/list.html">
-                            list
+                        <a href="http://caimaoy.github.io/tag/java.html">
+                            java
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://caimaoy.github.io/tag/supervisior.html">
+                            supervisior
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://caimaoy.github.io/tag/gunicorn.html">
+                            gunicorn
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
@@ -304,13 +262,28 @@ Save_as: 404.html
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
-                        <a href="http://caimaoy.github.io/tag/translation.html">
-                            translation
+                        <a href="http://caimaoy.github.io/tag/list.html">
+                            list
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
-                        <a href="http://caimaoy.github.io/tag/pyinstaller.html">
-                            pyinstaller
+                        <a href="http://caimaoy.github.io/tag/picture.html">
+                            picture
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://caimaoy.github.io/tag/diary.html">
+                            diary
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://caimaoy.github.io/tag/mac.html">
+                            mac
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://caimaoy.github.io/tag/web.html">
+                            web
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
@@ -324,13 +297,43 @@ Save_as: 404.html
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
-                        <a href="http://caimaoy.github.io/tag/soap-webservice.html">
-                            soap webservice
+                        <a href="http://caimaoy.github.io/tag/hhkb.html">
+                            HHKB
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://caimaoy.github.io/tag/translation.html">
+                            translation
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
                         <a href="http://caimaoy.github.io/tag/axis.html">
                             axis
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://caimaoy.github.io/tag/wsdd.html">
+                            wsdd
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://caimaoy.github.io/tag/webservice.html">
+                            webservice
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://caimaoy.github.io/tag/about-me.html">
+                            about-me
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://caimaoy.github.io/tag/flask.html">
+                            flask
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://caimaoy.github.io/tag/soap-webservice.html">
+                            soap webservice
                         </a>
                     </li>
                 </ul>

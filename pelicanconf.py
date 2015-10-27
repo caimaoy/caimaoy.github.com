@@ -115,3 +115,5 @@ SITEMAP = {
 # THEME = r'.\pelican-themes\bootstrap2-dark'
 # THEME = r'.\pelican-themes\SoMA'
 THEME = r'./pelican-themes/pelican-bootstrap3'
+
+WEIBO_FOLLOW = True
