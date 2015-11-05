@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>caimaoy's blog</title><link href="http://caimaoy.github.io/" rel="alternate"></link><link href="http://caimaoy.github.io/feeds/caimaoy.atom.xml" rel="self"></link><id>http://caimaoy.github.io/</id><updated>2015-10-16T17:47:00+08:00</updated><entry><title>python list implementation</title><link href="http://caimaoy.github.io/python-list-implementation.html" rel="alternate"></link><updated>2015-10-16T17:47:00+08:00</updated><author><name>caimaoy</name></author><id>tag:caimaoy.github.io,2015-10-16:python-list-implementation.html</id><summary type="html">&lt;h1&gt;Python list implementation&lt;/h1&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>caimaoy's blog</title><link href="http://caimaoy.github.io/" rel="alternate"></link><link href="http://caimaoy.github.io/feeds/caimaoy.atom.xml" rel="self"></link><id>http://caimaoy.github.io/</id><updated>2015-11-05T22:53:00+08:00</updated><entry><title>python list implementation</title><link href="http://caimaoy.github.io/python-list-implementation.html" rel="alternate"></link><updated>2015-10-16T17:47:00+08:00</updated><author><name>caimaoy</name></author><id>tag:caimaoy.github.io,2015-10-16:python-list-implementation.html</id><summary type="html">&lt;h1&gt;Python list implementation&lt;/h1&gt;
 &lt;h1&gt;深入 Python 列表的内部实现&lt;/h1&gt;
 &lt;p&gt;This post describes the CPython implementation of the list object. CPython is the most used Python implementation.  &lt;/p&gt;
 &lt;p&gt;Lists in Python are powerful and it is interesting to see how they are implemented internally.  &lt;/p&gt;
@@ -1122,11 +1122,17 @@ g/                     /d  &amp;lt;-- Delete the lines matching the regexp
 &lt;li&gt;这里面有一个reg的知识点：&lt;strong&gt;环视&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;\@&amp;lt;= 这是一个逆向环视&lt;/li&gt;
 &lt;li&gt;所以建议大家还是用第一种方法就好了&lt;/li&gt;
-&lt;/ul&gt;</summary><category term="vim"></category></entry><entry><title>Jessie English</title><link href="http://caimaoy.github.io/Jessie-English.html" rel="alternate"></link><updated>2015-04-22T10:24:00+08:00</updated><author><name>caimaoy</name></author><id>tag:caimaoy.github.io,2015-04-22:Jessie-English.html</id><summary type="html">&lt;h3&gt;prefix &amp;amp; root&lt;/h3&gt;
+&lt;/ul&gt;</summary><category term="vim"></category></entry><entry><title>Jessie English</title><link href="http://caimaoy.github.io/Jessie-English.html" rel="alternate"></link><updated>2015-11-05T22:53:00+08:00</updated><author><name>caimaoy</name></author><id>tag:caimaoy.github.io,2015-04-22:Jessie-English.html</id><summary type="html">&lt;h3&gt;prefix &amp;amp; root&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://caimaoy.gitbooks.io/jessie-prefix-root/content/"&gt;content&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.gitbook.com/book/caimaoy/jessie-prefix-root/details"&gt;details&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.gitbook.com/download/pdf/book/caimaoy/jessie-prefix-root"&gt;pdf_download_link&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;writing words&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://caimaoy.github.io/Jessie-English"&gt;for_more&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.gitbook.com/book/caimaoy/jessie-writing-words/details"&gt;details&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.gitbook.com/download/pdf/book/caimaoy/jessie-writing-words"&gt;pdf_download_link&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</summary><category term="English"></category></entry><entry><title>pyinstaller生成exe中文路径无法运行解决方案</title><link href="http://caimaoy.github.io/pyinstaller-chinese-dir.html" rel="alternate"></link><updated>2015-04-15T20:14:00+08:00</updated><author><name>caimaoy</name></author><id>tag:caimaoy.github.io,2015-04-15:pyinstaller-chinese-dir.html</id><summary type="html">&lt;blockquote&gt;
 &lt;p&gt;pyinstaller生成的exe中文路径不能运行，错误信息如下:&lt;/p&gt;
 &lt;/blockquote&gt;

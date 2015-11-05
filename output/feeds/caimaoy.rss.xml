@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>caimaoy's blog</title><link>http://caimaoy.github.io/</link><description></description><atom:link href="http://caimaoy.github.io/feeds/caimaoy.rss.xml" rel="self"></atom:link><lastBuildDate>Fri, 16 Oct 2015 17:47:00 +0800</lastBuildDate><item><title>python list implementation</title><link>http://caimaoy.github.io/python-list-implementation.html</link><description>&lt;h1&gt;Python list implementation&lt;/h1&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>caimaoy's blog</title><link>http://caimaoy.github.io/</link><description></description><atom:link href="http://caimaoy.github.io/feeds/caimaoy.rss.xml" rel="self"></atom:link><lastBuildDate>Thu, 05 Nov 2015 22:53:00 +0800</lastBuildDate><item><title>python list implementation</title><link>http://caimaoy.github.io/python-list-implementation.html</link><description>&lt;h1&gt;Python list implementation&lt;/h1&gt;
 &lt;h1&gt;深入 Python 列表的内部实现&lt;/h1&gt;
 &lt;p&gt;This post describes the CPython implementation of the list object. CPython is the most used Python implementation.  &lt;/p&gt;
 &lt;p&gt;Lists in Python are powerful and it is interesting to see how they are implemented internally.  &lt;/p&gt;
@@ -1127,7 +1127,13 @@ g/                     /d  &amp;lt;-- Delete the lines matching the regexp
 &lt;li&gt;&lt;a href="http://caimaoy.gitbooks.io/jessie-prefix-root/content/"&gt;content&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.gitbook.com/book/caimaoy/jessie-prefix-root/details"&gt;details&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.gitbook.com/download/pdf/book/caimaoy/jessie-prefix-root"&gt;pdf_download_link&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">caimaoy</dc:creator><pubDate>Wed, 22 Apr 2015 10:24:00 +0800</pubDate><guid>tag:caimaoy.github.io,2015-04-22:Jessie-English.html</guid><category>English</category></item><item><title>pyinstaller生成exe中文路径无法运行解决方案</title><link>http://caimaoy.github.io/pyinstaller-chinese-dir.html</link><description>&lt;blockquote&gt;
+&lt;/ul&gt;
+&lt;h3&gt;writing words&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://caimaoy.github.io/Jessie-English"&gt;for_more&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.gitbook.com/book/caimaoy/jessie-writing-words/details"&gt;details&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.gitbook.com/download/pdf/book/caimaoy/jessie-writing-words"&gt;pdf_download_link&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">caimaoy</dc:creator><pubDate>Thu, 05 Nov 2015 22:53:00 +0800</pubDate><guid>tag:caimaoy.github.io,2015-04-22:Jessie-English.html</guid><category>English</category></item><item><title>pyinstaller生成exe中文路径无法运行解决方案</title><link>http://caimaoy.github.io/pyinstaller-chinese-dir.html</link><description>&lt;blockquote&gt;
 &lt;p&gt;pyinstaller生成的exe中文路径不能运行，错误信息如下:&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;D:\测试&amp;gt;&amp;quot;D:\测试\caimaoy_tool.exe&amp;quot;
